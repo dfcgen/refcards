@@ -1,0 +1,1823 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\begin_preamble
+\input{text-inc}
+\input{pdf-inc}
+
+\usepackage{html}
+\end_preamble
+\language german
+\inputencoding latin1
+\fontscheme times
+\graphics default
+\paperfontsize 10
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 1.5cm
+\topmargin 0.5cm
+\rightmargin 3cm
+\bottommargin 0.5cm
+\headheight 1cm
+\headsep 0.4cm
+\footskip 0.4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+%% HTML conversion
+\layout Standard
+%%
+\layout Standard
+
+\backslash 
+begin{htmlonly}
+\newline 
+    
+\backslash 
+originalTeX %% Needed because "> in htmlmeta produces french guillemets in german
+\newline 
+
+\newline 
+    
+\backslash 
+htmlmeta{<META HTTP-EQUIV="content-language" CONTENT="de">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="robots" CONTENT="index, follow">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="author" CONTENT="Ralf Hoppe">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="description" LANG ="de" CONTENT="GNU Make Kurzreferenz">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="keywords" LANG ="de" CONTENT="GNU make">}
+\newline 
+
+\newline 
+    
+\backslash 
+germanTeX
+\newline 
+
+\newline 
+
+\backslash 
+end{htmlonly}
+\end_inset 
+
+
+\layout Title
+
+GNU Make --- Kurzreferenz
+\layout Author
+
+Copyright 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+copyright
+\end_inset 
+
+\SpecialChar ~
+Ralf Hoppe
+\layout Section
+
+Aufruf
+\begin_inset LatexCommand \index{Make}
+
+\end_inset 
+
+
+\layout Standard
+
+Der Make-Aufruf
+\begin_inset LatexCommand \index{Make!Aufruf}
+
+\end_inset 
+
+ sieht wiefolgt aus: 
+\family sans 
+make [
+\emph on 
+options
+\emph default 
+] [
+\emph on 
+VAR1
+\emph default 
+=
+\emph on 
+val1
+\emph default 
+ 
+\emph on 
+VAR2
+\emph default 
+=
+\emph on 
+val2
+\emph default 
+ \SpecialChar \ldots{}
+]
+\family default 
+\emph on 
+ 
+\family sans 
+goal
+\family default 
+.
+ 
+\emph default 
+Die wichtigsten Optionen
+\begin_inset LatexCommand \index{Make!Optionen}
+
+\end_inset 
+
+ (
+\emph on 
+options
+\emph default 
+) sind dabei:
+\layout Description
+
+--directory=
+\emph on 
+dir
+\emph default 
+ (-C\SpecialChar ~
+
+\emph on 
+dir
+\emph default 
+) Make wechselt vor der Ausführung in das Verzeichnis 
+\emph on 
+dir
+\emph default 
+.
+\layout Description
+
+--environment-overrides (-e) Variablen aus der Umgebung haben Vorrang.
+\layout Description
+
+--makefile=file (-f\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+) Verarbeitet file als Makefile.
+\layout Description
+
+--help (-h) Hilfe
+\begin_inset LatexCommand \index{Make!Hilfe}
+
+\end_inset 
+
+
+\layout Description
+
+--ignore-errors (-i) Make ignoriert alle Fehler
+\begin_inset LatexCommand \index{Fehler}
+
+\end_inset 
+
+ während der Verarbeitung.
+\layout Description
+
+--include-dir=dir (-I\SpecialChar ~
+
+\emph on 
+dir
+\emph default 
+) Spezifiziert weitere Verzeichnisse für die Suche nach Makefiles für 
+\family sans 
+include
+\family default 
+.
+\layout Description
+
+--keep-going (-k) make soll trotz Fehler
+\begin_inset LatexCommand \index{Fehler}
+
+\end_inset 
+
+ versuchen die Ausführung fortzusetzen.
+\layout Description
+
+--no-builtin-rules (-r) Alle eingebauten impliziten 
+\emph on 
+Rules
+\emph default 
+ werden von Make ignoriert.
+\layout Description
+
+--no-builtin-variables (-R) 
+\begin_inset LatexCommand \index{Variablen!Built-In}
+
+\end_inset 
+
+Alle vordefinierten Variablen von Make werden ignoriert.
+\layout Description
+
+--touch (-t) Aktualisiere Änderungszeit der Dateien (touch) anstatt die
+ zugehörigen 
+\emph on 
+Rules
+\emph default 
+ auszuführen.
+\layout Description
+
+--version (-v) Ausgabe der Version von Make.
+\layout Description
+
+--warn-undefined-variables Make gibt eine Warnung bei undefinierten Variablen
+\begin_inset LatexCommand \index{Variablen!Undefinierte}
+
+\end_inset 
+
+ aus.
+\layout Section
+
+Rules
+\layout Subsection
+
+Explizite Rules
+\begin_inset LatexCommand \index{Rules!Explizite}
+
+\end_inset 
+
+
+\layout Standard
+
+Jedes Makefile besteht aus sogenannten 
+\emph on 
+Rules
+\emph default 
+
+\begin_inset LatexCommand \index{Rules}
+
+\end_inset 
+
+, zu denen jeweils 
+\emph on 
+Targets
+\emph default 
+
+\begin_inset LatexCommand \index{Targets}
+
+\end_inset 
+
+, 
+\emph on 
+Prerequisites
+\begin_inset LatexCommand \index{Prerequisites}
+
+\end_inset 
+
+
+\emph default 
+ und 
+\emph on 
+Commands
+\emph default 
+ gehören.
+ Eine explizite Rule wird folgendermaßen geschrieben:
+\layout LyX-Code
+
+target(s) : [prerequisites]
+\begin_deeper 
+\layout LyX-Code
+
+[TAB shell-command]
+\layout LyX-Code
+
+[TAB shell-command]
+\layout LyX-Code
+
+\end_deeper 
+\layout Standard
+
+Diejenigen (abhängigen) 
+\emph on 
+Targets
+\emph default 
+, die für das Erreichen eine 
+\begin_inset Quotes eld
+\end_inset 
+
+Ziel
+\begin_inset Quotes erd
+\end_inset 
+
+-
+\emph on 
+Targets
+\emph default 
+ aktualisiert werden müssen, nennt man 
+\emph on 
+Goals
+\emph default 
+.
+ Ob eine Aktualisierung notwendig ist, entscheidet die Änderungszeit einer
+ gleichnamigen Datei --- es sei denn das 
+\emph on 
+Goal
+\emph default 
+ oder auch die 
+\emph on 
+Prerequesites
+\emph default 
+ sind als .PHONY
+\begin_inset LatexCommand \index{.PHONY}
+
+\end_inset 
+
+ deklariert.
+ Im letzteren Fall wird eine Datei weder vorausgesetzt noch erzeugt, 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+ie
+\end_inset 
+
+ das 
+\emph on 
+Target
+\emph default 
+ gilt immer als veraltet.
+ Wie ein 
+\emph on 
+Goal
+\emph default 
+ bzgl.
+ seiner 
+\emph on 
+Prerequesites
+\emph default 
+ aktualisiert wird, beschreiben die mit TAB beginnenden Shell-Commands.
+\layout Standard
+
+Beim Make-Aufruf kann ein spezifisches 
+\emph on 
+Goal
+\emph default 
+ übergeben werden, wird es weggelassen dann findet immer die erste gültige
+ 
+\emph on 
+Rule
+\emph default 
+ im Makefile Anwendung.
+ Sind 
+\emph on 
+Prerequesites
+\emph default 
+ selbst wieder 
+\emph on 
+Targets
+\emph default 
+ in anderen 
+\emph on 
+Rules
+\emph default 
+, dann setzt sich der Aktualisierungsprozeß rekursiv fort.
+ Die einzelnen Zeilen einer 
+\emph on 
+Rule
+\emph default 
+ werden immer in separaten Sub-Shells ausgeführt, was bei der Verwendung
+ von Variablen zu beachten ist.
+\layout Subsection
+
+Implizite Rules
+\begin_inset LatexCommand \index{Rules!Implizite}
+
+\end_inset 
+
+
+\layout Standard
+
+Implizite 
+\emph on 
+Rules
+\emph default 
+ in Make-Files werden von GNU mittlerweile als 
+\emph on 
+obsolet
+\emph default 
+ bezeichnet, da sie von den (allgemeineren) 
+\emph on 
+Pattern
+\emph default 
+-
+\emph on 
+Rules
+\emph default 
+ abgelöst werden.
+ Im Original beschreiben solche 
+\emph on 
+Rules
+\emph default 
+ die Beziehung zwischen Dateien bestimmter Extensions (im SInne von 
+\emph on 
+Prerequisite
+\emph default 
+ und 
+\emph on 
+Target
+\emph default 
+) und ihre Bildungsregeln als Shell-Command, also 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+:
+\layout LyX-Code
+
+.c.o:
+\begin_deeper 
+\layout LyX-Code
+
+[TAB shell-command]
+\layout LyX-Code
+
+[TAB shell-command]
+\end_deeper 
+\layout Standard
+
+Zahlreiche solcher 
+\emph on 
+Rules
+\emph default 
+ werden von Make durch Built-In 
+\emph on 
+Rules
+\begin_inset LatexCommand \index{Rules!Built-In}
+
+\end_inset 
+
+
+\emph default 
+ bereitgestellt.
+ Die wichtigsten davon sind:
+\layout LyX-Code
+
+.c.o:
+\begin_deeper 
+\layout LyX-Code
+
+$(CC) -c $(CFLAGS) $<
+\end_deeper 
+\layout LyX-Code
+
+.cc.o:
+\begin_deeper 
+\layout LyX-Code
+
+$(CXX) -c $(CPPFLAGS) $(CXXFLAGS)
+\end_deeper 
+\layout LyX-Code
+
+.s.o:
+\begin_deeper 
+\layout LyX-Code
+
+$(AS) $(ASFLAGS)
+\end_deeper 
+\layout LyX-Code
+
+.y.c:
+\begin_deeper 
+\layout LyX-Code
+
+$(YACC) $(YFLAGS)
+\end_deeper 
+\layout LyX-Code
+
+.l.c:
+\begin_deeper 
+\layout LyX-Code
+
+$(LEX) $(LFLAGS)
+\end_deeper 
+\layout LyX-Code
+
+.tex.dvi:
+\begin_deeper 
+\layout LyX-Code
+
+$(TEX)
+\end_deeper 
+\layout Subsection
+
+Pattern
+\begin_inset LatexCommand \index{Pattern}
+
+\end_inset 
+
+-Rules
+\begin_inset LatexCommand \index{Rules!Pattern-}
+
+\end_inset 
+
+
+\layout Standard
+
+Oftmals führen explizite 
+\emph on 
+Rules
+\emph default 
+ zu vielen gleichartigen Zeilen, in den sich 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ nur Teile von 
+\emph on 
+Targets
+\emph default 
+ 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+resp
+\end_inset 
+
+ Dateinamen ändern, die Verarbeitung aber immer gleich ist.
+ Eine 
+\emph on 
+Pattern
+\emph default 
+-
+\emph on 
+Rule
+\emph default 
+ schafft die Möglichkeit der (gleichartigen) Verarbeitung für alle 
+\emph on 
+Targets
+\emph default 
+, die zu einem 
+\emph on 
+Pattern
+\emph default 
+ passen.
+ Die Schreibweise einer solchen 
+\emph on 
+Rule
+\emph default 
+ ist die folgende:
+\layout LyX-Code
+
+targets : target-pattern: dep-patterns 
+\layout LyX-Code
+
+commands
+\layout LyX-Code
+
+\layout Standard
+
+Das 
+\emph on 
+Target
+\emph default 
+-
+\emph on 
+Pattern
+\emph default 
+ setzt sich aus einem Präfix gefolgt von einem Prozentzeichen 
+\begin_inset Quotes eld
+\end_inset 
+
+%
+\begin_inset Quotes erd
+\end_inset 
+
+ und (zuletzt) einem Suffix zusammen.
+ Das Prozentzeichen ist ähnlich einem Wildcard
+\begin_inset LatexCommand \index{Wildcard}
+
+\end_inset 
+
+ zu interpretieren, wobei der Teil des 
+\emph on 
+Targets
+\emph default 
+, zu dem es paßt, als auch als 
+\emph on 
+Stamm
+\begin_inset LatexCommand \index{Stamm}
+
+\end_inset 
+
+
+\emph default 
+ bezeichnet wird.
+ Zum Beispiel paßt 
+\begin_inset Quotes eld
+\end_inset 
+
+%.o
+\begin_inset Quotes erd
+\end_inset 
+
+ zu allen 
+\emph on 
+Targets
+\emph default 
+ (oder Dateien), die auf 
+\begin_inset Quotes eld
+\end_inset 
+
+.o
+\begin_inset Quotes erd
+\end_inset 
+
+ enden.
+\layout LyX-Code
+
+$(objects): %.o: %.c
+\begin_deeper 
+\layout LyX-Code
+
+$(CC) -c $(CFLAGS) $< -o $@
+\end_deeper 
+\layout Standard
+
+Make führt das Kommando für jedes Target aus, daß der 
+\emph on 
+Pattern
+\emph default 
+-
+\emph on 
+Rule
+\emph default 
+ entspricht --- das aber nur dann, wenn das Target nicht noch (irgendwo)
+ ein Kommando zur Generierung (
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ aus einer expliziten 
+\emph on 
+Rule
+\emph default 
+) hat
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Außerdem müssen die 
+\emph on 
+Prerequisites
+\emph default 
+ gefunden werden.
+\end_inset 
+
+.
+\layout Subsection
+
+Built-In Targets
+\layout Description
+
+.PHONY
+\begin_inset LatexCommand \index{.PHONY}
+
+\end_inset 
+
+ 
+\emph on 
+Phony Target
+\emph default 
+, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+ie
+\end_inset 
+
+ unabhängig davon ob eine gleichnamige Datei existiert wird es immer aktualisier
+t
+\layout Description
+
+.IGNORE
+\begin_inset LatexCommand \index{.IGNORE}
+
+\end_inset 
+
+ Fehler
+\begin_inset LatexCommand \index{Fehler}
+
+\end_inset 
+
+ bei der Ausführung zugehöriger Kommandos werden ignoriert
+\layout Description
+
+.PRECIOUS
+\begin_inset LatexCommand \index{.PRECIOUS}
+
+\end_inset 
+
+ Stopt Make die Programmausführung dann wird die zum 
+\emph on 
+Target
+\emph default 
+ gehörige Datei nicht gelöscht
+\layout Description
+
+.DEFAULT
+\begin_inset LatexCommand \index{.DEFAULT}
+
+\end_inset 
+
+ Kann zu einem Target keine Rule ermittelt werden, dann werden die hier
+ spezifizierten 
+\emph on 
+Commands
+\emph default 
+ angewendet.
+\layout Description
+
+.EXPORT_ALL_VARIABLES
+\begin_inset LatexCommand \index{.EXPORT\_ALL\_VARIABLES}
+
+\end_inset 
+
+ Hierbei handelt es sich weniger um ein 
+\emph on 
+Target
+\emph default 
+ als vielmehr eine Anweisung alle Variablen zu den Child-Prozessen (u.U.\SpecialChar ~
+Sub-Makes
+\begin_inset LatexCommand \index{Sub-Makes}
+
+\end_inset 
+
+) zu exportieren.
+\layout Subsection
+
+Bedingte Ausführung
+\begin_inset LatexCommand \index{Bedingte Ausführung}
+
+\end_inset 
+
+
+\layout Standard
+
+Bedingte Ausführung ist durch Verwendung der folgende Schlüsselwörter möglich:
+\layout Description
+
+ifdef
+\begin_inset LatexCommand \index{ifdef}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+VAR
+\emph default 
+ TRUE, wenn Variable 
+\emph on 
+VAR
+\emph default 
+ definiert ist.
+\layout Description
+
+ifndef
+\begin_inset LatexCommand \index{ifndef}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+VAR
+\emph default 
+ TRUE, wenn Variable 
+\emph on 
+VAR
+\emph default 
+ nicht definiert ist.
+\layout Description
+
+ifeq
+\begin_inset LatexCommand \index{ifeq}
+
+\end_inset 
+
+\SpecialChar ~
+(
+\emph on 
+VAR
+\emph default 
+,
+\emph on 
+val
+\emph default 
+) TRUE, wenn Variable 
+\emph on 
+VAR
+\emph default 
+ gleich 
+\emph on 
+val
+\emph default 
+ ist (Alternativen: 
+\family sans 
+ifeq '
+\emph on 
+VAR
+\emph default 
+' '
+\emph on 
+val
+\emph default 
+'
+\family default 
+, 
+\family sans 
+ifeq "
+\emph on 
+VAR
+\emph default 
+" "
+\emph on 
+val
+\emph default 
+"
+\family default 
+)
+\layout Description
+
+ifneq
+\begin_inset LatexCommand \index{ifneq}
+
+\end_inset 
+
+\SpecialChar ~
+(
+\emph on 
+VAR
+\emph default 
+,
+\emph on 
+val
+\emph default 
+) TRUE, wenn Variable 
+\emph on 
+VAR
+\emph default 
+ ungleich 
+\emph on 
+val
+\emph default 
+ ist
+\layout Standard
+
+Beispiel:
+\layout LyX-Code
+
+ifeq ($(CC),gcc)
+\begin_deeper 
+\layout LyX-Code
+
+$(CC) -o foo $(objects) $(libs_for_gcc)
+\end_deeper 
+\layout LyX-Code
+
+else
+\begin_deeper 
+\layout LyX-Code
+
+$(CC) -o foo $(objects) $(normal_libs)
+\end_deeper 
+\layout LyX-Code
+
+endif
+\layout Standard
+
+Variablen können auf der Kommandozeile definiert (und vordefinierte sogar
+ überschrieben) werden, Beispiel:\SpecialChar ~
+
+\family sans 
+make CFLAGS='-g -O'
+\family default 
+.
+\layout Section
+
+Variablen
+\begin_inset LatexCommand \index{Variablen}
+
+\end_inset 
+
+
+\layout Subsection
+
+Anwender-Variablen
+\begin_inset LatexCommand \index{Variablen!Anwender-}
+
+\end_inset 
+
+
+\layout Standard
+
+Ähnlich wie in Shell-Scripten können Variablen definiert und verwendet werden,
+ also 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+
+\layout LyX-Code
+
+VAR=
+\begin_inset Quotes erd
+\end_inset 
+
+Hello World
+\begin_inset Quotes erd
+\end_inset 
+
+
+\layout LyX-Code
+
+@echo $(VAR)
+\layout Standard
+
+Weitere Formen der Variablenzuweisung sind: 
+\emph on 
+VAR
+\emph default 
+:=, 
+\emph on 
+VAR
+\emph default 
+?= , 
+\emph on 
+VAR
+\emph default 
++= , für die auf das 
+\begin_inset LatexCommand \url[GNU Make]{http://www.gnu.org/software/make/manual/html_mono/make.html}
+
+\end_inset 
+
+ Manual verwiesen wird.
+ Sie unterscheiden sich in der Zuweisung des Wertes entweder zum Zeitpunkt
+ der Deklaration oder der Verwendung
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Dazu muß man wissen, daß GNU Make eine Zwei-Pass Anwendung ist.
+\end_inset 
+
+.
+\layout Standard
+
+Die Bezugnahme auf Shell-Variablen
+\begin_inset LatexCommand \index{Variablen!Shell-}
+
+\end_inset 
+
+ muß durch Doppel-Dollar, wie in $$
+\emph on 
+var
+\emph default 
+ erfolgen.
+\layout Subsection
+
+Auto-Variablen
+\begin_inset LatexCommand \index{Variablen!Auto-}
+
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Ohne Berücksichtigung von Variablen, die beim Handling von Archiven eine
+ Rolle spielen.
+\end_inset 
+
+
+\layout Description
+
+$< (erstes/einziges) 
+\emph on 
+Prerequisite
+\layout Description
+
+$@ 
+\emph on 
+Target
+\layout Description
+
+$? alle 
+\emph on 
+Prerequesite
+\emph default 
+, die neuer als das 
+\emph on 
+Target
+\emph default 
+ sind
+\layout Description
+
+$^ alle 
+\emph on 
+Prerequesites
+\layout Description
+
+$+ alle 
+\emph on 
+Prerequesites
+\emph default 
+, aber doppeltes Vorkommen bleibt erhalten
+\layout Description
+
+$* Stamm der impliziten 
+\emph on 
+Rule
+\emph default 
+ oder 
+\emph on 
+Pattern-Rule
+\layout Standard
+
+Varianten dieser Variablen können folgendermaßen (hier am Beispiel von $@)
+ gebildet werden:
+\layout Description
+
+$(@D) Verzeichnis-Teil des Pfades von $@
+\layout Description
+
+$(@F) Datei-Teil des Pfades von $@
+\layout Subsection
+
+Umgebungsvariablen
+\begin_inset LatexCommand \index{Variablen!Umgebungs-}
+
+\end_inset 
+
+
+\layout Standard
+
+In einem Makefile ist die Verwendung von Umgebungsvariablen möglich.
+ Soche Variablen (sowie die auf der Kommandozeile übergebenen) werden auch
+ an Sub-Makes exportiert.
+ Sollen Variablen des aktuellen Makefiles exportiert werden, dann sind sie
+ wiefolgt zu deklarieren:
+\layout LyX-Code
+
+VAR = value
+\layout LyX-Code
+
+export
+\begin_inset LatexCommand \index{export}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Variablen!Export}
+
+\end_inset 
+
+ VAR
+\layout Standard
+
+oder
+\layout LyX-Code
+
+export VAR = value
+\layout Standard
+
+Make wertet insbesondere die folgenden Umgebungsvariablen aus:
+\layout Description
+
+MAKE Name des Make-Programms
+\layout Description
+
+MAKEFILES Inhalt wird als Makefiles interpretiert, die vor der gesamten
+ Verarbeitung ausgeführt werden sollen.
+\layout Description
+
+MAKEFLAGS Flags, so als wären sie beim Aufruf übergeben worden.
+\layout Description
+
+MAKECMDGOALS Liste von 
+\emph on 
+Goals
+\emph default 
+ die auf der Kommandozeile übergeben wurden.
+\layout Description
+
+SHELL Name der Shell.
+\layout Description
+
+CC Name des C/C++ Compilers
+\layout Section
+
+Funktionen
+\begin_inset LatexCommand \index{Funktionen}
+
+\end_inset 
+
+
+\layout Description
+
+$(subst
+\begin_inset LatexCommand \index{Funktionen!subst}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+from
+\emph default 
+,
+\emph on 
+to
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Ersetzt 
+\emph on 
+from
+\emph default 
+ durch 
+\emph on 
+to
+\emph default 
+ in 
+\emph on 
+text
+\emph default 
+.
+\layout Description
+
+$(patsubst
+\begin_inset LatexCommand \index{Funktionen!patsubst}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+pat
+\emph default 
+,
+\emph on 
+new
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Ersetzt in 
+\emph on 
+text
+\emph default 
+ alle Worte, die mit 
+\emph on 
+pat
+\emph default 
+ übereinstimmen durch 
+\emph on 
+new.
+\layout Description
+
+$(strip
+\begin_inset LatexCommand \index{Funktionen!strip}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+string
+\emph default 
+) Entfernt alle Whitespaces aus 
+\emph on 
+string.
+\layout Description
+
+$(findstring
+\begin_inset LatexCommand \index{Funktionen!findstring}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+find
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Sucht den String 
+\emph on 
+find
+\emph default 
+ in text.
+\layout Description
+
+$(filter
+\begin_inset LatexCommand \index{Funktionen!filter}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+pattern
+\emph default 
+\SpecialChar \ldots{}
+,
+\emph on 
+text
+\emph default 
+) Selektiert in 
+\emph on 
+text
+\emph default 
+ die Wörter, die mit einem der 
+\emph on 
+pattern
+\emph default 
+ übereinstimmen.
+\layout Description
+
+$(filter-out
+\begin_inset LatexCommand \index{Funktionen!filter-out}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+pattern
+\emph default 
+\SpecialChar \ldots{}
+,
+\emph on 
+text
+\emph default 
+) Selektiert in 
+\emph on 
+text
+\emph default 
+ die Wörter, die mit keinem 
+\emph on 
+pattern
+\emph default 
+ übereinstimmen.
+\layout Description
+
+$(sort
+\begin_inset LatexCommand \index{Funktionen!sort}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+list
+\emph default 
+) Sortiert die Wörter in 
+\emph on 
+list
+\emph default 
+, wobei Doppelte entfernt werden.
+\layout Description
+
+$(dir
+\begin_inset LatexCommand \index{Funktionen!dir}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+fnames
+\emph default 
+\SpecialChar \ldots{}
+) Extrahiert den Verzeichnis-Teil aus 
+\emph on 
+fnames
+\emph default 
+.
+\layout Description
+
+$(notdir
+\begin_inset LatexCommand \index{Funktionen!notdir}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+fnames
+\emph default 
+\SpecialChar \ldots{}
+) Extrahiert den Dateinamen-Teil aus 
+\emph on 
+fnames
+\emph default 
+.
+\layout Description
+
+$(suffix
+\begin_inset LatexCommand \index{Funktionen!suffix}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+fnames
+\emph default 
+\SpecialChar \ldots{}
+) Extrahiert die Dateinamen-Erweiterung aus 
+\emph on 
+fnames
+\emph default 
+.
+\layout Description
+
+$(basename
+\begin_inset LatexCommand \index{Funktionen!basename}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+fnames
+\emph default 
+\SpecialChar \ldots{}
+) Extrahiert den Dateinamen-Teil (ohne Erweiterung) aus fnames.
+\layout Description
+
+$(addsuffix
+\begin_inset LatexCommand \index{Funktionen!addsuffix}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+suffix
+\emph default 
+,
+\emph on 
+names
+\emph default 
+\SpecialChar \ldots{}
+) Hängt 
+\emph on 
+suffix
+\emph default 
+ an jedes Wort in 
+\emph on 
+names
+\emph default 
+ an.
+\layout Description
+
+$(addprefix
+\begin_inset LatexCommand \index{Funktionen!addprefix}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+prefix
+\emph default 
+,
+\emph on 
+names
+\emph default 
+\SpecialChar \ldots{}
+) Fügt 
+\emph on 
+prefix
+\emph default 
+ vor jedes Wort in 
+\emph on 
+names
+\emph default 
+.
+\layout Description
+
+$(join
+\begin_inset LatexCommand \index{Funktionen!join}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+list1
+\emph default 
+,
+\emph on 
+list2
+\emph default 
+) Vereinigt die Wortlisten 
+\emph on 
+list1
+\emph default 
+ und 
+\emph on 
+list2
+\emph default 
+.
+\layout Description
+
+$(word
+\begin_inset LatexCommand \index{Funktionen!word}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+n
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Extrahiert das n-te (bei Eins beginnend) aus 
+\emph on 
+text
+\emph default 
+.
+\layout Description
+
+$(words
+\begin_inset LatexCommand \index{Funktionen!words}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+text
+\emph default 
+) Ermittelt die Anzahl der Worte in 
+\emph on 
+text
+\emph default 
+.
+\layout Description
+
+$(wordlist
+\begin_inset LatexCommand \index{Funktionen!wordlist}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+s
+\emph default 
+,
+\emph on 
+e
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Gibt eine Liste von Worten aus 
+\emph on 
+text
+\emph default 
+ zurück, die von Position 
+\emph on 
+s
+\emph default 
+ bis 
+\emph on 
+e
+\emph default 
+ reicht.
+\layout Description
+
+$(firstword
+\begin_inset LatexCommand \index{Funktionen!firstword}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+names
+\emph default 
+\SpecialChar \ldots{}
+) Extrahiert das erste Wort aus 
+\emph on 
+names
+\emph default 
+.
+\layout Description
+
+$(wildcard
+\begin_inset LatexCommand \index{Funktionen!wildcard}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+pat
+\emph default 
+\SpecialChar \ldots{}
+) Sucht Dateien, die mit dem Shell-Pattern 
+\emph on 
+pat
+\emph default 
+ übereinstimmen.
+\layout Description
+
+$(error
+\begin_inset LatexCommand \index{Funktionen!error}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+text
+\emph default 
+\SpecialChar \ldots{}
+) Fehlerausgabe
+\begin_inset LatexCommand \index{Fehler}
+
+\end_inset 
+
+ von 
+\emph on 
+text
+\emph default 
+ und Ende des Make-Prozesses.
+\layout Description
+
+$(warning
+\begin_inset LatexCommand \index{Funktionen!warning}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+text
+\emph default 
+\SpecialChar \ldots{}
+) Ausgabe der Warnung 
+\emph on 
+text
+\emph default 
+.
+\layout Description
+
+$(shell
+\begin_inset LatexCommand \index{Funktionen!shell}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+cmd
+\emph default 
+) Ausführung von Shell-Command 
+\emph on 
+cmd
+\emph default 
+.
+\layout Description
+
+$(origin
+\begin_inset LatexCommand \index{Funktionen!origin}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+var
+\emph default 
+) Teilt mit woher die Variable 
+\emph on 
+var
+\emph default 
+ stammt (
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ environment, file, command line, \SpecialChar \ldots{}
+)
+\layout Description
+
+$(foreach
+\begin_inset LatexCommand \index{Funktionen!foreach}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+var
+\emph default 
+,
+\emph on 
+list
+\emph default 
+,
+\emph on 
+text
+\emph default 
+) Ersatz der Shell FOR-Schleife (für Details siehe GNU Make Manual, 8.4).
+\layout Description
+
+$(call
+\begin_inset LatexCommand \index{Funktionen!call}
+
+\end_inset 
+
+\SpecialChar ~
+
+\emph on 
+var
+\emph default 
+,
+\emph on 
+param
+\emph default 
+,...) Berechne 
+\emph on 
+var
+\emph default 
+ neu, indem alle Referenzen $(1), $(2), \SpecialChar \ldots{}
+ darin durch die Werte von 
+\emph on 
+param,\SpecialChar \ldots{}
+
+\emph default 
+ ersetzt werden.
+\layout Standard
+
+Hinweis: Enthält eine Variable 
+\emph on 
+VAR
+\emph default 
+ einen Funktionsnamen, dann ist zum Aufruf das Konstrukt 
+\family sans 
+$(call 
+\emph on 
+VAR
+\emph default 
+)
+\family default 
+ zu verwenden.
+\layout Section
+
+Spezialzeichen
+\begin_inset LatexCommand \index{Spezialzeichen}
+
+\end_inset 
+
+
+\layout Description
+
+# Kommentar
+\begin_inset LatexCommand \index{Kommentar}
+
+\end_inset 
+
+
+\layout Description
+
+
+\backslash 
+ Zeilenfortsetzung (Verwendung am Zeilenende)
+\layout Description
+
+@
+\emph on 
+cmd
+\emph default 
+ Unterdrückt Echo
+\begin_inset LatexCommand \index{Echo}
+
+\end_inset 
+
+ der Kommandozeile bei Ausführung von 
+\emph on 
+cmd.
+\layout Description
+
+-
+\emph on 
+cmd
+\emph default 
+ Sollte 
+\emph on 
+cmd
+\emph default 
+ einen Fehler
+\begin_inset LatexCommand \index{Fehler}
+
+\end_inset 
+
+ zurückgeben, wird der Make-Prozeß nicht gestopt.
+\layout Description
+
++
+\emph on 
+cmd
+\emph default 
+ 
+\emph on 
+cmd
+\emph default 
+ wird rekursiv
+\begin_inset LatexCommand \index{Rekursion}
+
+\end_inset 
+
+ ausgeführt.
+\the_end

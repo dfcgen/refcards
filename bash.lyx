@@ -1,0 +1,2358 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\begin_preamble
+\input{text-inc}
+\input{pdf-inc}
+
+\usepackage{html}
+\end_preamble
+\language german
+\inputencoding latin1
+\fontscheme times
+\graphics default
+\paperfontsize 10
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 1.5cm
+\topmargin 0.5cm
+\rightmargin 3cm
+\bottommargin 0.5cm
+\headheight 1cm
+\headsep 0.4cm
+\footskip 0.4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+%% HTML conversion
+\layout Standard
+%%
+\layout Standard
+
+\backslash 
+begin{htmlonly}
+\newline 
+    
+\backslash 
+originalTeX %% Needed because "> in htmlmeta produces french guillemets in german
+\newline 
+
+\newline 
+    
+\backslash 
+htmlmeta{<META HTTP-EQUIV="content-language" CONTENT="de">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="robots" CONTENT="index, follow">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="author" CONTENT="Ralf Hoppe">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="description" LANG ="de" CONTENT="Bash Reference">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="keywords" LANG ="de" CONTENT="shell bash">}
+\newline 
+
+\newline 
+    
+\backslash 
+germanTeX
+\newline 
+
+\newline 
+
+\backslash 
+end{htmlonly}
+\end_inset 
+
+
+\layout Title
+
+Bash-Scripting Kurzreferenz
+\layout Author
+
+Copyright 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+copyright
+\end_inset 
+
+\SpecialChar ~
+Ralf Hoppe
+\layout Section
+
+Kommandoausführung
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+& Ausführung von 
+\emph on 
+cmd
+\emph default 
+ im Hintergrund
+\layout Description
+
+
+\emph on 
+cmd1
+\emph default 
+;\SpecialChar ~
+
+\emph on 
+cmd2
+\emph default 
+ Ausführung von 
+\emph on 
+cmd1
+\emph default 
+, danach 
+\emph on 
+cmd2
+\layout Description
+
+(
+\emph on 
+cmd1
+\emph default 
+;\SpecialChar ~
+
+\emph on 
+cmd2
+\emph default 
+) Ausführung von 
+\emph on 
+cmd1
+\emph default 
+, danach 
+\emph on 
+cmd2
+\emph default 
+ in eigener Sub-Shell
+\layout Description
+
+
+\emph on 
+cmd1
+\emph default 
+\SpecialChar ~
+&&\SpecialChar ~
+
+\emph on 
+cmd2
+\emph default 
+ Ausführung von 
+\emph on 
+cmd2
+\emph default 
+ nur dann, wenn Ausführung von 
+\emph on 
+cmd1
+\emph default 
+ erfolgreich war
+\layout Description
+
+
+\emph on 
+cmd1
+\emph default 
+\SpecialChar ~
+||\SpecialChar ~
+
+\emph on 
+cmd2
+\emph default 
+ Ausführung von 
+\emph on 
+cmd2
+\emph default 
+ , falls 
+\emph on 
+cmd1
+\emph default 
+ mit Fehlerstatus zurückkehrt
+\layout Description
+
+
+\emph on 
+cmd1
+\emph default 
+\SpecialChar ~
+|\SpecialChar ~
+
+\emph on 
+cmd2
+\emph default 
+ Ausführung mit Vernüpfung der (Standard-) Ausgabe von 
+\emph on 
+cmd1
+\emph default 
+ zur Eingabe von 
+\emph on 
+cmd2
+\emph default 
+ (Pipe)
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+\SpecialChar ~
+>\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+ Umlenkung der (Standard-) Ausgabe von 
+\emph on 
+cmd
+\emph default 
+ in Datei 
+\emph on 
+name
+\emph default 
+ (Überschreiben)
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+\SpecialChar ~
+>>\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+ Umlenkung der (Standard-) Ausgabe von 
+\emph on 
+cmd
+\emph default 
+ in Datei 
+\emph on 
+name
+\emph default 
+ (Anhängen)
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+\SpecialChar ~
+<\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+ Umlenkung der (Standard-) Eingabe von 
+\emph on 
+cmd
+\emph default 
+ aus Datei 
+\emph on 
+name
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+\SpecialChar ~
+2>&1 Ausführung von 
+\emph on 
+cmd
+\emph default 
+ mit Umlenkung der Fehlerausgaben auf die Standard-Ausgabe
+\layout Section
+
+Built-In Kommandos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Auswahl, außerdem unvollständig 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+re
+\end_inset 
+
+ aller möglichen Optionen und Argumente.
+\end_inset 
+
+
+\layout Description
+
+alias\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+[=
+\emph on 
+val
+\emph default 
+] Der Bezeichner 
+\emph on 
+name
+\emph default 
+ wird als Pseudonym für 
+\emph on 
+val
+\emph default 
+ vereinbart.
+\layout Description
+
+cd\SpecialChar ~
+
+\emph on 
+dir
+\emph default 
+ In Verzeichnis 
+\emph on 
+dir
+\emph default 
+ wechseln.
+\layout Description
+
+declare\SpecialChar ~
+[
+\emph on 
+opt
+\emph default 
+]\SpecialChar ~
+VAR[=
+\emph on 
+val
+\emph default 
+] Deklariert Variable 
+\emph on 
+VAR
+\emph default 
+ mit Option 
+\emph on 
+opt
+\emph default 
+ und weist (optional) den Wert 
+\emph on 
+val
+\emph default 
+ zu.
+ Optionen:
+\begin_deeper 
+\layout Description
+
+-r Read-Only
+\layout Description
+
+-i Integer
+\layout Description
+
+-a Array
+\layout Description
+
+-f Funktion
+\end_deeper 
+\layout Description
+
+dirs Zeigt den Inhalt des Directory-Stack.
+\layout Description
+
+echo\SpecialChar ~
+
+\emph on 
+string
+\emph default 
+ Ausgabe von 
+\emph on 
+string
+\emph default 
+ auf die Standard-Ausgabe
+\layout Description
+
+eval\SpecialChar ~
+[
+\emph on 
+args
+\emph default 
+\SpecialChar \ldots{}
+] Führt den Inhalt von 
+\emph on 
+args
+\emph default 
+ (nach Variablen-Substitution) als Kommando(s) aus.
+\layout Description
+
+exec\SpecialChar ~
+
+\emph on 
+cmd
+\emph default 
+ Ersetzt den aktuellen
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Normalerweise werden Kommandos (mittels fork) in einer Sub-Shell ausgeführt.
+\end_inset 
+
+ Prozeß (Shell) durch Ausführung von 
+\emph on 
+cmd
+\emph default 
+.
+\layout Description
+
+exit\SpecialChar ~
+[
+\emph on 
+err
+\emph default 
+] Beendet die Ausführung mit Fehlercode 
+\emph on 
+err
+\emph default 
+ (0 wenn erfolgreich).
+\layout Description
+
+export\SpecialChar ~
+
+\emph on 
+VAR
+\emph default 
+ Shell-Variable 
+\emph on 
+VAR
+\emph default 
+ wird exportiert (an Sub-Shells).
+\layout Description
+
+false Liefert immer FALSE (0).
+\layout Description
+
+getopts Parsed eine Kommandozeile.
+\layout Description
+
+hash\SpecialChar ~
+
+\emph on 
+cmds
+\emph default 
+ Zeichnet den Pfad zu den Kommandos 
+\emph on 
+cmds
+\emph default 
+ in der Hash-Tabelle (für schnelle Ausführung) auf.
+\layout Description
+
+help\SpecialChar ~
+
+\emph on 
+cmd
+\emph default 
+ Zeigt die Online-Hilfe zu Kommando 
+\emph on 
+cmd
+\emph default 
+.
+\layout Description
+
+kill\SpecialChar ~
+[opt]\SpecialChar ~
+pid Beendet Prozeß mit ID 
+\emph on 
+pid
+\emph default 
+ unter Verwendung der Optionen 
+\emph on 
+opt
+\emph default 
+.
+\layout Description
+
+let\SpecialChar ~
+
+\emph on 
+expr
+\emph default 
+ Ausführung arithmetischer Operationen mit Variablen.
+\layout Description
+
+local\SpecialChar ~
+[opt]\SpecialChar ~
+[VAR[=val]\SpecialChar \ldots{}
+] Deklariert lokale Variable 
+\emph on 
+VAR
+\emph default 
+ mit Option 
+\emph on 
+opt
+\emph default 
+ und weist (optional) den Wert 
+\emph on 
+val
+\emph default 
+ zu.
+\layout Description
+
+logout Logout von interaktiver Shell.
+\layout Description
+
+popd In nächstes Verzeichnis von Directory-Stack wechseln.
+\layout Description
+
+printf\SpecialChar ~
+
+\emph on 
+format
+\emph default 
+\SpecialChar ~
+
+\emph on 
+param
+\emph default 
+\SpecialChar \ldots{}
+ Formatierte Ausgabe der Parameter 
+\emph on 
+param
+\emph default 
+ ähnlich
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Mit kleineren Einschränkungen.
+\end_inset 
+
+ der 
+\emph on 
+C
+\emph default 
+-Funktion 
+\emph on 
+printf
+\emph default 
+().
+\layout Description
+
+pushd\SpecialChar ~
+[
+\emph on 
+dir
+\emph default 
+] Verzeichnis 
+\emph on 
+dir
+\emph default 
+ (Namen) auf Directory-Stack speichern.
+\layout Description
+
+pwd Aktuelles Verzeichnis ausgeben.
+\layout Description
+
+read\SpecialChar ~
+
+\emph on 
+VAR
+\emph default 
+ Lesen von der Standard-Eingabe in Variable 
+\emph on 
+VAR
+\emph default 
+.
+\layout Description
+
+return\SpecialChar ~
+[
+\emph on 
+err
+\emph default 
+] Rücksprung aus Shell-Funktion mit Fehlercode 
+\emph on 
+err
+\emph default 
+.
+\layout Description
+
+set\SpecialChar ~
+[
+\emph on 
+var
+\emph default 
+] Setzt Bash-Optionen (
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+cf
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:options}
+
+\end_inset 
+
+) oder Positionsparameter (im Sinne von $@\SpecialChar ~
+:=\SpecialChar ~
+
+\emph on 
+var
+\emph default 
+) 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+resp
+\end_inset 
+
+ zeigt sie an.
+\layout Description
+
+shift\SpecialChar ~
+[
+\emph on 
+n
+\emph default 
+] Verschiebung der Positionsparameter $1\SpecialChar \ldots{}
+$9 um 
+\emph on 
+n
+\emph default 
+ Positionen (Default 
+\begin_inset Formula $n=1$
+\end_inset 
+
+).
+\layout Description
+
+shopt\SpecialChar ~
+
+\emph on 
+opt
+\emph default 
+ Setzt/Zeigt erweiterte Optionen (
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+cf
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:options}
+
+\end_inset 
+
+).
+\layout Description
+
+source\SpecialChar ~
+
+\emph on 
+script
+\emph default 
+ Führt 
+\emph on 
+script
+\emph default 
+ in der aktuellen Shell aus (Wirkung wie #include).
+\layout Description
+
+true Liefert immer TRUE (1).
+\layout Description
+
+unset\SpecialChar ~
+
+\emph on 
+VAR
+\emph default 
+ Löschen der Variable 
+\emph on 
+VAR.
+\layout Description
+
+test\SpecialChar ~
+
+\emph on 
+expr
+\emph default 
+ Test-Funktion für Bedingung 
+\emph on 
+expr
+\emph default 
+ (siehe\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:func-test}
+
+\end_inset 
+
+).
+\layout Description
+
+type\SpecialChar ~
+
+\emph on 
+cmd
+\emph default 
+ Liefert (wie 
+\family sans 
+which
+\family default 
+) den kompletten Pfad zu 
+\emph on 
+cmd
+\emph default 
+.
+\layout Description
+
+umask\SpecialChar ~
+
+\emph on 
+mode
+\emph default 
+ Setzt die Rechte-Maske beim Anlegen von Dateien auf Wert 
+\emph on 
+mode
+\emph default 
+ (
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ 
+\family sans 
+umask\SpecialChar ~
+644
+\family default 
+ 
+\begin_inset Formula $\widehat{=}$
+\end_inset 
+
+ rw-r--r--).
+\layout Description
+
+ulimit\SpecialChar ~
+[
+\emph on 
+opt
+\emph default 
+]\SpecialChar ~
+[
+\emph on 
+lim
+\emph default 
+] Setzt/Zeigt aktuelle Einschränkungen 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+re
+\end_inset 
+
+ der Systemressourcen (Anzeige: 
+\family sans 
+ulimit\SpecialChar ~
+-a
+\family default 
+).
+\layout Description
+
+unalias\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+ Entfernt das Pseudonym 
+\emph on 
+name
+\emph default 
+ von der Alias-Liste.
+\layout Section
+
+Steueranweisungen
+\layout Paragraph
+
+if list; then list; [ elif list; then list; ] ...
+ [ else list; ] fi
+\layout Standard
+
+The if list is executed.
+ If its exit status is zero, the then list is executed.
+\layout Standard
+
+Otherwise, each elif list is executed in turn, and if its exit status is
+ zero, the
+\layout Standard
+
+corresponding then list is executed and the command completes.
+ Otherwise, the else
+\layout Standard
+
+list is executed, if present.
+ The exit status is the exit status of the last com­
+\layout Standard
+
+mand executed, or zero if no condition tested true.
+\layout Paragraph
+
+select name [ in word ] ; do list ; done
+\layout Standard
+
+The list of words following in is expanded, generating a list of items.
+ The set of
+\layout Standard
+
+expanded words is printed on the standard error, each preceded by a number.
+ If the
+\layout Standard
+
+in word is omitted, the positional parameters are printed (see PARAMETERS
+ below).
+\layout Standard
+
+The PS3 prompt is then displayed and a line read from the standard input.
+ If the
+\layout Standard
+
+line consists of a number corresponding to one of the displayed words, then
+ the
+\layout Standard
+
+value of name is set to that word.
+ If the line is empty, the words and prompt are
+\layout Standard
+
+displayed again.
+ If EOF is read, the command completes.
+ Any other value read
+\layout Standard
+
+causes name to be set to null.
+ The line read is saved in the variable REPLY.
+ The
+\layout Standard
+
+list is executed after each selection until a break command is executed.
+ The exit
+\layout Standard
+
+status of select is the exit status of the last command executed in list,
+ or zero if
+\layout Standard
+
+no commands were executed.
+\layout Paragraph
+
+case word in [ [(] pattern [ | pattern ] ...
+ ) list ;; ] ...
+ esac
+\layout Standard
+
+A case command first expands word, and tries to match it against each pattern
+ in
+\layout Standard
+
+turn, using the same matching rules as for pathname expansion (see Pathname
+ Expan­
+\layout Standard
+
+sion below).
+ When a match is found, the corresponding list is executed.
+ After the
+\layout Standard
+
+first match, no subsequent matches are attempted.
+ The exit status is zero if no
+\layout Standard
+
+pattern matches.
+ Otherwise, it is the exit status of the last command executed in
+\layout Standard
+
+list.
+\layout Paragraph
+
+for 
+\emph on 
+name
+\emph default 
+ [ in 
+\emph on 
+word
+\emph default 
+ ] ; do 
+\emph on 
+list
+\emph default 
+ ; done
+\layout Standard
+
+The list of words following in is expanded, generating a list of items.
+ The vari­
+\layout Standard
+
+able name is set to each element of this list in turn, and list is executed
+ each
+\layout Standard
+
+time.
+ If the in word is omitted, the for command executes list once for each
+ posi­
+\layout Standard
+
+tional parameter that is set (see PARAMETERS below).
+ The return status is the exit
+\layout Standard
+
+status of the last command that executes.
+ If the expansion of the items following
+\layout Standard
+
+in results in an empty list, no commands are executed, and the return status
+ is 0.
+\layout Paragraph
+
+for (( 
+\emph on 
+expr1
+\emph default 
+ ; 
+\emph on 
+expr2
+\emph default 
+ ; 
+\emph on 
+expr3
+\emph default 
+ )) ; do 
+\emph on 
+list
+\emph default 
+ ; done
+\layout Standard
+
+First, the arithmetic expression expr1 is evaluated according to the rules
+ described
+\layout Standard
+
+below under ARITHMETIC EVALUATION.
+ The arithmetic expression expr2 is then evalu­
+\layout Standard
+
+ated repeatedly until it evaluates to zero.
+ Each time expr2 evaluates to a non-zero
+\layout Standard
+
+value, list is executed and the arithmetic expression expr3 is evaluated.
+ If any
+\layout Standard
+
+expression is omitted, it behaves as if it evaluates to 1.
+ The return value is the
+\layout Standard
+
+exit status of the last command in list that is executed, or false if any
+ of the
+\layout Standard
+
+expressions is invalid.
+\layout Paragraph
+
+while list; do list; done
+\layout Standard
+
+The while command continuously executes the do list as long as the last
+ command in
+\layout Standard
+
+list returns an exit status of zero.
+ The until command is identical to the while
+\layout Standard
+
+command, except that the test is negated; the do list is executed as long
+ as the
+\layout Standard
+
+last command in list returns a non-zero exit status.
+ The exit status of the while
+\layout Standard
+
+and until commands is the exit status of the last do list command executed,
+ or zero
+\layout Standard
+
+if none was executed.
+\layout Paragraph
+
+until list; do list; done
+\layout Standard
+
+The while command continuously executes the do list as long as the last
+ command in
+\layout Standard
+
+list returns an exit status of zero.
+ The until command is identical to the while
+\layout Standard
+
+command, except that the test is negated; the do list is executed as long
+ as the
+\layout Standard
+
+last command in list returns a non-zero exit status.
+ The exit status of the while
+\layout Standard
+
+and until commands is the exit status of the last do list command executed,
+ or zero
+\layout Standard
+
+if none was executed.
+\layout Paragraph
+
+[
+\emph on 
+function
+\emph default 
+] 
+\emph on 
+name
+\emph default 
+ () { 
+\emph on 
+list
+\emph default 
+; }
+\layout Standard
+
+This defines a function named name.
+ The body of the function is the list of com­
+\layout Standard
+
+mands between { and }.
+ This list is executed whenever name is specified as the name
+\layout Standard
+
+of a simple command.
+ The exit status of a function is the exit status of the last
+\layout Standard
+
+command executed in the body.
+\layout Section
+
+
+\begin_inset LatexCommand \label{sec:func-test}
+
+\end_inset 
+
+Test-Funktion
+\layout Description
+
+Dateien
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Unvollständig, eine komplette Liste findet man 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ in 
+\begin_inset LatexCommand \cite[\bibrefchap{6}]{Burtch:2004}
+
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_deeper 
+\layout Description
+
+-d\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert und ist ein Verzeichnis
+\layout Description
+
+-e\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert
+\layout Description
+
+-f\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert und ist regulär
+\layout Description
+
+-s\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert und ist nicht leer
+\layout Description
+
+-r\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert und ist lesbar
+\layout Description
+
+-w\SpecialChar ~
+
+\emph on 
+file
+\emph default 
+ 
+\emph on 
+file
+\emph default 
+ existiert und ist schreibbar
+\end_deeper 
+\layout Description
+
+Strings
+\begin_deeper 
+\layout Description
+
+-z\SpecialChar ~
+
+\emph on 
+string
+\emph default 
+ 
+\emph on 
+string
+\emph default 
+ ist leer
+\layout Description
+
+-n\SpecialChar ~
+
+\emph on 
+string
+\emph default 
+ 
+\emph on 
+string 
+\emph default 
+ist nicht leer
+\layout Description
+
+
+\emph on 
+s1
+\emph default 
+\SpecialChar ~
+=\SpecialChar ~
+
+\emph on 
+s2
+\emph default 
+ 
+\emph on 
+s1
+\emph default 
+ ist gleich 
+\emph on 
+s2
+\layout Description
+
+
+\emph on 
+s1
+\emph default 
+\SpecialChar ~
+!=\SpecialChar ~
+
+\emph on 
+s2
+\emph default 
+ 
+\emph on 
+s1
+\emph default 
+ ist ungleich 
+\emph on 
+s2
+\layout Description
+
+
+\emph on 
+s1
+\emph default 
+\SpecialChar ~
+
+\backslash 
+<\SpecialChar ~
+
+\emph on 
+s2 s1
+\emph default 
+ ist kleiner 
+\emph on 
+s2 
+\emph default 
+(bzgl.
+ Sortierung)
+\layout Description
+
+
+\emph on 
+s1
+\emph default 
+\SpecialChar ~
+
+\backslash 
+>\SpecialChar ~
+
+\emph on 
+s2 s1
+\emph default 
+ ist größer 
+\emph on 
+s2
+\end_deeper 
+\layout Description
+
+Arithmetik
+\begin_deeper 
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-eq\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist gleich 
+\emph on 
+n2
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-ne\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist ungleich 
+\emph on 
+n2
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-lt\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist kleiner 
+\emph on 
+n2
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-le\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist kleiner/gleich 
+\emph on 
+n2
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-gt\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist größer 
+\emph on 
+n2
+\layout Description
+
+
+\emph on 
+n1
+\emph default 
+\SpecialChar ~
+-ge\SpecialChar ~
+
+\emph on 
+n2
+\emph default 
+ 
+\emph on 
+n1
+\emph default 
+ ist größer/gleich 
+\emph on 
+n2
+\end_deeper 
+\layout Section
+
+Substitutionen ($)
+\layout Description
+
+$1\SpecialChar \ldots{}
+$9 Positionsparameter des Aufrufs
+\layout Description
+
+$* alle Parameter (interpretiert als 
+\emph on 
+ein
+\emph default 
+ Element)
+\layout Description
+
+$@ alle Parameter (interpretiert als einzelne Elemente)
+\layout Description
+
+$? Exit-Status des letzten Kommandos
+\layout Description
+
+${#
+\emph on 
+VAR
+\emph default 
+} Länge der Variable 
+\emph on 
+VAR
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+\SpecialChar \ldots{}
+} Inhalt von Variable 
+\emph on 
+VAR:
+\begin_deeper 
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+} vollständig (äquivalent ist $
+\emph on 
+VAR
+\emph default 
+)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+:-
+\emph on 
+def
+\emph default 
+} vollständig, falls 
+\emph on 
+VAR
+\emph default 
+ definiert ist, sonst der Default-Wert 
+\emph on 
+def
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+:
+\emph on 
+=def
+\emph default 
+} wie 
+\family sans 
+${VAR:-
+\emph on 
+def
+\emph default 
+}
+\family default 
+, im Default-Fall wird 
+\emph on 
+VAR
+\emph default 
+ außerdem auf den Wert 
+\emph on 
+def
+\emph default 
+ gesetzt
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+:
+\emph on 
+?assign
+\emph default 
+} ersetzt durch 
+\emph on 
+assign
+\emph default 
+, falls 
+\emph on 
+VAR
+\emph default 
+ definiert ist (sonst Ende der Shell)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+:+
+\emph on 
+assign
+\emph default 
+} ersetzt durch 
+\emph on 
+assign
+\emph default 
+, falls 
+\emph on 
+VAR
+\emph default 
+ definiert ist (sonst unverändert)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+:
+\emph on 
+offset
+\emph default 
+[:
+\emph on 
+len
+\emph default 
+]} ab 
+\emph on 
+offset
+\emph default 
+ mit (optionaler) Länge 
+\emph on 
+len
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+#
+\emph on 
+str
+\emph default 
+} der rechts übrigbleibt
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Substring Removal, wobei das Pattern 
+\begin_inset Quotes eld
+\end_inset 
+
+str
+\begin_inset Quotes erd
+\end_inset 
+
+ auch * enthalten darf, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ abc*.
+\end_inset 
+
+, wenn Pattern 
+\emph on 
+str
+\emph default 
+ von links gesehen übereinstimmt (erster Treffer entscheidet)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+%
+\emph on 
+str
+\emph default 
+} der links übrigbleibt, wenn Pattern 
+\emph on 
+str
+\emph default 
+ von rechts gesehen übereinstimmt (erster Treffer entscheidet)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+#
+\emph on 
+str
+\emph default 
+} der rechts übrigbleibt, wenn Pattern 
+\emph on 
+str
+\emph default 
+ von links gesehen übereinstimmt (letzter Treffer entscheidet)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+%
+\emph on 
+str
+\emph default 
+} der links übrigbleibt, wenn Pattern 
+\emph on 
+str
+\emph default 
+ von rechts gesehen übereinstimmt (letzter Treffer entscheidet)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+/
+\emph on 
+s
+\emph default 
+/
+\emph on 
+r
+\emph default 
+} nach Ersetzung von String 
+\emph on 
+s
+\emph default 
+ durch String 
+\emph on 
+r
+\emph default 
+ (einmalig)
+\layout Description
+
+${
+\emph on 
+VAR
+\emph default 
+//
+\emph on 
+s
+\emph default 
+/
+\emph on 
+r
+\emph default 
+} nach Ersetzung von String 
+\emph on 
+s
+\emph default 
+ durch String 
+\emph on 
+r
+\emph default 
+ (überall in VAR)
+\end_deeper 
+\layout Section
+
+Globbing (Dateinamen-, String-Expansion)
+\layout Standard
+
+Die 
+\emph on 
+Bash
+\emph default 
+ kann prinzipiell keine regulären Ausdrücke (nach Anhang\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:reg-exp}
+
+\end_inset 
+
+) interpretieren.
+ Statt dessen verwendet sie 
+\emph on 
+Globbing
+\emph default 
+ auf Dateien/Verzeichnisse und Strings an, wobei die folgenden Wildcards
+ möglich sind:
+\layout Description
+
+Pattern
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Beginnen Dateien mit einem Punkt, dann paßt dieser niemals zu einem Pattern,
+ 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+ie
+\end_inset 
+
+ er muß im Pattern explizit angegeben sein.
+ Dieses Verhalten kann durch Setzen der "dotglob" Option verändert werden.
+\end_inset 
+
+
+\begin_deeper 
+\layout Description
+
+? beliebiges Zeichen
+\layout Description
+
+* beliebige Zeichenkette
+\layout Description
+
+[abc] Jedes Zeichen, enthalten in der Menge a, b, c
+\layout Description
+
+[a-c] Jedes Zeichen, enthalten in der Menge a, b, c
+\layout Description
+
+[^abc] Jedes Zeichen, nicht in der Menge a, b, c
+\layout Description
+
+{b*,c*,*est*} Gruppierung, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+
+\begin_deeper 
+\layout Standard
+
+
+\family sans 
+mkdir /usr/local/src/bash/{old,new,dist,bugs}
+\end_deeper 
+\end_deeper 
+\layout Standard
+
+Hinweis: Bei der Expansion verhindert das Einschließen in doppelte Klammern
+ der Art [[\SpecialChar \ldots{}
+]] jegliche Interpretation als Wildcards.
+\layout Section
+
+Built-In Variablen
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Unvollständig, eine komplette Liste findet man 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ in 
+\begin_inset LatexCommand \cite[\bibrefchap{5}]{Burtch:2004}
+
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Description
+
+BASH_VERSION (String) Version der Bash
+\layout Description
+
+DIRSTACK (Array) Aktueller Directory-Stack
+\layout Description
+
+EUID (Integer) Effektiver User-ID (UID
+\begin_inset LatexCommand \index{UID}
+
+\end_inset 
+
+)
+\layout Description
+
+HOSTNAME (String) Name des Host
+\layout Description
+
+HOSTTYPE (String) Art des Host, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+i386
+\begin_inset Quotes erd
+\end_inset 
+
+
+\layout Description
+
+LINENO (Integer) Aktuelle Ausführungszeile des Scripts
+\layout Description
+
+MACHTYPE (String) Beschreibt die Maschine im GNU 
+\emph on 
+cpu-company-system
+\emph default 
+ Format, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+i686-suse-linux
+\begin_inset Quotes erd
+\end_inset 
+
+
+\layout Description
+
+OPTARG Wert des letzten Arguments, verarbeitet in 
+\family sans 
+getopts
+\layout Description
+
+OPTIND (Integer) Index der nächsten Arguments zur Verarbeitung durch 
+\family sans 
+getopts
+\layout Description
+
+OSTYPE (String) Bezeichnung des Betriebssystems (OS), 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+linux
+\begin_inset Quotes erd
+\end_inset 
+
+
+\layout Description
+
+PPID (Integer) Prozeß-ID (PID
+\begin_inset LatexCommand \index{PID}
+
+\end_inset 
+
+) des Vater-Prozesses
+\layout Description
+
+PWD (String) Aktuelles Verzeichnis
+\layout Description
+
+SHLVL (Integer) Aktuelle Schachtelungstiefe der Shell-Aufrufe
+\layout Description
+
+UID (Integer) User-ID
+\layout Description
+
+HOME (String) Home-Verzeichnis des aktuellen User
+\layout Description
+
+IFS (String) Separator für Worttrennung bei Kommando 
+\family sans 
+read
+\family default 
+ (typisch 
+\begin_inset Quotes eld
+\end_inset 
+
+<space><tab><newline>
+\begin_inset Quotes erd
+\end_inset 
+
+)
+\layout Description
+
+PATH (String) Suchpfad für Kommandos
+\layout Description
+
+PS1\SpecialChar \ldots{}
+PS4 Primärer, sekundärer, \SpecialChar \ldots{}
+ Prompt-String
+\layout Section
+
+
+\begin_inset LatexCommand \label{sec:options}
+
+\end_inset 
+
+Optionen
+\layout Standard
+
+Optionen können auf der Kommandozeile oder mittels 
+\family sans 
+set -o 
+\emph on 
+option-name
+\family default 
+\emph default 
+ 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+resp
+\end_inset 
+
+ 
+\family sans 
+set -
+\emph on 
+option-abbrev
+\family default 
+\emph default 
+ im Shell-Script angegeben werden.
+ 
+\layout Description
+
+-C (noclobber) Schützt Dateien vor dem Überschreiben durch Umlenkung der
+ Ausgabe.
+\layout Description
+
+-D Zeige alle Strings, die mit $ beginnen (und führe keine Kommandos im
+ Script aus).
+\layout Description
+
+-a (allexport) Exportiere alle definierten Variablen.
+\layout Description
+
+-b (notify) Gebe Hinweis aus, wenn Hintergrund-Jobs enden.
+\layout Description
+
+-c\SpecialChar ~
+\SpecialChar \ldots{}
+ Lese Kommandos von \SpecialChar \ldots{}
+
+\layout Description
+
+-f (noglob) Verhindert Globbing.
+\layout Description
+
+-i Interaktive Scripts laufen im 
+\emph on 
+Restricted Mode
+\emph default 
+.
+\layout Description
+
+-p Script läuft als "suid".
+\layout Description
+
+-r Eingeschränkte Scripts laufen im 
+\emph on 
+Restricted Mode
+\emph default 
+.
+\layout Description
+
+-u (nounset) Die Verwendung von undefinierten Variablen führt zu einem Fehler.
+\layout Description
+
+-v (verbose) Ausgabe jedes Kommandos vor der Ausführung.
+\layout Description
+
+-x (xtrace) Ähnlich zu -v, aber expandiert die Kommandos vor der Ausgabe.
+\layout Description
+
+-e (errexit) Script wird beendet sobald ein Programm (Kommando) einen Fehlerstat
+us (ungleich 0) zurückgibt.
+\layout Description
+
+-n (noexec) Syntax-Check, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+ie
+\end_inset 
+
+ ohne Ausführung von Kommandos.
+\layout Description
+
+-s (stdin) Lese Kommandos von der Standard-Eingabe.
+\layout Description
+
+-t Ausführungsende sofort nach dem ersten Kommando.
+\layout Description
+
+- Flag für Ende der Optionsliste (alle weiteren Argumente sind Positionsparamete
+r).
+\layout Standard
+
+Außerdem gibt es erweiterte Optionen, die mit 
+\family sans 
+shopt\SpecialChar ~
+-
+\emph on 
+option-abbrev
+\family default 
+\emph default 
+ angesprochen werden.
+\layout Description
+
+cdable_vars Argumente des 
+\family sans 
+cd
+\family default 
+-Kommandos werden als Variablen interpretiert, wenn es sich nicht um Verzeichnis
+se handelt.
+\layout Description
+
+cdspell Automatische Korrektur einfache Schreibfehler in Verzeichnisnamen.
+\layout Description
+
+checkhash Suche Kommando zuerst in Hash-Tabelle, danach im Suchpfad.
+\layout Description
+
+checkwinsize Nach jedem ausgeführten Kommando wird auf eine Veränderung
+ der Terminal-Abmessungen geprüft.
+\layout Description
+
+cmdhist Zusammenfassung von Befehlszeilen in History.
+\layout Description
+
+dotglob Mit Punkt beginnenden Dateinamen werden beim Globbing berücksichtigt.
+\layout Description
+
+execfail Fehler bei der Ausführung eines 
+\family sans 
+exec
+\family default 
+ Kommandos beenden das Script nicht.
+\layout Description
+
+histexpand History-Dateien werden nicht überschrieben, sondern es wird angehängt.
+\layout Description
+
+lithist Zusammenfassen mehrzeiliger Befehle in der History.
+\layout Description
+
+sourcepath Das 
+\family sans 
+source
+\family default 
+-Kommando darf auf die 
+\emph on 
+PATH
+\emph default 
+-Variable zugreifen.
+\layout Description
+
+expand_aliases Erlaubt das Expandieren von Alias-Definitionen.
+\layout Description
+
+nocaseglob Keine Berücksichtigung von Groß-/Kleinschreibung beim Globbing.
+\layout Description
+
+huponexit Hintergrund-Jobs einer interaktiven Shell erhalten ein 
+\emph on 
+SIGHUP
+\emph default 
+-Signal, wenn diese endet.
+\layout Description
+
+restricted_shell Einschränkung der Bash-Funktionalitäten (Restricted-Mode).
+\layout Section
+\line_top \start_of_appendix 
+
+\begin_inset LatexCommand \label{sec:reg-exp}
+
+\end_inset 
+
+Reguläre Ausdrücke
+\layout Description
+
+
+\backslash 
+ Escape-Zeichen
+\layout Description
+
+^ Zeilenanfang (Anker)
+\layout Description
+
+$ Zeilenende (Anker)
+\layout Description
+
+
+\backslash 
+< Wortanfang
+\layout Description
+
+
+\backslash 
+> Wortende
+\layout Description
+
+.
+ jedes Zeichen
+\layout Description
+
+[\SpecialChar \ldots{}
+] Treffer, wenn Zeichen ist:
+\begin_deeper 
+\layout Description
+
+[abc] a oder b oder c
+\layout Description
+
+[0-9a-z] im Bereich 0-9 oder a-z
+\layout Description
+
+"[^a-z]" nicht im Bereich a-z
+\end_deeper 
+\layout Description
+
+Posix-Zeichenklassen
+\begin_deeper 
+\layout Description
+
+[:lower:] Kleinbuchstabe [a-z]
+\layout Description
+
+[:upper:] Großbuchstabe [A-Z]
+\layout Description
+
+[:alpha:] Buchstabe [A-Za-z]
+\layout Description
+
+[:digit:] Dezimale Ziffern [0-9]
+\layout Description
+
+[:xdigit:] Hexadezimale Ziffern [0-9A-Fa-f]
+\layout Description
+
+[:alnum:] Alphanumerisches Zeichen [A-Za-z0-9]
+\layout Description
+
+[:blank:] Leerzeichen/Tabulator
+\layout Description
+
+[:space:] Whitespace-Zeichen (Leerzeichen, Tabulator 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+etc
+\end_inset 
+
+)
+\layout Description
+
+[:cntrl:] Steuerzeichen
+\layout Description
+
+[:graph:] Druckbares Zeichen im Bereich 
+\begin_inset Formula $21_{\textrm{H}}-7\textrm{E}_{\textrm{H}}$
+\end_inset 
+
+ (ASCII)
+\layout Description
+
+[:print:] Druckbares Zeichen im Bereich 
+\begin_inset Formula $20_{\textrm{H}}-7\textrm{E}_{\textrm{H}}$
+\end_inset 
+
+ (ASCII)
+\end_deeper 
+\layout Description
+
+Zeichenwiederholungen
+\begin_deeper 
+\layout Description
+
+* 
+\begin_inset Formula $0\ldots\infty$
+\end_inset 
+
+
+\layout Description
+
++ 
+\begin_inset Formula $1\ldots\infty$
+\end_inset 
+
+
+\layout Description
+
+? 
+\begin_inset Formula $0,1$
+\end_inset 
+
+
+\layout Description
+
+
+\backslash 
+{\SpecialChar \ldots{}
+
+\backslash 
+} andere
+\begin_deeper 
+\layout Description
+
+
+\backslash 
+{n
+\backslash 
+} genau 
+\begin_inset Formula $n$
+\end_inset 
+
+
+\layout Description
+
+
+\backslash 
+{n,
+\backslash 
+} 
+\begin_inset Formula $n$
+\end_inset 
+
+ und mehr
+\layout Description
+
+
+\backslash 
+{n,m} mindestens 
+\begin_inset Formula $n$
+\end_inset 
+
+, maximal 
+\begin_inset Formula $m$
+\end_inset 
+
+
+\end_deeper 
+\end_deeper 
+\layout Description
+
+(\SpecialChar \ldots{}
+|\SpecialChar \ldots{}
+) Gruppierung und Alternative, 
+\begin_inset ERT
+status Inlined
+
+\layout Standard
+
+\backslash 
+eg
+\end_inset 
+
+ (alles|nichts)
+\layout Standard
+
+
+\begin_inset LatexCommand \BibTeX[plain]{computers}
+
+\end_inset 
+
+
+\the_end

@@ -1,0 +1,807 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\begin_preamble
+\input{text-inc}
+\input{pdf-inc}
+\input{math-inc}
+
+\usepackage{html}
+\end_preamble
+\language english
+\inputencoding latin1
+\fontscheme times
+\graphics default
+\paperfontsize 10
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 1.5cm
+\topmargin 0.5cm
+\rightmargin 3cm
+\bottommargin 0.5cm
+\headheight 1cm
+\headsep 0.4cm
+\footskip 0.4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+%% Plucker HTML conversion
+\layout Standard
+%%
+\layout Standard
+
+\backslash 
+begin{htmlonly}
+\newline 
+    
+\backslash 
+originalTeX %% Needed because "> in htmlmeta produces french guillemets in german
+\newline 
+
+\newline 
+    
+\backslash 
+htmlmeta{<META HTTP-EQUIV="content-language" CONTENT="de">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="robots" CONTENT="index, follow">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="author" CONTENT="Ralf Hoppe">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="description" LANG ="de" CONTENT="Tornado Commands and Shortcuts">}
+\newline 
+    
+\backslash 
+htmlmeta{<META NAME="keywords" LANG ="de" CONTENT="gdb tornado vxworks">}
+\newline 
+
+\newline 
+    
+\backslash 
+germanTeX
+\newline 
+
+\newline 
+    
+\backslash 
+renewenvironment{algorithm}[1][htbp] 
+\newline 
+    { 
+\backslash 
+begin{rawhtml} <hr> <em> Algorithmus </em> <hr> 
+\backslash 
+end{rawhtml} }
+\newline 
+    { 
+\backslash 
+begin{rawhtml} <br> <hr> <br> <br> 
+\backslash 
+end{rawhtml} }
+\newline 
+
+\newline 
+
+\backslash 
+end{htmlonly}
+\end_inset 
+
+
+\layout Title
+
+Debugger/Console Commands & Shortcuts
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Incomplete, w/o WindShell functions related to POSIX semaphores, periodic
+ functions, C++ specials.
+\end_inset 
+
+
+\layout Author
+
+Copyright 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+copyright
+\end_inset 
+
+\SpecialChar ~
+Ralf Hoppe
+\layout Description
+
+Specials
+\begin_deeper 
+\layout Description
+
+Ctrl+Break Interrupt shell command
+\layout Description
+
+\SpecialChar \ldots{}
+Ctrl+D Symbol expansion
+\layout Description
+
+
+\emph on 
+cmd
+\emph default 
+\SpecialChar ~
+Ctrl+W HTML-help for 
+\emph on 
+cmd
+\layout Description
+
+@
+\emph on 
+cmd
+\emph default 
+ Execute 
+\emph on 
+cmd
+\emph default 
+ in target shell (e.g.
+ 
+\emph on 
+@cd 
+\begin_inset Quotes eld
+\end_inset 
+
+/fl/
+\begin_inset Quotes erd
+\end_inset 
+
+
+\emph default 
+)
+\layout Description
+
+ESC Vi-Editor mode
+\end_deeper 
+\layout Description
+
+General
+\begin_deeper 
+\layout Description
+
+h Display shell history
+\layout Description
+
+help Print synopsis of selected command
+\layout Description
+
+quit Shutdown 
+\emph on 
+WindShell (Ctrl+D)
+\layout Description
+
+?shConfig Display/Set shell config
+\layout Description
+
+bootChange Modify boot parameters
+\layout Description
+
+printErrno\SpecialChar ~
+# Explain error number #
+\end_deeper 
+\layout Description
+
+Debug
+\begin_deeper 
+\layout Description
+
+\SpecialChar \ldots{}
+ Start at function
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+F6
+\end_inset 
+
+
+\layout Description
+
+\SpecialChar \ldots{}
+ Interrupt debugger
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+Shift+F5
+\end_inset 
+
+
+\layout Description
+
+\SpecialChar \ldots{}
+ Attach debugger to task
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+F6
+\end_inset 
+
+
+\layout Description
+
+browse Browse an address
+\layout Description
+
+d\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+],[
+\emph on 
+width
+\emph default 
+],[
+\emph on 
+num
+\emph default 
+] Display memory from 
+\emph on 
+adr
+\emph default 
+
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+6
+\end_inset 
+
+ with access 
+\emph on 
+width
+\emph default 
+ (
+\emph on 
+num
+\emph default 
+ locations)
+\layout Description
+
+m\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+],[
+\emph on 
+width
+\emph default 
+],[
+\emph on 
+num
+\emph default 
+] Modify memory at 
+\emph on 
+adr
+\emph default 
+ with access 
+\emph on 
+width
+\emph default 
+ (
+\emph on 
+num
+\emph default 
+ locations)
+\layout Description
+
+l\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+] Disassemble memory from 
+\emph on 
+adr
+\layout Description
+
+mRegs Modify registers
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+5
+\end_inset 
+
+
+\layout Description
+
+\SpecialChar \ldots{}
+ Display variables
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+4
+\end_inset 
+
+
+\layout Description
+
+\SpecialChar \ldots{}
+ Display watches
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+3
+\end_inset 
+
+
+\end_deeper 
+\layout Description
+
+Breakpoints
+\begin_deeper 
+\layout Description
+
+b\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+] Set/Display breakpoint(s) at 
+\emph on 
+adr
+\emph default 
+
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+F8/F9
+\end_inset 
+
+
+\layout Description
+
+bd\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+] Delete breakpoint from 
+\emph on 
+adr
+\layout Description
+
+bdall Delete all breakpoints
+\layout Description
+
+c Run/Continue
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+F5
+\end_inset 
+
+
+\layout Description
+
+s Step into
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+F10
+\end_inset 
+
+
+\layout Description
+
+so Step over
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Ctrl+F5
+\end_inset 
+
+
+\layout Description
+
+cret Step out (until return)
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Shift+F5
+\end_inset 
+
+
+\end_deeper 
+\layout Description
+
+Modules/Symbols
+\begin_deeper 
+\layout Description
+
+ld\SpecialChar ~
+[
+\emph on 
+mod
+\emph default 
+] Load object module 
+\emph on 
+mod
+\layout Description
+
+unld\SpecialChar ~
+[
+\emph on 
+mod
+\emph default 
+] Unload object module 
+\emph on 
+mod
+\layout Description
+
+moduleShow Show status of modules
+\layout Description
+
+lkup\SpecialChar ~
+
+\emph on 
+sym
+\emph default 
+ List address of symbol 
+\emph on 
+sym
+\layout Description
+
+lkAddr\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+] List symbols near 
+\emph on 
+adr
+\end_deeper 
+\layout Description
+
+Tasks
+\begin_deeper 
+\layout Description
+
+sp\SpecialChar ~
+[
+\emph on 
+adr
+\emph default 
+][,
+\emph on 
+args
+\emph default 
+] Spawn a task at 
+\emph on 
+adr
+\emph default 
+ with (default) argument
+\layout Description
+
+sps Spawn a task (set then suspended)
+\layout Description
+
+ts\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+/
+\emph on 
+id
+\emph default 
+ Suspend the task via 
+\emph on 
+name
+\emph default 
+/
+\emph on 
+id
+\layout Description
+
+td\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+/
+\emph on 
+id
+\emph default 
+ Delete a task via 
+\emph on 
+name
+\emph default 
+/
+\emph on 
+id
+\layout Description
+
+tr\SpecialChar ~
+
+\emph on 
+name
+\emph default 
+/
+\emph on 
+id
+\emph default 
+ Resume a suspended task
+\layout Description
+
+i Print task info from TCB
+\layout Description
+
+iStrict Print task info (atomic snapshot)
+\layout Description
+
+w Task's pending information
+\layout Description
+
+tw Object info task is pending on
+\layout Description
+
+tt Display stack trace
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+Alt+7
+\end_inset 
+
+
+\layout Description
+
+checkStack Print task stack usage
+\end_deeper 
+\layout Description
+
+Target\SpecialChar ~
+Server
+\begin_deeper 
+\layout Description
+
+pwd Display current directory
+\layout Description
+
+cd Change directory
+\layout Description
+
+ls List files in directory
+\end_deeper 
+\layout Description
+
+Target\SpecialChar ~
+System/Agent
+\begin_deeper 
+\layout Description
+
+reboot Reboot target system
+\layout Description
+
+sysResume Reset agent to task mode
+\layout Description
+
+sysSuspend Set agent to external mode
+\layout Description
+
+sysStatusShow Show system context
+\layout Description
+
+bootChange Change boot line
+\end_deeper 
+\layout Description
+
+Ressources
+\begin_deeper 
+\layout Description
+
+memShow Show system memory partition
+\layout Description
+
+memPartShow\SpecialChar ~
+
+\emph on 
+partid
+\emph default 
+ Show partition blocks of 
+\emph on 
+partId
+\layout Description
+
+smMemShow Show (system) shared memory
+\layout Description
+
+msgQShow\SpecialChar ~
+
+\emph on 
+msgQId
+\emph default 
+ Show message queue 
+\emph on 
+msgId
+\emph default 
+ info
+\layout Description
+
+semShow\SpecialChar ~
+
+\emph on 
+semId
+\emph default 
+ Show info about semaphore 
+\emph on 
+semId
+\layout Description
+
+classShow\SpecialChar ~
+
+\emph on 
+class
+\emph default 
+ Show info about object 
+\emph on 
+class
+\emph default 
+ (
+\family sans 
+lkup "ClassId"
+\family default 
+ shows available classes)
+\layout Description
+
+devs List all system-known devices
+\layout Description
+
+pciConfigTopoShow Displays PCI bus topology
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+More details can be retrieved by other 
+\emph on 
+pciConfigShow
+\emph default 
+ functions (pciDeviceShow, pciHeaderShow, \SpecialChar \ldots{}
+, see 
+\emph on 
+vxWorks Driver API Reference
+\emph default 
+)
+\end_inset 
+
+
+\layout Description
+
+iosDrvShow Display all system drivers
+\layout Description
+
+iosFdShow Display all file descriptor names
+\layout Description
+
+logFdSet\SpecialChar ~
+
+\emph on 
+fd
+\emph default 
+ Log-Ausgaben auf 
+\emph on 
+fd
+\layout Description
+
+dosFsShow\SpecialChar ~
+
+\emph on 
+devName
+\emph default 
+ Display DOS filesystem info's
+\layout Description
+
+VecShow Display interrupt vector table
+\end_deeper 
+\layout Description
+
+Network
+\begin_deeper 
+\layout Description
+
+hostShow Display the host table
+\layout Description
+
+ifShow\SpecialChar ~
+[
+\begin_inset Quotes eld
+\end_inset 
+
+
+\emph on 
+ifName
+\emph default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+] Display attached network interfaces
+\layout Description
+
+icmpstatShow Display ICMP (Ping) statistics 
+\layout Description
+
+inetstatShow Display active connections
+\layout Description
+
+ipstatShow Display IP statistics
+\layout Description
+
+tcpStatShow Display TCP statistics
+\layout Description
+
+udpStatShow Display UDP statistics
+\layout Description
+
+routestatShow Display routing statistics
+\layout Description
+
+sys557Show\SpecialChar ~
+[
+\emph on 
+unitNum
+\emph default 
+] Display ethernet controller info of 
+\emph on 
+unitNum
+\the_end
