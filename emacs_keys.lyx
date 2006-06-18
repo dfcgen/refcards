@@ -1,0 +1,1072 @@
+#LyX 1.4.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\end_preamble
+\language german
+\inputencoding latin1
+\fontscheme times
+\graphics default
+\paperfontsize 10
+\spacing single
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes true
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\emph on
+Key Bindings
+\emph default
+ für Emacs
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Copyright 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+copyright
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ Ralf Hoppe
+\end_layout
+
+\begin_layout Description
+F1 Hilfe (C-h\InsetSpace ~
+h)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Datei
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+C-f Datei öffnen
+\end_layout
+
+\begin_layout Description
+M-F4 Speichern und beenden (C-x C-c)
+\end_layout
+
+\begin_layout Description
+F2 Speichern (C-x\InsetSpace ~
+C-s)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F2 Alle speichern (C-x\InsetSpace ~
+s)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+C-w Speichern unter
+\end_layout
+
+\begin_layout Description
+Pause Read-Only Umschaltung
+\end_layout
+
+\begin_layout Description
+S-F11 DOS-Konvertierung
+\end_layout
+
+\begin_layout Description
+S-F12 UNIX-Konvertierung
+\end_layout
+
+\begin_layout Section*
+Buffer/Fenster
+\end_layout
+
+\begin_layout Description
+F10 Buffer Menü (C-x C-b)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Kp-Plus Nur ein Fenster (C-x\InsetSpace ~
+1)
+\end_layout
+
+\begin_layout Description
+Kp-Minus Fenster teilen (C-x\InsetSpace ~
+2)
+\end_layout
+
+\begin_layout Description
+Kp-Enter Buffer schließen (C-x\InsetSpace ~
+k)
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+b Buffer wechseln
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+o Nächstes Fenster
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+0 Fenster schließen ()
+\end_layout
+
+\begin_layout Section*
+Cursor
+\end_layout
+
+\begin_layout Description
+Home Zeilenanfang (C-a)
+\end_layout
+
+\begin_layout Description
+End Zeilenende (C-e)
+\end_layout
+
+\begin_layout Description
+C-Home Dateianfang (M-<)
+\end_layout
+
+\begin_layout Description
+C-End Dateiende (M->)
+\end_layout
+
+\begin_layout Description
+C-Left Wort rechts (M-f)
+\end_layout
+
+\begin_layout Description
+C-Right Wort links (M-b)
+\end_layout
+
+\begin_layout Description
+M-g Zu Zeile
+\end_layout
+
+\begin_layout Description
+C-l Cursor zentrieren
+\end_layout
+
+\begin_layout Description
+M-m 1.\InsetSpace ~
+Zeichen am Zeilenanfang
+\end_layout
+
+\begin_layout Description
+M-Left Anfang des Ausdrucks (M-a)
+\end_layout
+
+\begin_layout Description
+M-Right Ende des des Ausdrucks (M-e)
+\end_layout
+
+\begin_layout Description
+M-Up Funktionsanfang (C-M-a)
+\end_layout
+
+\begin_layout Description
+M-Down Funktionsende (C-M-e)
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+g Gehe zu Funktion
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset LatexCommand \label{foot_only_xemacs}
+
+\end_inset
+
+Nur XEmacs (erfordert 
+\emph on
+func-menu.el
+\emph default
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+l Funktionsliste (Fußnote\InsetSpace ~
+
+\begin_inset LatexCommand \ref{foot_only_xemacs}
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+F4 Nächster Fehler
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F4 Voriger Fehler (C-x\InsetSpace ~
+1)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Editieren
+\end_layout
+
+\begin_layout Description
+Markieren
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-Space Anfang
+\end_layout
+
+\begin_layout Description
+C-M-Space Ausdruck
+\end_layout
+
+\begin_layout Description
+F3 Funktion (C-M-h)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F3/C-a Alles (C-x\InsetSpace ~
+h)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+M-= Anzahl der Zeilen?
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Kopieren
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-Insert Normales (M-w)
+\end_layout
+
+\begin_layout Description
+C-M-Insert Register
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Einfügen
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+S-Insert Aktuelles (C-y)
+\end_layout
+
+\begin_layout Description
+M-Insert Nächstes
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Nur anwendbar direkt nach 
+\emph on
+S-Insert
+\emph default
+.
+\end_layout
+
+\end_inset
+
+ (M-y)
+\end_layout
+
+\begin_layout Description
+S-M-Insert Register
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Löschen (Ausschneiden)
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+S-Delete Markierung (C-w)
+\end_layout
+
+\begin_layout Description
+M-Delete Wort vorwärts
+\end_layout
+
+\begin_layout Description
+M-Backspace Wort rückwärts
+\end_layout
+
+\begin_layout Description
+C-Delete Zeile (C-k)
+\end_layout
+
+\begin_layout Description
+C-M-Delete Funktion
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Verschiedenes
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+F7/C-z Undo (C-x\InsetSpace ~
+u)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-q Steuerzeichen eingeben
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Siehe Emacs Variable 
+\emph on
+read-quoted-char-radix
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Suchen/Ersetzen
+\end_layout
+
+\begin_layout Description
+S-F9 Suche in Dateien (grep) 
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+M-F9 Suche rekursiv in Dateien (grep-find)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+M-F9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-s Interaktive Suche vorwärts
+\end_layout
+
+\begin_layout Description
+C-r Interaktive Suche rückwärts
+\end_layout
+
+\begin_layout Description
+C-M-s Suchen vorwärts 
+\emph on
+Reg-Exp
+\emph default
+ 
+\end_layout
+
+\begin_layout Description
+C-M-r Suchen rückwärts 
+\emph on
+Reg-Exp
+\end_layout
+
+\begin_layout Description
+M-.
+ Finde Tag
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Zum Anlegen des TAGS-Fikles vorher 
+\begin_inset Quotes eld
+\end_inset
+
+etags *.[ch]
+\begin_inset Quotes erd
+\end_inset
+
+ ausführen
+\end_layout
+
+\end_inset
+
+ an Cursorposition
+\end_layout
+
+\begin_layout Description
+M-* Gehe zurück zu 
+\begin_inset Quotes eld
+\end_inset
+
+M-.
+\begin_inset Quotes erd
+\end_inset
+
+ Position
+\end_layout
+
+\begin_layout Description
+Reguläre\InsetSpace ~
+Ausdrücke\InsetSpace ~
+(
+\emph on
+Reg-Exp
+\emph default
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+^ Zeilenanfang
+\end_layout
+
+\begin_layout Description
+$ Zeilenende
+\end_layout
+
+\begin_layout Description
+.
+ Beliebiges Zeichen
+\end_layout
+
+\begin_layout Description
+.* Beliebige Zeichenkette
+\end_layout
+
+\begin_layout Description
+
+\backslash
+< Wortanfang
+\end_layout
+
+\begin_layout Description
+
+\backslash
+> Wortende
+\end_layout
+
+\begin_layout Description
+[] Zeichenliste
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Formatieren
+\end_layout
+
+\begin_layout Description
+Zeichen
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+M-l Wort Kleinbuchstaben
+\end_layout
+
+\begin_layout Description
+M-u Wort Großbuchstaben
+\end_layout
+
+\begin_layout Description
+M-c Wort Großschreibung
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+C-l Bereich Kleinbuchstaben
+\end_layout
+
+\begin_layout Description
+C-x\InsetSpace ~
+C-u Bereich Großbuchstaben
+\end_layout
+
+\end_deeper
+\begin_layout Description
+(Syntaktisches)\InsetSpace ~
+Einrücken
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+Tab Zeile
+\end_layout
+
+\begin_layout Description
+S-Tab Bereich (C-M-
+\backslash
+)
+\end_layout
+
+\begin_layout Description
+F12 Funktion (C-c C-q)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-M-q Ausdruck
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Kommentar
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+F5 Bereich auskommentieren (C-c C-c)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F5 Bereich einkommentieren (C-u C-c C-c)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+F6 Kommentar einfügen/ausrichten (M-;)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F6 Kommentar entfernen
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+M-q Multiline formatieren
+\end_layout
+
+\begin_layout Description
+F8 Anfangsspalte setzen (C-x\InsetSpace ~
+;)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F8
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F8 Endespalte setzen (C-u\InsetSpace ~
+<col> C-u C-x\InsetSpace ~
+f)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F8
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Ansicht
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+h Block ausblenden
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Erfordert 
+\emph on
+hideshow.el
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+s Block einblenden
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+L Ebene ausblenden
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+S Alles einblenden
+\end_layout
+
+\begin_layout Description
+F11 Syntax Highlighting
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F11
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Kommandos
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+<Cmd> Kommando <Cmd> ausführen
+\end_layout
+
+\begin_layout Description
+C-u\InsetSpace ~
+<Num>\InsetSpace ~
+C-u\InsetSpace ~
+<Cmd> Kommando <Cmd> mit Argument <Num> ausführen
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+<Num> kann z.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+B.
+ als Wiederholungszähler wirken, wie in 
+\emph on
+C-u 78 C-u *
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-g Kommando abbrechen
+\end_layout
+
+\begin_layout Description
+Buffer-Modes
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+M-x\InsetSpace ~
+Ret Fundamental
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+lisp-mode Emacs Lisp
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+text-mode Text
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+asm-mode Assembler
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+c-mode C
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+hexl-mode Hexl
+\emph on
+ine
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+shell Shell
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+dos-mode DOS
+\end_layout
+
+\end_deeper
+\begin_layout Description
+M-! Shell-Kommando ausführen
+\end_layout
+
+\begin_layout Section*
+Maustasten
+\end_layout
+
+\begin_layout Description
+Mouse-1\InsetSpace ~
+(Links) Markieren
+\end_layout
+
+\begin_layout Description
+Mouse-2\InsetSpace ~
+(Mitte) Einfügen
+\end_layout
+
+\begin_layout Description
+Mouse-3\InsetSpace ~
+(Rechts) Kopieren
+\end_layout
+
+\begin_layout Description
+C-Mouse-1 Buffer Menü (C-x C-b)
+\end_layout
+
+\begin_layout Description
+C-Mouse-2 Texteigenschaften-Menü
+\end_layout
+
+\begin_layout Description
+C-Mouse-3 Modus-Menü
+\end_layout
+
+\begin_layout Section*
+Spezielle Modi
+\end_layout
+
+\begin_layout Description
+
+\emph on
+C-Modus
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-c\InsetSpace ~
+C-a Umschaltung Auto-Modus
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Electric
+\begin_inset Quotes erd
+\end_inset
+
+ characters insert newlines and indent.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+C-d Umschaltung Hungry-Modus
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Delete groups of spaces with a single Delete/Backspace.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+C-
+\backslash
+ Backslash Bereich
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+.\InsetSpace ~
+<style> Stil setzen (hoppe, cc-mode, gnu, k&r, bsd, linux, python, java,
+ user \SpecialChar \ldots{}
+)
+\end_layout
+
+\begin_layout Description
+F9 Make
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+VHDL-Modus
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+-\InsetSpace ~
+-\InsetSpace ~
+- Linie
+\end_layout
+
+\begin_layout Description
+-\InsetSpace ~
+-\InsetSpace ~
+-\InsetSpace ~
+- Großer Kommentar
+\end_layout
+
+\begin_layout Description
+C-c\InsetSpace ~
+M-b Beautify Bereich
+\end_layout
+
+\begin_layout Description
+F12 Beautify Buffer
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
