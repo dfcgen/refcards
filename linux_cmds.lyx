@@ -3,6 +3,10 @@
 \begin_document
 \begin_header
 \textclass scrartcl
+\begin_preamble
+\input{text-inc}
+\input{pdf-inc}
+\end_preamble
 \language german
 \inputencoding latin1
 \fontscheme default
@@ -257,7 +261,7 @@ Systemverwaltung
 \begin_layout Standard
 \align left
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="2">
+<lyxtabular version="3" rows="13" columns="2">
 <features islongtable="true">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
@@ -376,26 +380,6 @@ Anzeige Kernel-Messages (/var/log/messages)
 \begin_inset Text
 
 \begin_layout Standard
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Grub Boot-Menü und Parameter (/boot/grub/menu.lst)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 sysctl -a
 \end_layout
 
@@ -416,27 +400,7 @@ Anzeigen und Einstellen von Kernel-Parametern (/proc/sys)
 \begin_inset Text
 
 \begin_layout Standard
-insserv [-r] nfsd
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Persistente Aktivierung/Deaktivierung von Diensten
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-apt-get install xserver-org
+apt-get install xserver-xorg
 \end_layout
 
 \end_inset
@@ -448,6 +412,26 @@ apt-get install xserver-org
 Download und Installation des Debian-Pakets 
 \emph on
 xserver-org
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+apt-get check
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Prüft und bereinigt den APT-Cache
 \end_layout
 
 \end_inset
@@ -484,7 +468,7 @@ dpkg -l
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
@@ -499,7 +483,7 @@ Gibt eine Liste alle installierten Pakete aus
 \begin_inset Text
 
 \begin_layout Standard
-dpkg-reconfigure xserver-org
+dpkg-reconfigure xserver-xorg
 \end_layout
 
 \end_inset
@@ -509,6 +493,62 @@ dpkg-reconfigure xserver-org
 
 \begin_layout Standard
 Neukonfiguration des X11-Servers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+dpkg -i package.deb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Installiert Paket 
+\emph on
+package
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+dpkg-buildpackage -rfakeroot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Bildet ein Debian-Package aus aktuellem Verzeichnis
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+
+\emph on
+seahorse-agent
+\emph default
+ sollte wegen Signatur der Sourcen (*.dsc) laufen.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -701,7 +741,7 @@ Netzwerk
 \begin_layout Standard
 \align left
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="2">
+<lyxtabular version="3" rows="17" columns="2">
 <features islongtable="true">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
@@ -919,46 +959,6 @@ mailto()
 \begin_inset Text
 
 \begin_layout Standard
-imon
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ISDN Monitor (ASCII)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-isdnrep 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Übersicht der ISDN-Aktivitäten (/var/log/isdn.log)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
 nslookup
 \end_layout
 
@@ -1108,7 +1108,7 @@ Grafik, X11 & Gnome
 \begin_layout Standard
 \align left
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
+<lyxtabular version="3" rows="12" columns="2">
 <features islongtable="true">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
@@ -1207,28 +1207,6 @@ xkeycaps
 
 \begin_layout Standard
 Tastenzuordnungen anpassen (~/.Xmodmap)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-xwd
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Screen Shot nach 
-\emph on
-stdout
 \end_layout
 
 \end_inset
@@ -1450,7 +1428,7 @@ Softwareentwicklung
 \begin_layout Standard
 \align left
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="2">
+<lyxtabular version="3" rows="8" columns="2">
 <features islongtable="true">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
@@ -1469,32 +1447,6 @@ Kommando
 
 \begin_layout Standard
 Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-xmkmf
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Erzeugt 
-\emph on
-Makefile
-\emph default
- aus 
-\emph on
-Imakefile
 \end_layout
 
 \end_inset
@@ -1545,7 +1497,15 @@ Listet Symbole in Objetdateien
 \begin_inset Text
 
 \begin_layout Standard
-as
+pkg-config --cflags 
+\begin_inset Quotes eld
+\end_inset
+
+gdk-2.0
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1554,47 +1514,20 @@ as
 \begin_inset Text
 
 \begin_layout Standard
-GNU Assembler
+Recommended Package Compile Flags (siehe 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'/usr/lib/pkgconfig/*.pc'
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-gcc (g++)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-GNU C/C++ Compiler
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ld
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-GNU Linker
+)
 \end_layout
 
 \end_inset
@@ -1626,7 +1559,7 @@ importiert akt.
 \begin_inset Text
 
 \begin_layout Standard
-cvs co kdfcgen
+cvs co dfcgen
 \end_layout
 
 \end_inset
@@ -1635,7 +1568,7 @@ cvs co kdfcgen
 \begin_inset Text
 
 \begin_layout Standard
-checkt module kdfcgen aus
+checkt module dfcgen aus
 \end_layout
 
 \end_inset
@@ -1646,7 +1579,7 @@ checkt module kdfcgen aus
 \begin_inset Text
 
 \begin_layout Standard
-cvs ci kdfcgen
+cvs ci dfcgen
 \end_layout
 
 \end_inset
@@ -1662,32 +1595,12 @@ aktualisiert Repository mit akt.
 \end_inset
 </cell>
 </row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-cervisia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-CVS Frontend
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
-pharmacy
+meld
 \end_layout
 
 \end_inset
@@ -1696,7 +1609,7 @@ pharmacy
 \begin_inset Text
 
 \begin_layout Standard
-CVS Frontend
+CVS Frontend und Diff-Tool
 \end_layout
 
 \end_inset
@@ -1716,7 +1629,7 @@ TeX, LaTeX
 \begin_layout Standard
 \align left
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
+<lyxtabular version="3" rows="3" columns="2">
 <features islongtable="true">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
 <column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
@@ -1745,7 +1658,7 @@ Funktion
 \begin_inset Text
 
 \begin_layout Standard
-bibview
+bibview, tkbibtex
 \end_layout
 
 \end_inset
@@ -1754,33 +1667,9 @@ bibview
 \begin_inset Text
 
 \begin_layout Standard
-Editor für 
+Editoren für 
 \noun on
-bibtex
-\noun default
--Datenbanken
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-tkbibtex
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Editor für 
-\noun on
-bibtex
+BibTeX
 \noun default
 -Datenbanken
 \end_layout
