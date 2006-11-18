@@ -187,11 +187,6 @@ C-x\InsetSpace ~
 o Nächstes Fenster
 \end_layout
 
-\begin_layout Description
-C-x\InsetSpace ~
-0 Fenster schließen ()
-\end_layout
-
 \begin_layout Section*
 Cursor
 \end_layout
@@ -238,7 +233,7 @@ M-Left Anfang des Ausdrucks (M-a)
 \end_layout
 
 \begin_layout Description
-M-Right Ende des des Ausdrucks (M-e)
+M-Right Ende des Ausdrucks (M-e)
 \end_layout
 
 \begin_layout Description
@@ -247,6 +242,35 @@ M-Up Funktionsanfang (C-M-a)
 
 \begin_layout Description
 M-Down Funktionsende (C-M-e)
+\end_layout
+
+\begin_layout Description
+F4 Nächster Fehler
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+F4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F4 Voriger Fehler (C-x\InsetSpace ~
+1)
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Standard
+S-F4
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -283,35 +307,6 @@ l Funktionsliste (Fußnote\InsetSpace ~
 )
 \end_layout
 
-\begin_layout Description
-F4 Nächster Fehler
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-S-F4 Voriger Fehler (C-x\InsetSpace ~
-1)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section*
 Editieren
 \end_layout
@@ -322,7 +317,7 @@ Markieren
 
 \begin_deeper
 \begin_layout Description
-C-Space Anfang
+C-Space Anfang (Mark)
 \end_layout
 
 \begin_layout Description
@@ -356,10 +351,6 @@ S-F3
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-M-= Anzahl der Zeilen?
 \end_layout
 
 \end_deeper
@@ -461,11 +452,30 @@ C-q Steuerzeichen eingeben
 status open
 
 \begin_layout Standard
-Siehe Emacs Variable 
-\emph on
-read-quoted-char-radix
-\emph default
-.
+z.
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+B.
+ fügt C-q\InsetSpace ~
+C-i einen 
+\begin_inset Quotes eld
+\end_inset
+
+harten
+\begin_inset Quotes erd
+\end_inset
+
+ TAB ein.
 \end_layout
 
 \end_inset
@@ -485,6 +495,11 @@ S-F1
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+M-x\InsetSpace ~
+untabify Tabs in Leerzeichen umwandeln
 \end_layout
 
 \end_deeper
@@ -602,7 +617,11 @@ $ Zeilenende
 \end_layout
 
 \begin_layout Description
-.* Beliebige Zeichenkette
+.* Beliebige Zeichenkette, auch leer
+\end_layout
+
+\begin_layout Description
+.+ Beliebige Zeichenkette, nicht leer
 \end_layout
 
 \begin_layout Description
@@ -851,12 +870,12 @@ C-u\InsetSpace ~
 C-u\InsetSpace ~
 <Cmd> Kommando <Cmd> mit Argument <Num> ausführen
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Standard
 <Num> kann z.
 \begin_inset ERT
-status collapsed
+status inlined
 
 \begin_layout Standard
 
@@ -1037,44 +1056,6 @@ status collapsed
 
 \begin_layout Standard
 F9
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Description
-VHDL-Modus
-\end_layout
-
-\begin_deeper
-\begin_layout Description
--\InsetSpace ~
--\InsetSpace ~
-- Linie
-\end_layout
-
-\begin_layout Description
--\InsetSpace ~
--\InsetSpace ~
--\InsetSpace ~
-- Großer Kommentar
-\end_layout
-
-\begin_layout Description
-C-c\InsetSpace ~
-M-b Beautify Bereich
-\end_layout
-
-\begin_layout Description
-F12 Beautify Buffer
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F12
 \end_layout
 
 \end_inset
