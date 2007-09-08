@@ -1,12 +1,11 @@
-#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
 \textclass article
 \begin_preamble
-\input{text-inc}
-\input{pdf-inc}
-\input{html-inc}
+\input{all-inc}
+\docsubj{Bash-Scripting Kurzreferenz}{Bash Reference}{shell, bash}
 \end_preamble
 \language german
 \inputencoding latin1
@@ -31,7 +30,7 @@
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
-\quotes_language english
+\quotes_language german
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -42,14 +41,11 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status inlined
+\begin_inset Note Note
+status open
 
 \begin_layout Standard
-
-
-\backslash
-htmlsubj{Bash Reference}{shell, bash}
+$Id: bash.lyx,v 1.3 2007-09-08 16:56:42 ralf Exp $
 \end_layout
 
 \end_inset
@@ -70,13 +66,20 @@ status collapsed
 
 
 \backslash
-copyright
+textcopyright
+\backslash
+ 
+\backslash
+number
+\backslash
+year
+\backslash
+ 
 \end_layout
 
 \end_inset
 
-\InsetSpace ~
-Ralf Hoppe
+ Ralf Hoppe
 \end_layout
 
 \begin_layout Section

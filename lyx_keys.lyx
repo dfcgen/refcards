@@ -1,11 +1,11 @@
-#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
-\textclass article
+\textclass scrartcl
 \begin_preamble
-\usepackage{a4wide}
-\input{text-inc.tex}
+\input{all-inc.tex}
+\docsubj{LyX/Gnome Key Bindings}{LyX/Gnome Key Bindings}{X11, Gnome, LyX}
 \end_preamble
 \language german
 \inputencoding latin1
@@ -23,7 +23,7 @@
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
-\quotes_language english
+\quotes_language german
 \papercolumns 2
 \papersides 2
 \paperpagestyle default
@@ -32,6 +32,19 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+$Id: lyx_keys.lyx,v 1.2 2007-09-08 16:56:42 ralf Exp $
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Title
 
@@ -44,13 +57,19 @@ Key Bindings
 \begin_layout Author
 Copyright 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Standard
 
 
 \backslash
 copyright
+\backslash
+ 
+\backslash
+number
+\backslash
+year
 \backslash
  
 \end_layout
@@ -168,7 +187,7 @@ status open
 \begin_layout Standard
 Eine komplette Liste aller Shortcuts kann man aus 
 \emph on
-$LYXDIR/bind/*.bind
+$LYXDIR/bind/cua.bind
 \emph default
  ermitteln.
 \end_layout
@@ -269,40 +288,41 @@ Zeichenformate
 
 \begin_deeper
 \begin_layout Description
-Ctrl+e Hervorhebung (Alt+z+h)
+Ctrl+e Hervorhebung (Alt+z\InsetSpace ~
+h)
 \end_layout
 
 \begin_layout Description
-Ctrl+b Fett (Alt+z+f)
+Ctrl+b Fett (Alt+z\InsetSpace ~
+f)
 \end_layout
 
 \begin_layout Description
-Ctrl+u Unterstreich
-\family sans
-e
-\family default
-n
+Ctrl+u Unterstreichen (Alt+z\InsetSpace ~
+u)
 \end_layout
 
 \begin_layout Description
 Ctrl+l TeX-Modus
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Standard
-Die Anicht des ERT (Evil Red Text) kann mit der rechten Maustaste modifiziert
+Die Ansicht des ERT (Evil Red Text) kann mit der rechten Maustaste modifiziert
  werden.
  
 \end_layout
 
 \end_inset
 
-
+ (Alt+z\InsetSpace ~
+t)
 \end_layout
 
 \begin_layout Description
 Alt+z\InsetSpace ~
-k Kapitälchen
+k Kapitälchen (Alt+z\InsetSpace ~
+k)
 \end_layout
 
 \begin_layout Description
@@ -389,24 +409,24 @@ Alt+m Math-Menü
 \end_layout
 
 \begin_deeper
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 g\InsetSpace ~
 \SpecialChar \ldots{}
  Griechische Buchstaben
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 Shift+g Griechische Tastatur ein/aus
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 n Formelnummerierung ein
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 Shift+n Formelnummerierung aus
 \begin_inset Foot
@@ -437,7 +457,7 @@ nonumber gekennzeichnet.
 
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 l Limits Plazierung 
 \begin_inset Formula $\sum\limits _{i=1}^{n}x_{i}=\sum_{i=1}^{n}x_{i}$
@@ -446,124 +466,124 @@ l Limits Plazierung
 
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 c\InsetSpace ~
 i Spalte einfügen
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 c\InsetSpace ~
 d Spalte löschen
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 w\InsetSpace ~
 i Zeile einfügen
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 w\InsetSpace ~
 d Zeile löschen
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 t Umwandlung Formeltyp
 \end_layout
 
 \begin_deeper
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 i Inline
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 d Display (single line)
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 a Align
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 e eqnarray
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 m Multiline
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 n Non
 \end_layout
 
 \end_deeper
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 Shift+( Größenvariante Klammern
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 Symbole
 \end_layout
 
 \begin_deeper
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 u Summe
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 i Integral
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 p Partielles Differential
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 s Wurzel (square root)
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 r n'te Wurzel
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 f Bruch (fraction)
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 v Akzent Vektor
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 b Akzent Balken (bar)
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 h Akzent Dach (hat)
 \end_layout
 
-\begin_layout List
+\begin_layout Labeling
 \labelwidthstring 00.00.0000
 8 Unendlich (
 \begin_inset Formula $\infty$

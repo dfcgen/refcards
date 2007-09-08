@@ -1,675 +1,830 @@
-#LyX 1.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 221
-\textclass article
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass scrartcl
 \begin_preamble
-\input{text-inc}
-\input{pdf-inc}
-\input{html-inc}
-\input{math-inc}
+\input{all-inc}
+
+\setlength{\marginparwidth}{24pt}
+\setlength{\marginparsep}{12pt}
+\normalmarginpar
+
+\docsubj{VxWorks "C" Interpreter Commands}{VxWorks Host Shell Commands}{gdb, workbench, vxworks}
 \end_preamble
 \language english
 \inputencoding latin1
 \fontscheme times
 \graphics default
 \paperfontsize 10
-\spacing single 
+\spacing other 0.7
 \papersize a4paper
-\paperpackage a4
-\use_geometry 0
-\use_amsmath 1
-\use_natbib 0
-\use_numerical_citations 0
+\use_geometry true
+\use_amsmath 2
+\cite_engine basic
+\use_bibtopic false
 \paperorientation portrait
-\leftmargin 1.5cm
-\topmargin 0.5cm
-\rightmargin 3cm
-\bottommargin 0.5cm
+\branch WITH_IXP4XX
+\selected 1
+\color none
+\end_branch
+\leftmargin 2.5cm
+\topmargin 1cm
+\rightmargin 2cm
+\bottommargin 3cm
 \headheight 1cm
-\headsep 0.4cm
-\footskip 0.4cm
+\headsep 0.5cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
 \quotes_language german
-\quotes_times 2
-\papercolumns 1
-\papersides 1
+\papercolumns 2
+\papersides 2
 \paperpagestyle plain
+\tracking_changes false
+\output_changes true
+\end_header
 
-\layout Standard
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+$Id: vxworks.lyx,v 1.2 2007-09-08 16:56:42 ralf Exp $
+\end_layout
+
+\end_inset
 
 
-\begin_inset ERT
-status Open
+\end_layout
 
-\layout Standard
+\begin_layout Title
+VxWorks 
+\begin_inset Quotes gld
+\end_inset
 
-\backslash 
-htmlsubj{Tornado Commands and Shortcuts}{gdb, tornado, vxworks}
-\end_inset 
+C
+\begin_inset Quotes grd
+\end_inset
 
-
-\layout Title
-
-Debugger/Console Commands & Shortcuts
+ Interpreter Commands
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
+\begin_layout Standard
+Incomplete, for all available commands see the 
+\begin_inset Quotes gld
+\end_inset
 
-Incomplete, w/o WindShell functions related to POSIX semaphores, periodic
- functions, C++ specials.
-\end_inset 
+Host Shell User's Guide
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Notice that 
+\emph on
+INCLUDE_USE_NATIVE_SHELL
+\emph default
+ is required for some commands.
+\end_layout
+
+\end_inset
 
 
-\layout Author
+\begin_inset Foot
+status collapsed
 
+\begin_layout Standard
+Especially for host (kernel) shell.
+ The target shell additionaly offers GDB and TCL commands .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
 Copyright 
 \begin_inset ERT
-status Collapsed
+status collapsed
 
-\layout Standard
+\begin_layout Standard
 
-\backslash 
-copyright
-\end_inset 
 
-\SpecialChar ~
-Ralf Hoppe
-\layout Section*
+\backslash
+textcopyright
+\backslash
+ 
+\backslash
+number
+\backslash
+year
+\backslash
+ 
+\end_layout
 
+\end_inset
+
+ Ralf Hoppe
+\end_layout
+
+\begin_layout Section
 Specials
-\layout Description
+\end_layout
 
+\begin_layout Description
+cmd Switch to command interpreter
+\end_layout
+
+\begin_layout Description
+C Switch over to C interpreter
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+From/In command interpreter mode.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+emacs Turn on Emacs mode
+\end_layout
+
+\begin_layout Description
 Ctrl+Break Interrupt shell command
-\layout Description
+\end_layout
 
+\begin_layout Description
 \SpecialChar \ldots{}
 Ctrl+D Symbol expansion
-\layout Description
+\end_layout
 
+\begin_layout Description
 
-\emph on 
+\emph on
 cmd
-\emph default 
-\SpecialChar ~
+\emph default
+\InsetSpace ~
 Ctrl+W HTML-help for 
-\emph on 
+\emph on
 cmd
+\emph default
+
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
+\begin_layout Standard
+Only host shell.
+\end_layout
 
-Only in target shell.
-\end_inset 
+\end_inset
 
 
-\layout Description
+\end_layout
 
+\begin_layout Description
 @
-\emph on 
+\emph on
 cmd
-\emph default 
- Execute 
-\emph on 
+\emph default
+ Execute target routine 
+\emph on
 cmd
-\emph default 
- in target shell (e.g.
+\emph default
+ (e.g.
  
-\emph on 
+\emph on
 @cd 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
-/fl/
+/tffs0/
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
 
-\emph default 
+\emph default
 )
-\layout Section*
+\end_layout
 
+\begin_layout Section
 General
-\layout Description
+\end_layout
 
-h Display shell history
-\layout Description
-
+\begin_layout Description
 help Print synopsis of selected command
-\layout Description
+\end_layout
 
-printErrno\SpecialChar ~
+\begin_layout Description
+printErrno\InsetSpace ~
 # Explain error number #
-\layout Description
+\end_layout
 
-?shConfig Display/Set shell config
-\layout Description
+\begin_layout Description
+?shConfig Show/Set shell config
+\end_layout
 
+\begin_layout Description
 bootChange Modify boot parameters
-\layout Description
+\end_layout
 
+\begin_layout Description
 reboot Reboot target system
 \begin_inset Marginal
-collapsed false
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 Ctrl+X
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Section*
+\end_layout
 
+\begin_layout Section
 Debug
-\layout Description
+\end_layout
 
+\begin_layout Description
 browse Browse an address
-\layout Description
+\end_layout
 
-d\SpecialChar ~
+\begin_layout Description
+d\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
-],[
-\emph on 
-width
-\emph default 
-],[
-\emph on 
-num
-\emph default 
-] Display memory from 
-\emph on 
-adr
-\emph default 
- with access 
-\emph on 
-width
-\emph default 
- (
-\emph on 
-num
-\emph default 
- locations)
-\layout Description
+\emph default
+][
+\emph on
+,width
+\emph default
+][
+\emph on
+,num
+\emph default
+] Show memory
+\end_layout
 
-m\SpecialChar ~
+\begin_layout Description
+m\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
-],[
-\emph on 
-width
-\emph default 
-],[
-\emph on 
-num
-\emph default 
-] Modify memory at 
-\emph on 
-adr
-\emph default 
- with access 
-\emph on 
-width
-\emph default 
- (
-\emph on 
-num
-\emph default 
- locations)
-\layout Description
+\emph default
+][
+\emph on
+,width
+\emph default
+][
+\emph on
+,num
+\emph default
+] Modify memory
+\end_layout
 
-l\SpecialChar ~
+\begin_layout Description
+l\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
-] Disassemble memory from 
-\emph on 
-adr
-\layout Description
+\emph default
+] Disassemble memory
+\end_layout
 
+\begin_layout Description
 mRegs Modify registers
-\layout Description
+\end_layout
 
-b\SpecialChar ~
+\begin_layout Description
+b\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
-] Set/Display breakpoint(s) at 
-\emph on 
-adr
-\layout Description
+\emph default
+] Set/Show breakpoint(s)
+\end_layout
 
-bd\SpecialChar ~
+\begin_layout Description
+bd\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
-] Delete breakpoint from 
-\emph on 
-adr
-\layout Description
+\emph default
+] Delete breakpoint
+\end_layout
 
+\begin_layout Description
 bdall Delete all breakpoints
-\layout Description
+\end_layout
 
-c Run/Continue
+\begin_layout Description
+c Continue
 \begin_inset Marginal
-collapsed true
+status open
 
-\layout Standard
-
+\begin_layout Standard
 F8
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Description
+\end_layout
 
+\begin_layout Description
 s Step into
 \begin_inset Marginal
-collapsed true
+status open
 
-\layout Standard
-
+\begin_layout Standard
 F5
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Description
+\end_layout
 
+\begin_layout Description
 so Step over
 \begin_inset Marginal
-collapsed true
+status open
 
-\layout Standard
-
+\begin_layout Standard
 F6
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Description
+\end_layout
 
+\begin_layout Description
 cret Step out (until return)
 \begin_inset Marginal
-collapsed true
+status open
 
-\layout Standard
-
+\begin_layout Standard
 F7
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Section*
+\end_layout
 
-Modules/Symbols
-\layout Description
+\begin_layout Section
+Modules & Symbols
+\end_layout
 
-ld\SpecialChar ~
+\begin_layout Description
+ld\InsetSpace ~
 [
-\emph on 
+\emph on
 mod
-\emph default 
-] Load object module 
-\emph on 
-mod
-\layout Description
+\emph default
+] Load object module
+\end_layout
 
-unld\SpecialChar ~
+\begin_layout Description
+unld\InsetSpace ~
 [
-\emph on 
+\emph on
 mod
-\emph default 
-] Unload object module 
-\emph on 
-mod
-\layout Description
+\emph default
+] Unload object module
+\end_layout
 
+\begin_layout Description
 moduleShow Show status of modules
-\layout Description
+\end_layout
 
-lkup\SpecialChar ~
+\begin_layout Description
+lkup\InsetSpace ~
 
-\emph on 
+\emph on
 sym
-\emph default 
+\emph default
  List address of symbol 
-\emph on 
+\emph on
 sym
-\layout Description
+\end_layout
 
-lkAddr\SpecialChar ~
+\begin_layout Description
+lkAddr\InsetSpace ~
 [
-\emph on 
+\emph on
 adr
-\emph default 
+\emph default
 ] List symbols near 
-\emph on 
+\emph on
 adr
-\layout Section*
+\end_layout
 
+\begin_layout Section
 Tasks
-\layout Description
+\end_layout
 
-sp\SpecialChar ~
-[
-\emph on 
-adr
-\emph default 
-][,
-\emph on 
-args
-\emph default 
-] Spawn a task at 
-\emph on 
-adr
-\emph default 
- with (default) argument
-\layout Description
-
-sps Spawn a task (set then suspended)
-\layout Description
-
-ts\SpecialChar ~
-
-\emph on 
-name
-\emph default 
-/
-\emph on 
-id
-\emph default 
- Suspend the task via 
-\emph on 
-name
-\emph default 
-/
-\emph on 
-id
-\layout Description
-
-td\SpecialChar ~
-
-\emph on 
-name
-\emph default 
-/
-\emph on 
-id
-\emph default 
- Delete a task via 
-\emph on 
-name
-\emph default 
-/
-\emph on 
-id
-\layout Description
-
-tr\SpecialChar ~
-
-\emph on 
-name
-\emph default 
-/
-\emph on 
-id
-\emph default 
- Resume a suspended task
-\layout Description
-
+\begin_layout Description
 i Print task info from TCB
-\layout Description
+\end_layout
 
-iStrict Print task info (atomic snapshot)
-\layout Description
+\begin_layout Description
+sp\InsetSpace ~
+[
+\emph on
+adr
+\emph default
+][,
+\emph on
+args
+\emph default
+] Spawn a task
+\end_layout
 
+\begin_layout Description
+sps Spawn a task (set then suspended)
+\end_layout
+
+\begin_layout Description
+ts\InsetSpace ~
+
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+ Suspend a task
+\end_layout
+
+\begin_layout Description
+td\InsetSpace ~
+
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+ Delete a task
+\end_layout
+
+\begin_layout Description
+tr\InsetSpace ~
+
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+ Resume a suspended task
+\end_layout
+
+\begin_layout Description
 w Task's pending information
-\layout Description
+\end_layout
 
+\begin_layout Description
 tw Object info task is pending on
-\layout Description
+\end_layout
 
-tt Display stack trace
-\layout Description
+\begin_layout Description
+tt Show stack trace
+\end_layout
 
+\begin_layout Description
 checkStack Print task stack usage
-\layout Section*
+\end_layout
 
+\begin_layout Section
 Resources
-\layout Description
+\end_layout
 
-vmContextShow Display memory configuration (MMU)
-\begin_inset Note
-collapsed true
+\begin_layout Description
+vmContextShow Show memory config (MMU)
+\begin_inset Note Note
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 INCLUDE_VM_SHOW
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Description
+\end_layout
 
+\begin_layout Description
 memShow Show system memory partition
-\layout Description
+\end_layout
 
-memPartShow\SpecialChar ~
+\begin_layout Description
+memPartShow\InsetSpace ~
 
-\emph on 
+\emph on
 partid
-\emph default 
+\emph default
  Show partition blocks of 
-\emph on 
+\emph on
 partId
-\layout Description
+\end_layout
 
+\begin_layout Description
 pmShow Show 
 \begin_inset Quotes gld
-\end_inset 
+\end_inset
 
 persistent
 \begin_inset Quotes grd
-\end_inset 
+\end_inset
 
  memory info
-\layout Description
+\end_layout
 
-msgQShow\SpecialChar ~
+\begin_layout Description
+msgQShow\InsetSpace ~
 
-\emph on 
+\emph on
 msgQId
-\emph default 
+\emph default
  Show message queue 
-\emph on 
+\emph on
 msgId
-\emph default 
+\emph default
  info
-\layout Description
+\end_layout
 
-semShow\SpecialChar ~
+\begin_layout Description
+semShow\InsetSpace ~
 
-\emph on 
+\emph on
 semId
-\emph default 
+\emph default
  Show info about semaphore 
-\emph on 
+\emph on
 semId
-\layout Description
+\end_layout
 
-classShow\SpecialChar ~
+\begin_layout Description
+wdShow\InsetSpace ~
 
-\emph on 
+\emph on
+wdId
+\emph default
+ Show info about watchod 
+\emph on
+wdId
+\end_layout
+
+\begin_layout Description
+classShow\InsetSpace ~
+
+\emph on
 class
-\emph default 
+\emph default
  Show info about object 
-\emph on 
+\emph on
 class
-\emph default 
- (
-\family sans 
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+
+\family sans
 lkup "ClassId"
-\family default 
- shows available classes)
-\layout Description
+\family default
+ shows available classes
+\end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+envShow Show environment info
+\end_layout
+
+\begin_layout Section
+I/O-System 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+texorpdfstring{
+\backslash
+footnote{For commands as cd, pwd, xcopy and friends see usrFsLib.}}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
 devs List all system-known devices
-\layout Description
+\end_layout
 
-pciConfigTopoShow Display PCI bus topology
-\layout Description
+\begin_layout Description
+iosDrvShow Show all system drivers
+\end_layout
 
-pciDeviceShow Display PCI devices
-\layout Description
+\begin_layout Description
+iosFdShow Show all file descriptor names
+\end_layout
 
-pciHeaderShow Display configuration data of PCI device
-\layout Description
+\begin_layout Description
+tffsShowAll Show TFFS socket information
+\begin_inset Note Note
+status collapsed
 
-tffsShowAll Display TFFS socket information
-\begin_inset Note
-collapsed true
-
-\layout Standard
-
+\begin_layout Standard
 INCLUDE_TFFS_SHOW
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Description
+\end_layout
 
-iosDrvShow Display all system drivers
-\layout Description
+\begin_layout Description
+dosFsShow\InsetSpace ~
 
-iosFdShow Display all file descriptor names
-\layout Description
+\emph on
+dev
+\emph default
+ Show DOS filesystem info's for 
+\emph on
+dev
+\end_layout
 
+\begin_layout Description
 logShow Show log info
-\layout Description
+\end_layout
 
-logFdSet\SpecialChar ~
+\begin_layout Description
+loggerInfoShow Show log info
+\end_layout
 
-\emph on 
-fd
-\emph default 
- Log-Ausgaben auf 
-\emph on 
-fd
-\layout Description
+\begin_layout Description
+pciConfigTopoShow Show PCI bus topology
+\end_layout
 
-dosFsShow\SpecialChar ~
+\begin_layout Description
+pciDeviceShow Show PCI devices
+\end_layout
 
-\emph on 
-devName
-\emph default 
- Display DOS filesystem info's
-\layout Description
+\begin_layout Description
+pciHeaderShow Show PCI device config
+\end_layout
 
-netPoolShow\SpecialChar ~
-
-\emph on 
-poolId
-\emph default 
- Display pool statistics
-\layout Description
-
-netStackSysPoolShow Display network stack system pool
-\layout Description
-
-netStackDataPoolShow Display network stack data pool
-\layout Description
-
-VecShow Display interrupt vector table
-\layout Section*
-
+\begin_layout Section
 Network
-\layout Description
+\end_layout
 
-hostShow Display the host table
-\layout Description
+\begin_layout Description
+netPoolShow\InsetSpace ~
 
-muxShow Display interfaces info
-\layout Description
+\emph on
+poolId
+\emph default
+ Show pool statistics
+\end_layout
 
-ifShow\SpecialChar ~
+\begin_layout Description
+netStackSysPoolShow Show network stack system pool
+\end_layout
+
+\begin_layout Description
+netStackDataPoolShow Show network stack data pool
+\end_layout
+
+\begin_layout Description
+hostShow Show the host table
+\end_layout
+
+\begin_layout Description
+muxShow Show interfaces info
+\end_layout
+
+\begin_layout Description
+ifShow\InsetSpace ~
 [
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\emph on 
+\emph on
 ifName
-\emph default 
+\emph default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
-] Display attached network interfaces
-\layout Description
+] Show attached network interfaces
+\end_layout
 
-arpShow Display ARP table
-\layout Description
+\begin_layout Description
+arpShow Show ARP table
+\end_layout
 
-mRouteShow Display all IP routes
-\layout Description
+\begin_layout Description
+mRouteShow Show all IP routes
+\end_layout
 
-icmpstatShow Display ICMP (Ping) statistics 
-\layout Description
+\begin_layout Description
+icmpstatShow Show ICMP (Ping) statistics 
+\end_layout
 
-inetstatShow Display active connections
-\layout Description
+\begin_layout Description
+inetstatShow Show active connections
+\end_layout
 
-ipstatShow Display IP statistics
-\layout Description
+\begin_layout Description
+ipstatShow Show IP statistics
+\end_layout
 
-tcpStatShow Display TCP statistics
-\layout Description
+\begin_layout Description
+tcpStatShow Show TCP statistics
+\end_layout
 
-udpStatShow Display UDP statistics
-\layout Description
+\begin_layout Description
+udpStatShow Show UDP statistics
+\end_layout
 
-routestatShow Display routing statistics
-\layout Description
+\begin_layout Description
+routestatShow Show routing statistics
+\end_layout
 
-loggerInfoShow Display log information
-\layout Section*
-
+\begin_layout Section
 BSP-Specific
-\layout Description
+\end_layout
 
-sys557Show\SpecialChar ~
+\begin_layout Description
+sys557Show\InsetSpace ~
 [
-\emph on 
-unitNum
-\emph default 
-] Display Ethernet controller info of 
-\emph on 
-unitNum
-\layout Description
+\emph on
+unit
+\emph default
+] Show i82557 controller info
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch WITH_IXP4XX
+status open
+
+\begin_layout Subsection
+Intel XScale ixp425/465 BSP
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Based on Intel's ixp400 library.
+\end_layout
+
+\end_inset
 
 
-\begin_inset Note
-collapsed false
+\end_layout
 
-\layout Standard
+\begin_layout Description
+ixEthMiiPhyShow Show status of PHY
+\end_layout
 
-Hier mit Dokumentenvarianten arbeiten (erst ab LyX 1.4)
-\end_inset 
+\begin_deeper
+\begin_layout Description
+ixEthMibIIShow Show MIB-II statistics
+\end_layout
 
-ixEthMiiPhyShow
-\layout Description
+\begin_layout Description
+ixp425GPIOShow Show GPIO config
+\end_layout
 
-ixEthMibIIShow Display MIB-II statistics
-\layout Description
+\end_inset
 
-ixEthAccDataPlaneShow
-\layout Description
 
-ixp425GPIOShow Display configuration of GPIO ports
-\the_end
+\end_layout
+
+\end_body
+\end_document

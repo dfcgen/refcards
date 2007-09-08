@@ -1,28 +1,42 @@
-#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 245
 \begin_document
 \begin_header
 \textclass article
 \begin_preamble
+\input{all-inc}
 
+\setlength{\marginparwidth}{24pt}
+\setlength{\marginparsep}{12pt}
+\normalmarginpar
+
+\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\textsf{#1}}
+\docsubj{Emacs Key Bindings}{Emacs Keys}{Emacs}
 \end_preamble
 \language german
 \inputencoding latin1
 \fontscheme times
 \graphics default
 \paperfontsize 10
-\spacing single
+\spacing other 0.7
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\leftmargin 2.5cm
+\topmargin 1cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 1cm
+\headsep 0.5cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
+\paragraph_separation indent
 \defskip smallskip
-\quotes_language english
+\quotes_language german
 \papercolumns 2
 \papersides 2
 \paperpagestyle default
@@ -53,13 +67,19 @@ Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
 \begin_layout Author
 Copyright 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Standard
 
 
 \backslash
-copyright
+textcopyright
+\backslash
+ 
+\backslash
+number
+\backslash
+year
 \backslash
  
 \end_layout
@@ -69,22 +89,7 @@ copyright
  Ralf Hoppe
 \end_layout
 
-\begin_layout Description
-F1 Hilfe (C-h\InsetSpace ~
-h)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
+\begin_layout Section
 Datei
 \end_layout
 
@@ -100,31 +105,11 @@ M-F4 Speichern und beenden (C-x C-c)
 \begin_layout Description
 F2 Speichern (C-x\InsetSpace ~
 C-s)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F2
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F2 Alle speichern (C-x\InsetSpace ~
 s)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F2
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -144,22 +129,12 @@ S-F11 UNIX-Konvertierung
 S-F12 DOS-Konvertierung
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Buffer/Fenster
 \end_layout
 
 \begin_layout Description
 F10 Buffer Menü (C-x C-b)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F10
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -187,7 +162,7 @@ C-x\InsetSpace ~
 o Nächstes Fenster
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Cursor
 \end_layout
 
@@ -246,38 +221,18 @@ M-Down Funktionsende (C-M-e)
 
 \begin_layout Description
 F4 Nächster Fehler
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F4
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F4 Voriger Fehler (C-x\InsetSpace ~
 1)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F4
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 C-c\InsetSpace ~
 g Gehe zu Funktion
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset LatexCommand \label{foot_only_xemacs}
@@ -307,15 +262,14 @@ l Funktionsliste (Fußnote\InsetSpace ~
 )
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Editieren
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsection*
 Markieren
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 C-Space Anfang (Mark)
 \end_layout
@@ -326,39 +280,17 @@ C-M-Space Ausdruck
 
 \begin_layout Description
 F3 Funktion (C-M-h)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F3
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F3/C-a Alles (C-x\InsetSpace ~
 h)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F3
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 Kopieren
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 C-Insert Normales (M-w)
 \end_layout
@@ -367,12 +299,10 @@ C-Insert Normales (M-w)
 C-M-Insert Register
 \end_layout
 
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 Einfügen
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 S-Insert Aktuelles (C-y)
 \end_layout
@@ -399,12 +329,10 @@ S-Insert
 S-M-Insert Register
 \end_layout
 
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 Löschen (Ausschneiden)
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 S-Delete Markierung (C-w)
 \end_layout
@@ -425,31 +353,19 @@ C-Delete Zeile (C-k)
 C-M-Delete Funktion
 \end_layout
 
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 Verschiedenes
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 F7/C-z Undo (C-x\InsetSpace ~
 u)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F7
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 C-q Steuerzeichen eingeben
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Standard
 z.
@@ -485,16 +401,6 @@ harten
 
 \begin_layout Description
 S-F1 UTF-8 Sonderzeichen (ucs-insert)
-\begin_inset Marginal
-status open
-
-\begin_layout Standard
-S-F1
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -502,47 +408,81 @@ M-x\InsetSpace ~
 untabify Tabs in Leerzeichen umwandeln
 \end_layout
 
-\end_deeper
-\begin_layout Section*
+\begin_layout Section
 Suchen/Ersetzen
 \end_layout
 
 \begin_layout Description
 S-F9 Suche in Dateien (grep) 
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F9
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 M-F9 Suche rekursiv in Dateien (grep-find)
-\begin_inset Marginal
+\end_layout
+
+\begin_layout Description
+C-s/C-r Interaktive Suche vorwärts/rückwärts
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-s/C-w Weitersuchen vorwärts/rückwärts
+\end_layout
+
+\begin_layout Description
+C-w Akt.
+\begin_inset ERT
 status collapsed
 
 \begin_layout Standard
-M-F9
+
+
+\backslash
+ 
 \end_layout
 
 \end_inset
 
-
+ Wort an Suchstring anhängen
 \end_layout
 
 \begin_layout Description
-C-s Interaktive Suche vorwärts
+C-y Rest der Zeile an Suchstring anhängen
 \end_layout
 
 \begin_layout Description
-C-r Interaktive Suche rückwärts
+M-y Einfügen an Ende des Suchstrings
 \end_layout
 
+\begin_layout Description
+M-c Umschaltung Case-Sensitivity
+\end_layout
+
+\begin_layout Description
+M-r Umschaltung auf reguläre Ausdrücke
+\end_layout
+
+\begin_layout Description
+M-e Suchstring editieren
+\end_layout
+
+\begin_layout Description
+M-n Verwende nächsten Suchstring
+\end_layout
+
+\begin_layout Description
+M-p Verwende vorhergehenden Suchstring
+\end_layout
+
+\begin_layout Description
+M-Tab Vervollständigung aus vorherigen Suchstrings
+\end_layout
+
+\begin_layout Description
+C-g Suche abbrechen
+\end_layout
+
+\end_deeper
 \begin_layout Description
 C-M-s Suchen vorwärts 
 \emph on
@@ -592,17 +532,14 @@ M-.
  Position
 \end_layout
 
-\begin_layout Description
-Reguläre\InsetSpace ~
-Ausdrücke\InsetSpace ~
-(
+\begin_layout Subsection*
+Reguläre Ausdrücke (
 \emph on
 Reg-Exp
 \emph default
 )
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 ^ Zeilenanfang
 \end_layout
@@ -640,16 +577,14 @@ $ Zeilenende
 [] Zeichenliste
 \end_layout
 
-\end_deeper
-\begin_layout Section*
+\begin_layout Section
 Formatieren
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsection*
 Zeichen
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 M-l Wort Kleinbuchstaben
 \end_layout
@@ -672,13 +607,11 @@ C-x\InsetSpace ~
 C-u Bereich Großbuchstaben
 \end_layout
 
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 (Syntaktisches)\InsetSpace ~
 Einrücken
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 Tab Zeile
 \end_layout
@@ -691,82 +624,30 @@ S-Tab Bereich (C-M-
 
 \begin_layout Description
 F12 Funktion (C-c C-q)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F12
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 C-M-q Ausdruck
 \end_layout
 
-\end_deeper
-\begin_layout Description
+\begin_layout Subsection*
 Kommentar
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 F5 Bereich auskommentieren (C-c C-c)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F5
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F5 Bereich einkommentieren (C-u C-c C-c)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F5
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 F6 Kommentar einfügen/ausrichten (M-;)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F6
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F6 Kommentar entfernen
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F6
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -776,36 +657,15 @@ M-q Multiline formatieren
 \begin_layout Description
 F8 Anfangsspalte setzen (C-x\InsetSpace ~
 ;)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F8
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
 S-F8 Endespalte setzen (C-u\InsetSpace ~
 <col> C-u C-x\InsetSpace ~
 f)
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-S-F8
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Section*
+\begin_layout Section
 Ansicht
 \end_layout
 
@@ -843,20 +703,14 @@ S Alles einblenden
 
 \begin_layout Description
 F11 Syntax Highlighting
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F11
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
+\begin_layout Section
 Kommandos
+\end_layout
+
+\begin_layout Description
+M-! Shell-Kommando ausführen
 \end_layout
 
 \begin_layout Description
@@ -870,7 +724,7 @@ C-u\InsetSpace ~
 C-u\InsetSpace ~
 <Cmd> Kommando <Cmd> mit Argument <Num> ausführen
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Standard
 <Num> kann z.
@@ -903,11 +757,10 @@ C-u 78 C-u *
 C-g Kommando abbrechen
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsection*
 Buffer-Modes
 \end_layout
 
-\begin_deeper
 \begin_layout Description
 M-x\InsetSpace ~
 Ret Fundamental
@@ -950,12 +803,7 @@ M-x\InsetSpace ~
 dos-mode DOS
 \end_layout
 
-\end_deeper
-\begin_layout Description
-M-! Shell-Kommando ausführen
-\end_layout
-
-\begin_layout Section*
+\begin_layout Section
 Maustasten
 \end_layout
 
@@ -986,7 +834,7 @@ C-Mouse-2 Texteigenschaften-Menü
 C-Mouse-3 Modus-Menü
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Spezielle Modi
 \end_layout
 
@@ -1045,22 +893,12 @@ C-
 C-c\InsetSpace ~
 .\InsetSpace ~
 <style> Stil setzen (hoppe, cc-mode, gnu, k&r, bsd, linux, python, java,
- user \SpecialChar \ldots{}
+ user, \SpecialChar \ldots{}
 )
 \end_layout
 
 \begin_layout Description
 F9 Make
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Standard
-F9
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body
