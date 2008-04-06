@@ -1,34 +1,57 @@
-#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
 \begin_document
 \begin_header
 \textclass scrartcl
 \begin_preamble
 \input{all-inc}
+
+\setlength{\marginparwidth}{2.5cm}
+\setlength{\marginparsep}{12pt}
+
 \docsubj{Linux Commands}{Linux}{Linux}
 \end_preamble
 \language german
 \inputencoding latin1
-\fontscheme default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family rmdefault
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
-\paperfontsize default
+\paperfontsize 10
 \spacing single
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\branch SUSE
+\selected 0
+\color #faf0e6
+\end_branch
+\leftmargin 2.5cm
+\topmargin 2cm
+\rightmargin 2.5cm
+\bottommargin 2cm
+\footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip medskip
+\defskip smallskip
 \quotes_language german
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle plain
 \tracking_changes false
-\output_changes true
+\output_changes false
+\author "" 
+\author "" 
 \end_header
 
 \begin_body
@@ -38,7 +61,7 @@
 status open
 
 \begin_layout Standard
-$Id: linux_cmds.lyx,v 1.3 2007-09-08 16:56:42 ralf Exp $
+$Id: linux_cmds.lyx,v 1.4 2008-04-06 11:03:14 ralf Exp $
 \end_layout
 
 \end_inset
@@ -47,19 +70,19 @@ $Id: linux_cmds.lyx,v 1.3 2007-09-08 16:56:42 ralf Exp $
 \end_layout
 
 \begin_layout Title
-Nützliche Linux Kommandos
+NÃ¼tzliche Linux Kommandos
 \end_layout
 
 \begin_layout Author
 Copyright 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Standard
 
 
 \backslash
-copyright
+textcopyright
 \backslash
  
 \backslash
@@ -77,487 +100,49 @@ Ralf Hoppe
 \end_layout
 
 \begin_layout Section
-Hardware (-Konfiguration)
+Paketverwaltung
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+dpkg\InsetSpace ~
+-l Gibt eine Liste alle installierten Pakete aus
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Kommando
+dpkg
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-lprsetup
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Apsfilter-Konfiguration (/dev/usblp0)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-free
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige RAM-Nutzung
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-hdparm -i /dev/hda
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige Festplattenparameter
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-lsdev
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt Hardware-Info's (IRQ, DMA, I/O) zu Devices
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-hwinfo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Abruf von Hardware-Informationen
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-procinfo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige von System-Informationen (CPU, RAM,\SpecialChar \ldots{}
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-lsusb -v
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt alle erkannten USB-Geräte
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-cdrecord -scanbus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt alle erkannten SCSI-Geräte
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
 
 
 \end_layout
 
-\begin_layout Section
-Systemverwaltung
+\begin_layout Description
+dpkg\InsetSpace ~
+--configure\InsetSpace ~
+-a Konfiguration von Debian-Paketen nach Download (falls
+ nicht automatisch ausgefÃ¼hrt)
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Kommando
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ldd 
-\emph on
-program
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt benötigte shared Libraries von 
-\emph on
-program
-\emph default
- 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ldconfig -p
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt alle installierten und notwendige shared Libraries (/etc/ld.so.conf)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-mandb
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Aktualisiert Index-Files von 
-\noun on
-man-
-\noun default
-Datenbanken ($MANPATH)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dmesg
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige Kernel-Messages (/var/log/messages)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-sysctl -a
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeigen und Einstellen von Kernel-Parametern (/proc/sys)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-apt-get install xserver-xorg
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Download und Installation des Debian-Pakets 
-\emph on
-xserver-org
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-apt-get check
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Prüft und bereinigt den APT-Cache
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dpkg --configure -a
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Konfiguration von (Debian/Ubuntu) Paketen nach Download, falls nicht automatisch
- ausgeführt
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dpkg -l
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Gibt eine Liste alle installierten Pakete aus
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dpkg-reconfigure xserver-xorg
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Neukonfiguration des X11-Servers
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dpkg -i package.deb
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Installiert Paket 
-\emph on
+\begin_layout Description
+dpkg\InsetSpace ~
+-i\InsetSpace ~
+<package.deb> Installiert Paket 
+\family typewriter
 package
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-dpkg-buildpackage -rfakeroot
+\begin_layout Description
+dpkg-reconfigure\InsetSpace ~
+xserver-xorg Neukonfiguration des X11-Servers
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Bildet ein Debian-Package aus aktuellem Verzeichnis
+\begin_layout Description
+dpkg-buildpackage\InsetSpace ~
+-rfakeroot Bildet ein Debian-Package aus aktuellem Verzeichnis
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -572,90 +157,216 @@ seahorse-agent
 
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Description
+apt-get\InsetSpace ~
+check PrÃ¼ft und bereinigt den APT Cache
+\begin_inset Marginal
+status open
+
+\begin_layout Standard
+apt
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+apt-get\InsetSpace ~
+install\InsetSpace ~
+<package> Download und Installation des Debian-Pakets 
+\family typewriter
+packet
+\end_layout
+
+\begin_layout Section
+Hardware
+\end_layout
+
+\begin_layout Description
+lprsetup Apsfilter-Konfiguration (
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'/dev/usblp0'
+\end_layout
+
+\end_inset
+
+)
+\begin_inset Marginal
+status open
+
+\begin_layout Standard
+cupsys
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+hdparm\InsetSpace ~
+-i\InsetSpace ~
+/dev/hda Anzeige Festplattenparameter
+\end_layout
+
+\begin_layout Description
+hwinfo Abruf von Hardware-Informationen
+\begin_inset Marginal
+status open
+
+\begin_layout Standard
+hwinfo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+procinfo Anzeige von System-Informationen (CPU, RAM, \SpecialChar \ldots{}
+)
+\end_layout
+
+\begin_layout Description
+free Anzeige RAM-Nutzung
+\end_layout
+
+\begin_layout Description
+lsdev Zeigt Hardware-Info's (IRQ, DMA, I/O) zu Devices
+\begin_inset Marginal
+status open
+
+\begin_layout Standard
+
+\family typewriter
+procinfo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+lsusb\InsetSpace ~
+-v Zeigt alle erkannten USB-GerÃ¤te
+\end_layout
+
+\begin_layout Description
+cdrecord\InsetSpace ~
+-scanbus Zeigt alle erkannten SCSI-GerÃ¤te
+\begin_inset Marginal
+status open
+
+\begin_layout Standard
+cdrecord
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+
+\end_layout
+
+\begin_layout Section
+Systemverwaltung
+\end_layout
+
+\begin_layout Description
+sysctl\InsetSpace ~
+-a Anzeigen und Einstellen von Kernel-Parametern (
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'/proc/sys'
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+dmesg Anzeige Kernel-Messages (
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'/var/log/messages'
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+ldconfig\InsetSpace ~
+-p Zeigt alle installierten und notwendige shared Libraries (
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'/etc/ld.so.conf'
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+ldd\InsetSpace ~
+<program> Zeigt benÃ¶tigte shared Libraries von 
+\family typewriter
+program
+\end_layout
+
+\begin_layout Description
+mandb Aktualisiert Index-Files von Manual-Pages (
+\family typewriter
+$MANPATH
+\family default
+)
 \end_layout
 
 \begin_layout Section
 Dateisystem
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
-<features islongtable="true">
-<column alignment="block" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Kommando
+\begin_layout Description
+tar\InsetSpace ~
+-czf\InsetSpace ~
+dir\InsetSpace ~
+>\InsetSpace ~
+dir.tar.gz Rekursives GNU-Zip des Verzeichnisses dir
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-tar -czf 
-\emph on
-dir
-\emph default
- > 
-\emph on
-dir.tar.gz
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Rekursives GNU-Zip des Verzeichnisses 
-\emph on
-dir
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-fuser /dev/sr0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige der 
+\begin_layout Description
+fuser\InsetSpace ~
+/dev/sr0 Anzeige der 
 \begin_inset Quotes eld
 \end_inset
 
@@ -663,92 +374,67 @@ Owner
 \begin_inset Quotes erd
 \end_inset
 
--PID's zu offenen Dateien, Geräten (/dev/\SpecialChar \ldots{}
-, /proc)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-lsof -i -n -P
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Anzeige aller offenen Dateien
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+-PID's zu offenen Dateien, GerÃ¤ten (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\noun off
-\color none
-mount -o loop -t iso9660 geda-install-20060124.iso /mnt/iso
+
+\backslash
+path'/dev'
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-ISO-Image mounten
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+, 
+\begin_inset ERT
+status open
 
 \begin_layout Standard
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\noun off
-\color none
-mount -t smbfs -o username=regina,password=xxx //ginare/C /home/ralf/mnt/iso
+
+\backslash
+path'/proc'
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+
+)
+\end_layout
+
+\begin_layout Description
+lsof\InsetSpace ~
+-i\InsetSpace ~
+-n\InsetSpace ~
+-P Anzeige aller offenen Dateien
+\end_layout
+
+\begin_layout Description
+mount\InsetSpace ~
+-o\InsetSpace ~
+loop\InsetSpace ~
+-t\InsetSpace ~
+iso9660\InsetSpace ~
+<image.iso>\InsetSpace ~
+/mnt/iso ISO-Image image in Dateisystem mounten
+\end_layout
+
+\begin_layout Description
+mount\InsetSpace ~
+-t\InsetSpace ~
+smbfs\InsetSpace ~
+-o\InsetSpace ~
+username=regina,password=xxx\InsetSpace ~
+//ginare/C\InsetSpace ~
+/home/ralf/mnt/iso Samba
+ Mount
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Samba Mount
+samba
 \end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
 
 \end_inset
 
@@ -759,240 +445,131 @@ Samba Mount
 Netzwerk
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+isdnctrl\InsetSpace ~
+hangup\InsetSpace ~
+ippp0 ISDN Leitung auflegen
+\end_layout
+
+\begin_layout Description
+sendmail\InsetSpace ~
+-q Weckt sendmail-DÃ¤mon zum Versenden von Mails
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Kommando
+postfix
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Description
+fetchmail\InsetSpace ~
+-v\InsetSpace ~
+-a Holt Mails vom POP-Account beim Provider ab (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-Funktion
+
+
+\backslash
+path'~/.fetchmailrc'
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+
+)
+\end_layout
+
+\begin_layout Description
+c2faxsend\InsetSpace ~
+-v\InsetSpace ~
+-f\InsetSpace ~
+TIFF\InsetSpace ~
+-d\InsetSpace ~
+"032211140851"\InsetSpace ~
+fax.tif Fax versenden Ã¼ber ISDN CAPI 2.0
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-sendmail -q
+capi4hylafax
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Description
+faxrm\InsetSpace ~
+-a\InsetSpace ~
+<id> Weist hylafax an Fax-Job mit Nummer 
+\family typewriter
+id
+\family default
+ abzubrechen
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Weckt sendmail-Dämon zum Versenden von Mails
+hylafax
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-fetchmail -v -a
+
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Holt Mails vom POP-Account beim Provider ab (~/.fetchmailrc)
+\begin_layout Description
+netstat\InsetSpace ~
+-n Zeigt Netzwerk-Verbindungen
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-c2faxsend -v -f TIFF -d "032211140851" fax.tif
+\begin_layout Description
+route\InsetSpace ~
+-n Zeigt Routing-Tabelle
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Fax versenden über ISDN CAPI 2.0
+\begin_layout Description
+nslookup DNS
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-faxrm <id>
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Weist hylafax an Fax-Job mit Nummer <id> abzubrechen
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-netstat -rn
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt Netzwerk-Verbindungen und Routing-Tabellen
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-netstat -l
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt alle laufenden Netzwrk-Services
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-route -n
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-zeigt Routing-Tabelle
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ifconfig -a
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt akt.
+\begin_layout Description
+ifconfig\InsetSpace ~
+-a Zeigt akt.
  Informationen zu Netzwerk-Devices
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+iptables\InsetSpace ~
+-L\InsetSpace ~
+-n\InsetSpace ~
+-v Anzeige der Firewall Filterregeln (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-iptables -L -n -v
+
+
+\backslash
+path'/var/log/firewall'
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-Anzeige der Firewall Filterregeln (/var/log/firewall)
+)
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+mozilla\InsetSpace ~
+-mail\InsetSpace ~
+-remote\InsetSpace ~
 
-\begin_layout Standard
-isdnctrl hangup ippp0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-ISDN Leitung auflegen
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-mozilla -mail -remote 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1000,162 +577,47 @@ mailto()
 \begin_inset Quotes eld
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+ Ã–ffnet Mozilla Mail-Fenster
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Öffnet Mail-Fenster
+mozilla
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-nslookup
+
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-DNS
-\end_layout
+\begin_layout Description
+ntop Zeigt Netzwerkstatistiken auf Terminal oder HTML (
+\begin_inset LatexCommand htmlurl
+target "http://localhost:3000"
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+
+)
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 ntop
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-Zeigt Netzwerkstatistiken auf Terminal oder HTML (http://localhost:3000)
+
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+curl File-Download grÃ¶ÃŸer 2GB via http
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-tkined
+curl
 \end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Netzwerk-Darstellung/Untersuchung (Scotty)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-saint
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Netzwerk Sicherheits-Scan
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-weblint
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Syntaxanalyse von Web-Seiten
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-w3m
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Textmodus WEB-Browser
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-curl <url>
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Download files (may be > 2GB) via http
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
 
 \end_inset
 
@@ -1166,284 +628,171 @@ Download files (may be > 2GB) via http
 Grafik, X11 & Gnome
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+xrdb X Resourcendatenbank (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-Kommando
+
+
+\backslash
+path'~/.Xresources'
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+, 
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-Funktion
+
+
+\backslash
+path'/usr/X11R6/lib/X11/app-defaults'
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+
+)
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 xrdb
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-X Resourcendatenbank (~/.Xresources, /usr/X11R6/lib/X11/app-defaults)
+
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+xvidtune Bildlage justieren
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 xvidtune
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Description
+xlsfonts\InsetSpace ~
+'*helvetica*' Passende Fonts anzeigen (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-Bildlage justieren
+
+
+\backslash
+path'/usr/X11R6/lib/X11/fonts'
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+
+)
+\end_layout
+
+\begin_layout Description
+xkeycaps Tastenzuordnungen anpassen (
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-xlsfonts '*helvetica*'
+
+
+\backslash
+path'~/.Xmodmap'
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-Alle passenden Fonts anzeigen (/usr/X11R6/lib/X11/fonts)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+)
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 xkeycaps
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-Tastenzuordnungen anpassen (~/.Xmodmap)
+
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-xfig
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Grafisches Zeichentool
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-tkfont
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-X11 Fonts inspizieren
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+xev X11-Events anzeigen
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 xev
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Description
+s3switch S3 Savage Ausgang umschalten (LCD, Monitor, TV)
+\begin_inset Foot
+status open
 
 \begin_layout Standard
-X11-Events anzeigen
+Laptop
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-xkeycaps
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Tastaturbelegung
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-xmodmap -pm -pke
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-X11 Key Mapping
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-xv
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-XView
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 s3switch
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Description
+gconftool\InsetSpace ~
+-R\InsetSpace ~
+/apps/nautilus-cd-burner Zeigt Konfiguration der Applikation
+ 
+\family typewriter
+
+\begin_inset ERT
+status open
 
 \begin_layout Standard
-S3 Savage Ausgang umschalten (LCD, Monitor, TV)
+
+
+\backslash
+path'nautilus-cd-burner'
 \end_layout
 
 \end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
 
-\family typewriter
-gconftool -R /apps/nautilus-cd-burner
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Zeigt Konfiguration der Applikation 
-\emph on
-nautilus-cd-burner
-\emph default
- (graphisch per 
-\family typewriter
-gconf-editor
 \family default
-)
-\end_layout
+ (graphisch per gconf-editor)
+\begin_inset Marginal
+status open
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Standard
+gconf2
+\end_layout
 
 \end_inset
 
@@ -1454,58 +803,32 @@ gconf-editor
 Multimedia
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features islongtable="true">
-<column alignment="block" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Kommando
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-cdda2wav -D /dev/cdrom -s -b 16 -r 44100 -t 13 -O wav -d 59177f track13.wav
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-CD-Audio (CDA)
+\begin_layout Description
+cdda2wav\InsetSpace ~
+-D\InsetSpace ~
+/dev/cdrom\InsetSpace ~
+-s\InsetSpace ~
+-b\InsetSpace ~
+16\InsetSpace ~
+-r\InsetSpace ~
+44100\InsetSpace ~
+-t\InsetSpace ~
+13\InsetSpace ~
+-O\InsetSpace ~
+wav\InsetSpace ~
+-d\InsetSpace ~
+59177f\InsetSpace ~
+track13.wav CD-Audio (CDA)
 \begin_inset Formula $\rightarrow$
 \end_inset
 
 WAV
-\end_layout
+\begin_inset Marginal
+status open
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Standard
+cdda2wav
+\end_layout
 
 \end_inset
 
@@ -1516,79 +839,29 @@ WAV
 Softwareentwicklung
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+nm\InsetSpace ~
+-C Listet Symbole in Objetdateien
+\end_layout
+
+\begin_layout Description
+makedepend Kreiert AbhÃ¤ngigkeiten fÃ¼r Makefiles
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Kommando
+xutils-dev
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-Funktion
+
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+pkg-config\InsetSpace ~
+--cflags\InsetSpace ~
 
-\begin_layout Standard
-makedepend
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Kreiert Abhängigkeiten für Makefiles
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-nm -C
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Listet Symbole in Objetdateien
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-pkg-config --cflags 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1596,16 +869,7 @@ gdk-2.0
 \begin_inset Quotes erd
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Recommended Package Compile Flags (siehe 
+ Empfohlene Compile-Flags (
 \begin_inset ERT
 status inlined
 
@@ -1619,94 +883,26 @@ path'/usr/lib/pkgconfig/*.pc'
 \end_inset
 
 )
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-cvs import repos vtag rtag
+pkg-config
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Standard
-importiert akt.
- Directory in Repository
+
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-cvs co dfcgen
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-checkt module dfcgen aus
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-cvs ci dfcgen
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-aktualisiert Repository mit akt.
- Verzeichnis
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+meld CVS Frontend und Diff-Tool
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
 meld
 \end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-CVS Frontend und Diff-Tool
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
 
 \end_inset
 
@@ -1717,78 +913,14 @@ CVS Frontend und Diff-Tool
 TeX, LaTeX
 \end_layout
 
-\begin_layout Standard
-\align left
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
-<features islongtable="true">
-<column alignment="left" valignment="top" leftline="true" width="5cm">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="10cm">
-<row topline="true" bottomline="true" endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
+\begin_layout Description
+texhash MuÃŸ nach Installation neuer Styles/Klassen ausgefÃ¼hrt werden
+\begin_inset Marginal
+status open
 
 \begin_layout Standard
-Kommando
+tetex
 \end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Funktion
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-bibview, tkbibtex
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Editoren für 
-\noun on
-BibTeX
-\noun default
--Datenbanken
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true" bottomline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-texhash
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Muß nach Installation neuer Styles/Klassen ausgeführt werden
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
 
 \end_inset
 
