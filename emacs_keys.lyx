@@ -272,13 +272,7 @@ F3 Speedbar ein/aus
 \end_layout
 
 \begin_layout Description
-S-F3 Speedbar \SpecialChar \menuseparator
- Analysis
-\end_layout
-
-\begin_layout Description
-C-S-F3 Speedbar \SpecialChar \menuseparator
- Files
+S-F3 Funktionsnamen anzeigen ein/aus
 \end_layout
 
 \begin_layout Description
@@ -798,7 +792,11 @@ F8 Suche in Dateien (grep)
 \end_layout
 
 \begin_layout Description
-S-F8 Suche rekursiv in Dateien (grep-find)
+S-F8 Suche in aktuellem Buffer
+\end_layout
+
+\begin_layout Description
+C-S-F8 Suche rekursiv in Dateien (grep-find)
 \end_layout
 
 \begin_layout Description
