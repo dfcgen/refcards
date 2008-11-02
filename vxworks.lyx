@@ -5,13 +5,39 @@
 \textclass scrartcl
 \begin_preamble
 \input{all-inc}
-
-\setlength{\marginparwidth}{24pt}
-\setlength{\marginparsep}{12pt}
-\normalmarginpar
-
 \docsubj{VxWorks}{VxWorks}{vxworks, workbench, interpreter, environment}
+
+\setlength{\skip\footins}{10mm}
+
+%% margin notes not supported by package multicol
+%% \setlength{\marginparwidth}{24pt}
+%% \setlength{\marginparsep}{12pt}
+%% \normalmarginpar
+
+%% change linebreak character set from path.sty
+%% originally: \discretionaries |~!@$%^&*()_+`-=#{}[]:";'<>,.?\/|
+\discretionaries '~!|@$%^&*()_+`-=#{"}[]:;<>,.?\/'
+
+\usepackage{multicol}
+
+%% redefinition of description environment (tricky)
+\let\oldenvdesc = \description
+\let\endoldenvdesc = \enddescription
+\renewenvironment{description}
+{%
+    \begin{oldenvdesc}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+}{\end{oldenvdesc}}
+
+\setkomafont{descriptionlabel}{\small\ttfamily\bfseries}
+\setlength{\parskip}{0pt}
+
+\date{} %% no date after title/author
 \end_preamble
+\options normalheadings
 \language english
 \inputencoding latin1
 \font_roman times
@@ -24,7 +50,7 @@
 \font_tt_scale 100
 \graphics default
 \paperfontsize 10
-\spacing other 0.7
+\spacing other 0.9
 \papersize a4paper
 \use_geometry true
 \use_amsmath 2
@@ -33,12 +59,20 @@
 \use_bibtopic false
 \paperorientation portrait
 \branch WITH_IXP4XX
-\selected 1
+\selected 0
 \color #faf0e6
 \end_branch
-\leftmargin 2.5cm
+\branch WITH_PRE65
+\selected 0
+\color #faf0e6
+\end_branch
+\branch WITH_HOST_TOOLS
+\selected 0
+\color #faf0e6
+\end_branch
+\leftmargin 2cm
 \topmargin 1cm
-\rightmargin 2cm
+\rightmargin 1.5cm
 \bottommargin 3cm
 \headheight 1cm
 \headsep 0.5cm
@@ -47,10 +81,11 @@
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
-\quotes_language german
-\papercolumns 2
+\quotes_language swedish
+\papercolumns 1
 \papersides 2
-\paperpagestyle plain
+\paperpagestyle empty
+\bullet 0 0 15 3
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -64,7 +99,7 @@
 status open
 
 \begin_layout Standard
-$Id: vxworks.lyx,v 1.3 2008-04-20 14:36:55 ralf Exp $
+$Id: vxworks.lyx,v 1.4 2008-11-02 17:24:31 ralf Exp $
 \end_layout
 
 \end_inset
@@ -73,10 +108,14 @@ $Id: vxworks.lyx,v 1.3 2008-04-20 14:36:55 ralf Exp $
 \end_layout
 
 \begin_layout Title
+
+\size large
 VxWorks
 \end_layout
 
 \begin_layout Author
+
+\size small
 Copyright 
 \begin_inset ERT
 status open
@@ -87,12 +126,34 @@ status open
 \backslash
 textcopyright
 \backslash
+  
+\backslash
+number
+\backslash
+year
+\backslash
  
 \end_layout
 
 \end_inset
 
  Ralf Hoppe
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -105,16 +166,35 @@ C
 
  Interpreter
 \begin_inset ERT
-status collapsed
+status inlined
 
 \begin_layout Standard
 
 
 \backslash
-texorpdfstring{
-\backslash
-footnote{Especially for target (kernel) shell.
- The host shell additionally offers GDB and TCL commands.}}{}
+headingspecial{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Especially for target (kernel) shell.
+ The host shell additionally offers GDB and TCL commands.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+}{}
 \end_layout
 
 \end_inset
@@ -128,6 +208,29 @@ Specials
 
 \begin_layout Description
 cmd Switch to command interpreter
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+setlength{
+\backslash
+itemsep}{0pt}
+\backslash
+setlength{
+\backslash
+topsep}{0pt}
+\backslash
+setlength{
+\backslash
+parsep}{0pt}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -311,7 +414,21 @@ bdall Delete all breakpoints
 \end_layout
 
 \begin_layout Description
-c Continue
+c\InsetSpace ~
+[
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+] Continue (task\InsetSpace ~
+
+\emph on
+name/id
+\emph default
+)
 \begin_inset Marginal
 status open
 
@@ -325,7 +442,21 @@ F8
 \end_layout
 
 \begin_layout Description
-s Step into
+s\InsetSpace ~
+[
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+] Step into (task\InsetSpace ~
+
+\emph on
+name/id
+\emph default
+)
 \begin_inset Marginal
 status open
 
@@ -339,7 +470,21 @@ F5
 \end_layout
 
 \begin_layout Description
-so Step over
+so\InsetSpace ~
+[
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+] Step over (task\InsetSpace ~
+
+\emph on
+name/id
+\emph default
+)
 \begin_inset Marginal
 status open
 
@@ -353,7 +498,21 @@ F6
 \end_layout
 
 \begin_layout Description
-cret Step out (until return)
+cret\InsetSpace ~
+[
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+] Step out (task\InsetSpace ~
+
+\emph on
+name/id
+\emph default
+)
 \begin_inset Marginal
 status open
 
@@ -436,7 +595,7 @@ args
 \end_layout
 
 \begin_layout Description
-sps Spawn a task (set then suspended)
+sps Spawn a task, set then suspended
 \end_layout
 
 \begin_layout Description
@@ -483,7 +642,16 @@ w Task's pending information
 \end_layout
 
 \begin_layout Description
-tw Object info task is pending on
+tw\InsetSpace ~
+
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+ Object info task is pending on
 \end_layout
 
 \begin_layout Description
@@ -495,7 +663,9 @@ checkStack Print task stack usage
 \end_layout
 
 \begin_layout Description
-spy Prozessorauslastung
+spy,\InsetSpace ~
+spyStop,\InsetSpace ~
+spyHelp Processor usage
 \end_layout
 
 \begin_layout Subsection
@@ -505,7 +675,7 @@ Resources
 \begin_layout Description
 vmContextShow Show memory config (MMU)
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Standard
 INCLUDE_VM_SHOW
@@ -610,25 +780,110 @@ envShow Show environment info
 \end_layout
 
 \begin_layout Subsection
+Real Time Processes (RTP)
+\end_layout
+
+\begin_layout Description
+rtpShow\InsetSpace ~
+[
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+,\InsetSpace ~
+
+\emph on
+level
+\emph default
+] Show RTP(s) info
+\end_layout
+
+\begin_layout Description
+rtpMemShow\InsetSpace ~
+
+\emph on
+name
+\emph default
+/
+\emph on
+id
+\emph default
+\InsetSpace ~
+[,\InsetSpace ~
+
+\emph on
+level
+\emph default
+] Show RTP memory info
+\end_layout
+
+\begin_layout Description
+rtpi\InsetSpace ~
+
+\emph on
+rtpId
+\emph default
+ Show all tasks in RTP 
+\emph on
+rtpId
+\end_layout
+
+\begin_layout Description
+rtpSp\InsetSpace ~
+
+\begin_inset Quotes sld
+\end_inset
+
+<path>/myVxApp.vxe\InsetSpace ~
+[
+\emph on
+args
+\emph default
+]
+\begin_inset Quotes srd
+\end_inset
+
+ Execute RTP with 
+\emph on
+args
+\end_layout
+
+\begin_layout Subsection
 I/O-System
 \begin_inset ERT
-status collapsed
+status inlined
 
 \begin_layout Standard
 
 
 \backslash
-texorpdfstring{
-\backslash
-footnote{For commands as cd, pwd, xcopy and friends see usrFsLib.
+headingspecial{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+For commands as cd, pwd, xcopy and friends see usrFsLib.
   For all available commands see the Host Shell Users Guide.
- Notice that INCLUDE
-\backslash
-_USE
-\backslash
-_NATIVE
-\backslash
-_SHELL is required for some commands.}}{}
+ Notice that INCLUDE_USE_NATIVE_SHELL is required for some commands.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+}{}
 \end_layout
 
 \end_inset
@@ -682,6 +937,10 @@ loggerInfoShow Show log info
 \end_layout
 
 \begin_layout Description
+ambaShow Shows AMBA bus devices
+\end_layout
+
+\begin_layout Description
 pciConfigTopoShow Show PCI bus topology
 \end_layout
 
@@ -698,6 +957,14 @@ Network
 \end_layout
 
 \begin_layout Description
+netHelp Show network helper functions
+\end_layout
+
+\begin_layout Description
+hostShow Show the remote host table
+\end_layout
+
+\begin_layout Description
 netPoolShow\InsetSpace ~
 
 \emph on
@@ -707,20 +974,20 @@ poolId
 \end_layout
 
 \begin_layout Description
-netStackSysPoolShow Show network stack system pool
+netStackSysPoolShow Show network system pool
 \end_layout
 
 \begin_layout Description
-netStackDataPoolShow Show network stack data pool
-\end_layout
-
-\begin_layout Description
-hostShow Show the host table
+netStackDataPoolShow Show network data pool
 \end_layout
 
 \begin_layout Description
 muxShow Show interfaces info
 \end_layout
+
+\begin_layout Standard
+\begin_inset Branch WITH_PRE65
+status collapsed
 
 \begin_layout Description
 ifShow\InsetSpace ~
@@ -740,11 +1007,15 @@ ifName
 \end_layout
 
 \begin_layout Description
-arpShow Show ARP table
+mbufShow Show mbuf statistics
 \end_layout
 
 \begin_layout Description
 mRouteShow Show all IP routes
+\end_layout
+
+\begin_layout Description
+arpShow Show ARP table
 \end_layout
 
 \begin_layout Description
@@ -771,6 +1042,11 @@ udpStatShow Show UDP statistics
 routestatShow Show routing statistics
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 BSP-Specific
 \end_layout
@@ -786,7 +1062,7 @@ unit
 
 \begin_layout Standard
 \begin_inset Branch WITH_IXP4XX
-status open
+status collapsed
 
 \begin_layout Subsubsection
 Intel XScale ixp425/465 BSP
@@ -824,7 +1100,7 @@ Command Interpreter
 \end_layout
 
 \begin_layout Description
-C Switch over to 
+C Switch to 
 \begin_inset Quotes gld
 \end_inset
 
@@ -901,7 +1177,32 @@ ipf Firewall
 ipd Interpeak daemon
 \end_layout
 
+\begin_layout Description
+rtp Real Time Process commands
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch WITH_HOST_TOOLS
+status collapsed
+
 \begin_layout Section
+Host
+\end_layout
+
+\begin_layout Description
+vxprj
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Platform
+\end_layout
+
+\begin_layout Subsection
 Environment
 \end_layout
 
@@ -910,26 +1211,7 @@ WIND_HOME Installation directory
 \end_layout
 
 \begin_layout Description
-WIND_BASE Base directory of VxWorks version, 
-\begin_inset ERT
-status inlined
-
-\begin_layout Standard
-
-
-\backslash
-eg
-\backslash
-path'C:
-\backslash
-WindRiver
-\backslash
-vxworks65'
-\end_layout
-
-\end_inset
-
-
+WIND_BASE Base directory of VxWorks
 \end_layout
 
 \begin_layout Description
@@ -939,9 +1221,11 @@ status inlined
 
 \begin_layout Standard
 
-
+e.
 \backslash
-eg
+,g.
+\backslash
+ 
 \backslash
 path'x86-win32'
 \end_layout
@@ -958,9 +1242,11 @@ status inlined
 
 \begin_layout Standard
 
-
+e.
 \backslash
-eg
+,g.
+\backslash
+ 
 \backslash
 path'vxworks-6.5'
 \end_layout
@@ -971,37 +1257,15 @@ path'vxworks-6.5'
 \end_layout
 
 \begin_layout Description
-WIND_COMPONENTS Components path, 
-\begin_inset ERT
-status inlined
-
-\begin_layout Standard
-
-
-\backslash
-eg
-\backslash
-path'C:
-\backslash
-WindRiver
-\backslash
-components'
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Platform
+WIND_COMPONENTS Components path
 \end_layout
 
 \begin_layout Description
-Configuration
-\end_layout
-
-\begin_layout Itemize
+VX_OS_LIBS OS libraries in 
+\family typewriter
+LD_LINK_PATH
+\family default
+ and 
 \begin_inset ERT
 status inlined
 
@@ -1009,39 +1273,7 @@ status inlined
 
 
 \backslash
-path'%WIND_BASE%
-\backslash
-config
-\backslash
-pne
-\backslash
-config.mk'
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status inlined
-
-\begin_layout Standard
-
-
-\backslash
-path'%WIND_BASE%
-\backslash
-target
-\backslash
-h
-\backslash
-tool
-\backslash
-gnu
-\backslash
-defs.arm'
+path'$(TGT_DIR)/lib/lib$(CPU)$(TOOL)vx.a'
 \end_layout
 
 \end_inset
@@ -1050,7 +1282,48 @@ defs.arm'
 \end_layout
 
 \begin_layout Description
-Compile
+LIBS Customer's libraries and 
+\family typewriter
+VX_OS_LIBS
+\end_layout
+
+\begin_layout Description
+LD_LINK_PATH 
+\family typewriter
+ld
+\family default
+ search path
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Includes the tool independant and dependant directories, as well as any
+ additional directory specified via LD_LINK_PATH_EXTRA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+end{multicols}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Build
 \end_layout
 
 \begin_layout Itemize
@@ -1061,7 +1334,22 @@ status inlined
 
 
 \backslash
-path'cd %WIND_BASE%'
+path'cd %WIND_BASE%; make CPU=XSCALE TOOL=[gnu|gnube|diab|sfdiab] FEATURE_SET=pn
+e [comp-kernel|comp-user] TARGET=rclean'
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+sf 
+\begin_inset Formula $\equiv$
+\end_inset
+
+ software floating point
 \end_layout
 
 \end_inset
@@ -1077,7 +1365,8 @@ status inlined
 
 
 \backslash
-path'make CPU=XSCALE TOOL=gnube FEATURE_SET=pne comp-kernel TARGET=rclean'
+path'make CPU=XSCALE TOOL=[gnu|gnube|diab|sfdiab] FEATURE_SET=pne [comp-kernel|c
+omp-usr] ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
 \end_layout
 
 \end_inset
@@ -1093,8 +1382,193 @@ status inlined
 
 
 \backslash
-path'make CPU=XSCALE TOOL=gnube FEATURE_SET=pne comp-kernel ADDED_CFLAGS+="-DIP_
-DEBUG"'
+path'cd %WIND_BASE%/target/src; make CPU=SPARC TOOL=[gnu|gnube|diab|sfdiab]
+ OPT=-fr'
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Rebuild of VxWorks source code without WindView instrumentation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Files
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring Components objects/libraries: 
+Kernel\InsetSpace ~
+mode\InsetSpace ~
+config:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+pad 
+\begin_inset Formula $\equiv$
+\end_inset
+
+ Platform for Automotive Device, pne
+\begin_inset Formula $\equiv$
+\end_inset
+
+ Platform Networking Equipment, pcd
+\begin_inset Formula $\equiv$
+\end_inset
+
+ Platform for Consumer Devices, pid
+\begin_inset Formula $\equiv$
+\end_inset
+
+ Platform for Industrial Devices
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/config/[pne|pad|pcd|pid]/config.mk'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+User\InsetSpace ~
+mode\InsetSpace ~
+config: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/config/[pne|pad|pcd|pid]/configRtp.mk'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Compile\InsetSpace ~
+flags: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/h/tool/$(TOOL)/defs.$(CPU)'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Components\InsetSpace ~
+objects/libraries: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_COMPONENTS)/obj'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Precompiled\InsetSpace ~
+objects:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Precompiled object files (without any source code) from third parties.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/precomp'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Environment\InsetSpace ~
+variables: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_HOME)/install.properties'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Workbench\InsetSpace ~
+config: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'workspace/.metadata/.plugins/org.eclipse.ui.workbench/workbench.xml'
 \end_layout
 
 \end_inset
