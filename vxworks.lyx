@@ -70,6 +70,10 @@
 \selected 0
 \color #faf0e6
 \end_branch
+\branch WITH_BUILD_VARS
+\selected 0
+\color #faf0e6
+\end_branch
 \leftmargin 2cm
 \topmargin 1cm
 \rightmargin 1.5cm
@@ -99,7 +103,7 @@
 status open
 
 \begin_layout Standard
-$Id: vxworks.lyx,v 1.4 2008-11-02 17:24:31 ralf Exp $
+$Id: vxworks.lyx,v 1.5 2008-11-06 16:56:05 ralf Exp $
 \end_layout
 
 \end_inset
@@ -936,22 +940,6 @@ logShow Show log info
 loggerInfoShow Show log info
 \end_layout
 
-\begin_layout Description
-ambaShow Shows AMBA bus devices
-\end_layout
-
-\begin_layout Description
-pciConfigTopoShow Show PCI bus topology
-\end_layout
-
-\begin_layout Description
-pciDeviceShow Show PCI devices
-\end_layout
-
-\begin_layout Description
-pciHeaderShow Show PCI device config
-\end_layout
-
 \begin_layout Subsection
 Network
 \end_layout
@@ -1049,6 +1037,22 @@ routestatShow Show routing statistics
 
 \begin_layout Subsection
 BSP-Specific
+\end_layout
+
+\begin_layout Description
+ambaShow Shows AMBA bus devices
+\end_layout
+
+\begin_layout Description
+pciConfigTopoShow Show PCI bus topology
+\end_layout
+
+\begin_layout Description
+pciDeviceShow Show PCI devices
+\end_layout
+
+\begin_layout Description
+pciHeaderShow Show PCI device config
 \end_layout
 
 \begin_layout Description
@@ -1261,6 +1265,94 @@ WIND_COMPONENTS Components path
 \end_layout
 
 \begin_layout Description
+TOOL Compiler, 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+e.
+\backslash
+,g.
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+diab
+\family default
+, 
+\family typewriter
+sfdiab
+\family default
+, 
+\family typewriter
+gnu
+\family default
+, 
+\family typewriter
+gnube
+\family default
+, \SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Description
+TOOL_FAMILY Compiler-Familie (
+\family typewriter
+diab
+\family default
+, 
+\family typewriter
+gnu
+\family default
+)
+\end_layout
+
+\begin_layout Description
+CPU Processor, 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+e.
+\backslash
+,g.
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+PPC604
+\family default
+, 
+\family typewriter
+XSCALE
+\family default
+, 
+\family typewriter
+ARM
+\family default
+, 
+\family typewriter
+SPARC
+\family default
+, \SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch WITH_BUILD_VARS
+status open
+
+\begin_layout Description
 VX_OS_LIBS OS libraries in 
 \family typewriter
 LD_LINK_PATH
@@ -1306,6 +1398,28 @@ Includes the tool independant and dependant directories, as well as any
 
 \end_layout
 
+\begin_layout Description
+TGT_DIR 
+\begin_inset ERT
+status open
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status inlined
@@ -1334,8 +1448,24 @@ status inlined
 
 
 \backslash
-path'cd %WIND_BASE%; make CPU=XSCALE TOOL=[gnu|gnube|diab|sfdiab] FEATURE_SET=pn
-e [comp-kernel|comp-user] TARGET=rclean'
+path'cd %WIND_BASE%'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'make CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|comp-usr)
+ TARGET=rclean'
 \end_layout
 
 \end_inset
@@ -1365,8 +1495,79 @@ status inlined
 
 
 \backslash
-path'make CPU=XSCALE TOOL=[gnu|gnube|diab|sfdiab] FEATURE_SET=pne [comp-kernel|c
-omp-usr] ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
+path'make CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|comp-usr)
+ ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+Generates object files in 
+\family typewriter
+$(WIND_BASE)/target/lib/$(CPU)/
+\family default
+\SpecialChar \ldots{}
+ subdirectories: 
+\family typewriter
+objbridge
+\family default
+, 
+\family typewriter
+objcci
+\family default
+, 
+\family typewriter
+objcurl
+\family default
+, 
+\family typewriter
+objdot1x
+\family default
+, 
+\family typewriter
+objepcommon
+\family default
+, 
+\family typewriter
+objepdes
+\family default
+, 
+\family typewriter
+objnetapps
+\family default
+, 
+\family typewriter
+objnetcommon
+\family default
+, 
+\family typewriter
+objnetwrap
+\family default
+, 
+\family typewriter
+objrpc
+\family default
+, 
+\family typewriter
+objseclibs
+\family default
+, 
+\family typewriter
+objsnmp
+\family default
+, 
+\family typewriter
+objssl
+\family default
+, 
+\family typewriter
+objvxsnmp
+\family default
+.
 \end_layout
 
 \end_inset
@@ -1382,18 +1583,33 @@ status inlined
 
 
 \backslash
-path'cd %WIND_BASE%/target/src; make CPU=SPARC TOOL=[gnu|gnube|diab|sfdiab]
- OPT=-fr'
+path'cd %WIND_BASE%/target/src; make CPU=SPARC TOOL=sfdiab OPT=-fr'
 \end_layout
 
 \end_inset
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Standard
-Rebuild of VxWorks source code without WindView instrumentation.
+You must (manually) remove object files and associated libraries in advance,
+ to force 
+\emph on
+make
+\emph default
+ rebuilding the binaries.
+ The special option -fr means: rebuild without 
+\emph on
+WindView
+\begin_inset LatexCommand index
+name "WindView"
+
+\end_inset
+
+
+\emph default
+ instrumentation.
 \end_layout
 
 \end_inset
@@ -1406,7 +1622,8 @@ Files
 \end_layout
 
 \begin_layout Labeling
-\labelwidthstring Components objects/libraries: 
+\labelwidthstring Architecture/Family Makefile: 
+\noindent
 Kernel\InsetSpace ~
 mode\InsetSpace ~
 config:
@@ -1443,7 +1660,7 @@ status inlined
 
 
 \backslash
-path'$(WIND_BASE)/config/[pne|pad|pcd|pid]/config.mk'
+path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/config.mk'
 \end_layout
 
 \end_inset
@@ -1463,7 +1680,7 @@ status inlined
 
 
 \backslash
-path'$(WIND_BASE)/config/[pne|pad|pcd|pid]/configRtp.mk'
+path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/configRtp.mk'
 \end_layout
 
 \end_inset
@@ -1473,7 +1690,8 @@ path'$(WIND_BASE)/config/[pne|pad|pcd|pid]/configRtp.mk'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Compile\InsetSpace ~
+Architecture\InsetSpace ~
+compile\InsetSpace ~
 flags: 
 \begin_inset ERT
 status inlined
@@ -1482,7 +1700,79 @@ status inlined
 
 
 \backslash
-path'$(WIND_BASE)/target/h/tool/$(TOOL)/defs.$(CPU)'
+path'$(WIND_BASE)/target/(h|usr)/tool/$(TOOL_FAMILY)/defs.$(CPU)'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Compiler\InsetSpace ~
+family\InsetSpace ~
+flags: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/(h|usr)/tool/$(TOOL_FAMILY)/defs.$(TOOL_FAMILY)'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Architecture/Family\InsetSpace ~
+Makefile: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/(h|usr)/tool/$(TOOL_FAMILY)/make.$(CPU)$(TOOL)'
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Standard
+Includes 
+\family typewriter
+defs.$(TOOL_FAMILY)
+\family default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Common\InsetSpace ~
+makefiles: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/h/make'
 \end_layout
 
 \end_inset
@@ -1502,6 +1792,38 @@ status inlined
 
 \backslash
 path'$(WIND_COMPONENTS)/obj'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+VxWorks\InsetSpace ~
+objects/libraries: 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/lib/$(CPU)'
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status inlined
+
+\begin_layout Standard
+
+
+\backslash
+path'$(WIND_BASE)/target/usr/lib/$(CPU)'
 \end_layout
 
 \end_inset
