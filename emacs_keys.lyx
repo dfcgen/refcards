@@ -464,8 +464,7 @@ Delete groups of spaces with a single Delete/Backspace.
 \begin_layout Description
 C-c\InsetSpace ~
 .\InsetSpace ~
-<style> Stil setzen (hoppe, cc-mode, gnu, k&r, bsd, linux, python, java,
- user, \SpecialChar \ldots{}
+<style> Stil setzen (hoppe, gnu, k&r, bsd, linux, \SpecialChar \ldots{}
 )
 \end_layout
 
@@ -750,6 +749,16 @@ M-q Multiline formatieren
 C-x\InsetSpace ~
 ; Anfangsspalte auf Cursorpos.
  setzen
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+(set-comment-column)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -792,11 +801,19 @@ F8 Suche in Dateien (grep)
 \end_layout
 
 \begin_layout Description
-S-F8 Suche in aktuellem Buffer
+S-F8 Suche in aktuellem Buffer (occur)
 \end_layout
 
 \begin_layout Description
 C-S-F8 Suche rekursiv in Dateien (grep-find)
+\end_layout
+
+\begin_layout Description
+F10 Nächste Fundstelle
+\end_layout
+
+\begin_layout Description
+S-F10 Vorherige Fundstelle
 \end_layout
 
 \begin_layout Description
@@ -958,11 +975,11 @@ CVS
 \end_layout
 
 \begin_layout Description
-Pause Ruft 
+Menü Ruft 
 \emph on
 Dired
 \emph default
-
+ auf
 \begin_inset Foot
 status collapsed
 
