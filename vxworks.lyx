@@ -77,6 +77,14 @@
 \selected 1
 \color #faf0e6
 \end_branch
+\branch WITH_BSP_SANDPOINT
+\selected 0
+\color #faf0e6
+\end_branch
+\branch WITH_BSP_IXP4XX
+\selected 0
+\color #faf0e6
+\end_branch
 \leftmargin 2cm
 \topmargin 1cm
 \rightmargin 1.5cm
@@ -106,7 +114,7 @@
 status open
 
 \begin_layout Standard
-$Id: vxworks.lyx,v 1.6 2008-11-17 17:17:39 ralf Exp $
+$Id: vxworks.lyx,v 1.7 2008-11-22 16:35:39 ralf Exp $
 \end_layout
 
 \end_inset
@@ -973,7 +981,16 @@ netStackDataPoolShow Show network data pool
 \end_layout
 
 \begin_layout Description
-muxShow Show interfaces info
+muxShow\InsetSpace ~
+[
+\emph on
+devName
+\emph default
+][
+\emph on
+,unit
+\emph default
+] Show interfaces info
 \end_layout
 
 \begin_layout Standard
@@ -983,17 +1000,9 @@ status collapsed
 \begin_layout Description
 ifShow\InsetSpace ~
 [
-\begin_inset Quotes eld
-\end_inset
-
-
 \emph on
 ifName
 \emph default
-
-\begin_inset Quotes erd
-\end_inset
-
 ] Show attached network interfaces
 \end_layout
 
@@ -1039,35 +1048,35 @@ routestatShow Show routing statistics
 \end_layout
 
 \begin_layout Subsection
-BSP-Specific
-\end_layout
-
-\begin_layout Description
-pciConfigTopoShow Show PCI bus topology
-\end_layout
-
-\begin_layout Description
-pciDeviceShow Show PCI devices
-\end_layout
-
-\begin_layout Description
-pciHeaderShow Show PCI device config
-\end_layout
-
-\begin_layout Description
-sys557Show\InsetSpace ~
-[
-\emph on
-unit
-\emph default
-] Show i82557 controller info
+BSP
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch WITH_IXP4XX
-status collapsed
+\begin_inset Branch WITH_BSP_GAISLER
+status open
 
 \begin_layout Subsubsection
+SPARC Leon (Gaisler)
+\end_layout
+
+\begin_layout Description
+ambaShow Shows AMBA bus devices
+\end_layout
+
+\begin_layout Description
+gpTimerShow Show General Purpose (GP) Timers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch WITH_BSP_IXP4XX
+status collapsed
+
+\begin_layout Standard
 Intel XScale ixp425/465 BSP
 \begin_inset Foot
 status collapsed
@@ -1099,19 +1108,32 @@ ixp425GPIOShow Show GPIO config
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch WITH_BSP_GAISLER
-status open
+\begin_inset Branch WITH_BSP_SANDPOINT
+status collapsed
 
 \begin_layout Subsubsection
-SPARC Leon (Gaisler)
+Sandpoint
 \end_layout
 
 \begin_layout Description
-ambaShow Shows AMBA bus devices
+pciConfigTopoShow Show PCI bus topology
 \end_layout
 
 \begin_layout Description
-gpTimerShow Show General Purpose (GP) Timers
+pciDeviceShow Show PCI devices
+\end_layout
+
+\begin_layout Description
+pciHeaderShow Show PCI device config
+\end_layout
+
+\begin_layout Description
+sys557Show\InsetSpace ~
+[
+\emph on
+unit
+\emph default
+] Show i82557 controller info
 \end_layout
 
 \end_inset
@@ -1468,8 +1490,8 @@ status inlined
 
 
 \backslash
-path'cd %WIND_BASE%; make CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|c
-omp-usr) TARGET=rclean'
+path'make -C %WIND_BASE% CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|co
+mp-usr) TARGET=rclean'
 \end_layout
 
 \end_inset
@@ -1499,8 +1521,8 @@ status inlined
 
 
 \backslash
-path'make CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|comp-usr)
- ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
+path'make -C %WIND_BASE% CPU=XSCALE TOOL=gnube [FEATURE_SET=pne] (comp-kernel|co
+mp-usr) ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
 \end_layout
 
 \end_inset
@@ -1587,15 +1609,14 @@ status inlined
 
 
 \backslash
-path'cd %WIND_BASE%/target/[usr/]src; make CPU=SPARC TOOL=sfdiab rclean;
- make CPU=SPARC TOOL=sfdiab OPT=-fr'
+path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab OPT=-fr'
 \end_layout
 
 \end_inset
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Standard
 usr 
