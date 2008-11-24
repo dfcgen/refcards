@@ -1,5 +1,5 @@
-#LyX 1.4.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass scrartcl
@@ -7,15 +7,26 @@
 \input{all-inc.tex}
 \docsubj{LyX/Gnome Key Bindings}{LyX/Gnome Key Bindings}{X11, Gnome, LyX}
 \end_preamble
+\use_default_options false
 \language german
 \inputencoding latin1
-\fontscheme times
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
 \graphics dvips
 \paperfontsize 10
 \spacing single
+\use_hyperref false
 \papersize a4paper
 \use_geometry false
 \use_amsmath 1
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -28,7 +39,8 @@
 \papersides 2
 \paperpagestyle default
 \tracking_changes false
-\output_changes true
+\output_changes false
+\author "" 
 \end_header
 
 \begin_body
@@ -37,8 +49,8 @@
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
-$Id: lyx_keys.lyx,v 1.2 2007-09-08 16:56:42 ralf Exp $
+\begin_layout Plain Layout
+$Id: lyx_keys.lyx,v 1.3 2008-11-24 18:20:02 ralf Exp $
 \end_layout
 
 \end_inset
@@ -51,7 +63,7 @@ $Id: lyx_keys.lyx,v 1.2 2007-09-08 16:56:42 ralf Exp $
 \emph on
 Key Bindings
 \emph default
- für X11/Gnome & LyX
+ fÃ¼r X11/Gnome & LyX
 \end_layout
 
 \begin_layout Author
@@ -59,7 +71,7 @@ Copyright
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -84,7 +96,7 @@ X11
 \end_layout
 
 \begin_layout Description
-Ctrl+Alt+F7 Zurück zu X11
+Ctrl+Alt+F7 ZurÃ¼ck zu X11
 \end_layout
 
 \begin_layout Description
@@ -112,11 +124,11 @@ Gnome
 \end_layout
 
 \begin_layout Description
-Alt+F1 Panel-Menü
+Alt+F1 Panel-MenÃ¼
 \end_layout
 
 \begin_layout Description
-Alt+F2 Befehl ausführen
+Alt+F2 Befehl ausfÃ¼hren
 \end_layout
 
 \begin_layout Description
@@ -124,7 +136,7 @@ Alt+F3
 \end_layout
 
 \begin_layout Description
-Alt+F4 Fenster schließen
+Alt+F4 Fenster schlieÃŸen
 \end_layout
 
 \begin_layout Description
@@ -132,7 +144,7 @@ Alt+F7 Fenster verschieben
 \end_layout
 
 \begin_layout Description
-Alt+F8 Fenstergröße ändern
+Alt+F8 FenstergrÃ¶ÃŸe Ã¤ndern
 \end_layout
 
 \begin_layout Description
@@ -140,7 +152,7 @@ Alt+F9 Fenster minimieren
 \end_layout
 
 \begin_layout Description
-Alt+Tab Nächstes Fenster
+Alt+Tab NÃ¤chstes Fenster
 \end_layout
 
 \begin_layout Description
@@ -152,7 +164,7 @@ Ctrl+Alt+Left Voriger Desktop
 \end_layout
 
 \begin_layout Description
-Ctrl+Alt+Right Nächster Desktop
+Ctrl+Alt+Right NÃ¤chster Desktop
 \end_layout
 
 \begin_layout Description
@@ -172,11 +184,11 @@ Alt-Print Fensterfoto
 \end_layout
 
 \begin_layout Description
-Alt+Space Fenstermenü
+Alt+Space FenstermenÃ¼
 \end_layout
 
 \begin_layout Description
-Alt+Home Home-Verzeichnis öffnen
+Alt+Home Home-Verzeichnis Ã¶ffnen
 \end_layout
 
 \begin_layout Section
@@ -184,7 +196,7 @@ LyX
 \begin_inset Foot
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Eine komplette Liste aller Shortcuts kann man aus 
 \emph on
 $LYXDIR/bind/cua.bind
@@ -203,7 +215,7 @@ Datei
 
 \begin_deeper
 \begin_layout Description
-Ctrl+o Öffnen
+Ctrl+o Ã–ffnen
 \end_layout
 
 \begin_layout Description
@@ -211,7 +223,7 @@ Ctrl+s Speichern
 \end_layout
 
 \begin_layout Description
-Ctrl+w Schließen
+Ctrl+w SchlieÃŸen
 \end_layout
 
 \begin_layout Description
@@ -231,7 +243,7 @@ Ctrl+q Beenden
 \end_layout
 
 \begin_layout Description
-Ctrl+PgDown Nächstes Dokument
+Ctrl+PgDown NÃ¤chstes Dokument
 \end_layout
 
 \begin_layout Description
@@ -253,7 +265,7 @@ Ctrl+x Ausschneiden
 \end_layout
 
 \begin_layout Description
-Ctrl+v Einfügen
+Ctrl+v EinfÃ¼gen
 \end_layout
 
 \begin_layout Description
@@ -265,7 +277,10 @@ Ctrl+f Suchen/Ersetzen
 \end_layout
 
 \begin_layout Description
-Ctrl+g Nächster LaTeX\InsetSpace ~
+Ctrl+g NÃ¤chster LaTeX
+\begin_inset space ~
+\end_inset
+
 Fehler
 \end_layout
 
@@ -288,17 +303,26 @@ Zeichenformate
 
 \begin_deeper
 \begin_layout Description
-Ctrl+e Hervorhebung (Alt+z\InsetSpace ~
+Ctrl+e Hervorhebung (Alt+z
+\begin_inset space ~
+\end_inset
+
 h)
 \end_layout
 
 \begin_layout Description
-Ctrl+b Fett (Alt+z\InsetSpace ~
+Ctrl+b Fett (Alt+z
+\begin_inset space ~
+\end_inset
+
 f)
 \end_layout
 
 \begin_layout Description
-Ctrl+u Unterstreichen (Alt+z\InsetSpace ~
+Ctrl+u Unterstreichen (Alt+z
+\begin_inset space ~
+\end_inset
+
 u)
 \end_layout
 
@@ -307,7 +331,7 @@ Ctrl+l TeX-Modus
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Die Ansicht des ERT (Evil Red Text) kann mit der rechten Maustaste modifiziert
  werden.
  
@@ -315,23 +339,38 @@ Die Ansicht des ERT (Evil Red Text) kann mit der rechten Maustaste modifiziert
 
 \end_inset
 
- (Alt+z\InsetSpace ~
+ (Alt+z
+\begin_inset space ~
+\end_inset
+
 t)
 \end_layout
 
 \begin_layout Description
-Alt+z\InsetSpace ~
-k Kapitälchen (Alt+z\InsetSpace ~
+Alt+z
+\begin_inset space ~
+\end_inset
+
+k KapitÃ¤lchen (Alt+z
+\begin_inset space ~
+\end_inset
+
 k)
 \end_layout
 
 \begin_layout Description
-Alt+z\InsetSpace ~
+Alt+z
+\begin_inset space ~
+\end_inset
+
 s Serifenfrei (Sans)
 \end_layout
 
 \begin_layout Description
-Alt+z\InsetSpace ~
+Alt+z
+\begin_inset space ~
+\end_inset
+
 c Typewriter (Code)
 \end_layout
 
@@ -346,7 +385,7 @@ Shift+Alt+
 \begin_inset Formula $\rightarrow$
 \end_inset
 
- ändern
+ Ã¤ndern
 \end_layout
 
 \begin_layout Description
@@ -368,17 +407,20 @@ Alt+.
 \end_layout
 
 \begin_layout Subsection*
-LyX\InsetSpace ~
+LyX
+\begin_inset space ~
+\end_inset
+
 Math-Mode
 \begin_inset Foot
 status open
 
-\begin_layout Standard
-Unvollständig, 
+\begin_layout Plain Layout
+UnvollstÃ¤ndig, 
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -387,11 +429,10 @@ cf
 
 \end_inset
 
+ Datei
+\begin_inset space ~
+\end_inset
 
-\emph on
- 
-\emph default
-Datei\InsetSpace ~
 
 \emph on
 $LYXDIR/bind/math.bind
@@ -405,13 +446,16 @@ $LYXDIR/bind/math.bind
 \end_layout
 
 \begin_layout Description
-Alt+m Math-Menü
+Alt+m Math-MenÃ¼
 \end_layout
 
 \begin_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-g\InsetSpace ~
+g
+\begin_inset space ~
+\end_inset
+
 \SpecialChar \ldots{}
  Griechische Buchstaben
 \end_layout
@@ -432,12 +476,12 @@ Shift+n Formelnummerierung aus
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 In 
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -446,7 +490,10 @@ LaTeX
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 durch 
 \backslash
 nonumber gekennzeichnet.
@@ -468,26 +515,38 @@ l Limits Plazierung
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-c\InsetSpace ~
-i Spalte einfügen
+c
+\begin_inset space ~
+\end_inset
+
+i Spalte einfÃ¼gen
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-c\InsetSpace ~
-d Spalte löschen
+c
+\begin_inset space ~
+\end_inset
+
+d Spalte lÃ¶schen
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-w\InsetSpace ~
-i Zeile einfügen
+w
+\begin_inset space ~
+\end_inset
+
+i Zeile einfÃ¼gen
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-w\InsetSpace ~
-d Zeile löschen
+w
+\begin_inset space ~
+\end_inset
+
+d Zeile lÃ¶schen
 \end_layout
 
 \begin_layout Labeling
@@ -529,7 +588,7 @@ n Non
 \end_deeper
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Shift+( Größenvariante Klammern
+Shift+( GrÃ¶ÃŸenvariante Klammern
 \end_layout
 
 \begin_layout Labeling
@@ -595,12 +654,12 @@ h Akzent Dach (hat)
 \end_deeper
 \end_deeper
 \begin_layout Description
-Ctrl+m kontextabhängig:
+Ctrl+m kontextabhÃ¤ngig:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Inline Math einfügen
+Inline Math einfÃ¼gen
 \end_layout
 
 \begin_layout Itemize
@@ -612,7 +671,7 @@ newcommand in Math-Makro umwandeln
 \begin_layout Itemize
 Text (
 \backslash
-text) in Formel einfügen (in Math-Mode)
+text) in Formel einfÃ¼gen (in Math-Mode)
 \end_layout
 
 \end_deeper
@@ -641,7 +700,7 @@ Ctrl+Enter Mehrzeilige Formel (eqnarray)
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -650,7 +709,7 @@ vspace{-1
 parskip}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -664,9 +723,15 @@ Hinweise
 \begin_inset Foot
 status open
 
-\begin_layout Standard
-Gemeine Fehler, für Tips siehe 
-\begin_inset LatexCommand \htmlurl{http://www.lyx.org}
+\begin_layout Plain Layout
+Gemeine Fehler, fÃ¼r Tips siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.lyx.org
+\end_layout
 
 \end_inset
 
@@ -679,7 +744,7 @@ Gemeine Fehler, für Tips siehe
 \end_layout
 
 \begin_layout Enumerate
-In Index-Einträgen müssen die speziellen Zeichen 
+In Index-EintrÃ¤gen mÃ¼ssen die speziellen Zeichen 
 \begin_inset Quotes eld
 \end_inset
 
@@ -705,9 +770,9 @@ $
 
  
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -726,7 +791,7 @@ etc
 \begin_inset Quotes erd
 \end_inset
 
- geschützt werden.
+ geschÃ¼tzt werden.
 \end_layout
 
 \end_body
