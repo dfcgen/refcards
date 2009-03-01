@@ -1,12 +1,10 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass scrartcl
 \begin_preamble
 \input{all-inc}
-\docsubj{VxWorks}{VxWorks}{vxworks, workbench, interpreter, environment}
-
 \setlength{\skip\footins}{10mm}
 
 %% margin notes not supported by package multicol
@@ -37,6 +35,7 @@
 \date{} %% no date after title/author
 \end_preamble
 \options normalheadings,parskip+
+\use_default_options false
 \language english
 \inputencoding latin1
 \font_roman times
@@ -47,9 +46,22 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize 10
 \spacing other 0.9
+\use_hyperref true
+\pdf_subject "VxWorks"
+\pdf_keywords "vxworks, workbench, interpreter, environment"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
 \use_amsmath 2
@@ -57,10 +69,6 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\branch WITH_IXP4XX
-\selected 0
-\color #faf0e6
-\end_branch
 \branch WITH_PRE65
 \selected 0
 \color #faf0e6
@@ -113,8 +121,8 @@
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
-$Id: vxworks.lyx,v 1.7 2008-11-22 16:35:39 ralf Exp $
+\begin_layout Plain Layout
+$Id: vxworks.lyx,v 1.8 2009-03-01 08:16:46 ralf Exp $
 \end_layout
 
 \end_inset
@@ -135,13 +143,13 @@ Copyright
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 textcopyright
 \backslash
-  
+ 2007 -- 
 \backslash
 number
 \backslash
@@ -157,9 +165,9 @@ year
 
 \begin_layout Standard
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -181,9 +189,9 @@ C
 
  Interpreter
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -194,9 +202,9 @@ headingspecial{
 
 
 \begin_inset Foot
-status collapsed
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Especially for target (kernel) shell.
  The host shell additionally offers GDB and TCL commands.
 \end_layout
@@ -205,9 +213,9 @@ Especially for target (kernel) shell.
 
 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 }{}
 \end_layout
@@ -226,7 +234,7 @@ cmd Switch to command interpreter
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -271,7 +279,10 @@ TAB Symbol expansion
 \emph on
 cmd
 \emph default
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 Ctrl+W HTML-help for 
 \emph on
 cmd
@@ -292,7 +303,7 @@ cmd
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -325,12 +336,19 @@ help Print synopsis of selected command
 \end_layout
 
 \begin_layout Description
-printErrno\InsetSpace ~
+printErrno
+\begin_inset space ~
+\end_inset
+
 # Explain error number #
 \end_layout
 
 \begin_layout Description
 ?shConfig Show/Set shell config
+\end_layout
+
+\begin_layout Description
+bootParamsShow Show boot parameters
 \end_layout
 
 \begin_layout Description
@@ -342,7 +360,7 @@ reboot Reboot target system
 \begin_inset Marginal
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Ctrl+X
 \end_layout
 
@@ -360,7 +378,10 @@ browse Browse an address
 \end_layout
 
 \begin_layout Description
-d\InsetSpace ~
+d
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -377,7 +398,10 @@ adr
 \end_layout
 
 \begin_layout Description
-m\InsetSpace ~
+m
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -394,7 +418,10 @@ adr
 \end_layout
 
 \begin_layout Description
-l\InsetSpace ~
+l
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -407,7 +434,10 @@ mRegs Modify registers
 \end_layout
 
 \begin_layout Description
-b\InsetSpace ~
+b
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -416,7 +446,10 @@ adr
 \end_layout
 
 \begin_layout Description
-bd\InsetSpace ~
+bd
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -429,7 +462,10 @@ bdall Delete all breakpoints
 \end_layout
 
 \begin_layout Description
-c\InsetSpace ~
+c
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 name
@@ -438,7 +474,10 @@ name
 \emph on
 id
 \emph default
-] Continue (task\InsetSpace ~
+] Continue (task
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name/id
@@ -447,7 +486,7 @@ name/id
 \begin_inset Marginal
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 F8
 \end_layout
 
@@ -457,7 +496,10 @@ F8
 \end_layout
 
 \begin_layout Description
-s\InsetSpace ~
+s
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 name
@@ -466,7 +508,10 @@ name
 \emph on
 id
 \emph default
-] Step into (task\InsetSpace ~
+] Step into (task
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name/id
@@ -475,7 +520,7 @@ name/id
 \begin_inset Marginal
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 F5
 \end_layout
 
@@ -485,7 +530,10 @@ F5
 \end_layout
 
 \begin_layout Description
-so\InsetSpace ~
+so
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 name
@@ -494,7 +542,10 @@ name
 \emph on
 id
 \emph default
-] Step over (task\InsetSpace ~
+] Step over (task
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name/id
@@ -503,7 +554,7 @@ name/id
 \begin_inset Marginal
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 F6
 \end_layout
 
@@ -513,7 +564,10 @@ F6
 \end_layout
 
 \begin_layout Description
-cret\InsetSpace ~
+cret
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 name
@@ -522,7 +576,10 @@ name
 \emph on
 id
 \emph default
-] Step out (task\InsetSpace ~
+] Step out (task
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name/id
@@ -531,7 +588,7 @@ name/id
 \begin_inset Marginal
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 F7
 \end_layout
 
@@ -545,7 +602,10 @@ Modules & Symbols
 \end_layout
 
 \begin_layout Description
-ld\InsetSpace ~
+ld
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 mod
@@ -554,7 +614,10 @@ mod
 \end_layout
 
 \begin_layout Description
-unld\InsetSpace ~
+unld
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 mod
@@ -567,7 +630,10 @@ moduleShow Show status of modules
 \end_layout
 
 \begin_layout Description
-lkup\InsetSpace ~
+lkup
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 sym
@@ -578,7 +644,10 @@ sym
 \end_layout
 
 \begin_layout Description
-lkAddr\InsetSpace ~
+lkAddr
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -597,7 +666,10 @@ i Print task info from TCB
 \end_layout
 
 \begin_layout Description
-sp\InsetSpace ~
+sp
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 adr
@@ -614,7 +686,10 @@ sps Spawn a task, set then suspended
 \end_layout
 
 \begin_layout Description
-ts\InsetSpace ~
+ts
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name
@@ -627,7 +702,10 @@ id
 \end_layout
 
 \begin_layout Description
-td\InsetSpace ~
+td
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name
@@ -640,7 +718,10 @@ id
 \end_layout
 
 \begin_layout Description
-tr\InsetSpace ~
+tr
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name
@@ -657,7 +738,10 @@ w Task's pending information
 \end_layout
 
 \begin_layout Description
-tw\InsetSpace ~
+tw
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name
@@ -678,8 +762,14 @@ checkStack Print task stack usage
 \end_layout
 
 \begin_layout Description
-spy,\InsetSpace ~
-spyStop,\InsetSpace ~
+spy,
+\begin_inset space ~
+\end_inset
+
+spyStop,
+\begin_inset space ~
+\end_inset
+
 spyHelp Processor usage
 \end_layout
 
@@ -688,11 +778,31 @@ Resources
 \end_layout
 
 \begin_layout Description
+syscallShow
+\begin_inset space ~
+\end_inset
+
+[
+\emph on
+grp
+\emph default
+,
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+level
+\emph default
+] Shows all available system calls
+\end_layout
+
+\begin_layout Description
 vmContextShow Show memory config (MMU)
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 INCLUDE_VM_SHOW
 \end_layout
 
@@ -706,7 +816,10 @@ memShow Show system memory partition
 \end_layout
 
 \begin_layout Description
-memPartShow\InsetSpace ~
+memPartShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 partid
@@ -729,7 +842,10 @@ persistent
 \end_layout
 
 \begin_layout Description
-msgQShow\InsetSpace ~
+msgQShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 msgQId
@@ -742,7 +858,10 @@ msgId
 \end_layout
 
 \begin_layout Description
-semShow\InsetSpace ~
+semShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 semId
@@ -753,7 +872,10 @@ semId
 \end_layout
 
 \begin_layout Description
-wdShow\InsetSpace ~
+wdShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 wdId
@@ -764,7 +886,10 @@ wdId
 \end_layout
 
 \begin_layout Description
-classShow\InsetSpace ~
+classShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 class
@@ -777,7 +902,7 @@ class
 \begin_inset Foot
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \family sans
 lkup "ClassId"
@@ -799,7 +924,10 @@ Real Time Processes (RTP)
 \end_layout
 
 \begin_layout Description
-rtpShow\InsetSpace ~
+rtpShow
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 name
@@ -808,7 +936,10 @@ name
 \emph on
 id
 \emph default
-,\InsetSpace ~
+,
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 level
@@ -817,7 +948,10 @@ level
 \end_layout
 
 \begin_layout Description
-rtpMemShow\InsetSpace ~
+rtpMemShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 name
@@ -826,8 +960,14 @@ name
 \emph on
 id
 \emph default
-\InsetSpace ~
-[,\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
+[,
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 level
@@ -836,7 +976,10 @@ level
 \end_layout
 
 \begin_layout Description
-rtpi\InsetSpace ~
+rtpi
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 rtpId
@@ -847,12 +990,18 @@ rtpId
 \end_layout
 
 \begin_layout Description
-rtpSp\InsetSpace ~
+rtpSp
+\begin_inset space ~
+\end_inset
+
 
 \begin_inset Quotes sld
 \end_inset
 
-<path>/myVxApp.vxe\InsetSpace ~
+<path>/myVxApp.vxe
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 args
@@ -869,9 +1018,9 @@ args
 \begin_layout Subsection
 I/O-System
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -884,19 +1033,18 @@ headingspecial{
 \begin_inset Foot
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 For commands as cd, pwd, xcopy and friends see usrFsLib.
   For all available commands see the Host Shell Users Guide.
- Notice that INCLUDE_USE_NATIVE_SHELL is required for some commands.
 \end_layout
 
 \end_inset
 
 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 }{}
 \end_layout
@@ -923,7 +1071,7 @@ tffsShowAll Show TFFS socket information
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 INCLUDE_TFFS_SHOW
 \end_layout
 
@@ -933,7 +1081,10 @@ INCLUDE_TFFS_SHOW
 \end_layout
 
 \begin_layout Description
-dosFsShow\InsetSpace ~
+dosFsShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 dev
@@ -964,7 +1115,10 @@ hostShow Show the remote host table
 \end_layout
 
 \begin_layout Description
-netPoolShow\InsetSpace ~
+netPoolShow
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 poolId
@@ -981,7 +1135,10 @@ netStackDataPoolShow Show network data pool
 \end_layout
 
 \begin_layout Description
-muxShow\InsetSpace ~
+muxShow
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 devName
@@ -998,7 +1155,10 @@ devName
 status collapsed
 
 \begin_layout Description
-ifShow\InsetSpace ~
+ifShow
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 ifName
@@ -1056,7 +1216,25 @@ BSP
 status open
 
 \begin_layout Subsubsection
-SPARC Leon (Gaisler)
+SPARC-V8 Leon
+\begin_inset space ~
+\end_inset
+
+3 (Gaisler Research)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Based on Gaisler Research release 1.1.0 (for VxWorks
+\begin_inset space ~
+\end_inset
+
+6.5).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1064,7 +1242,11 @@ ambaShow Shows AMBA bus devices
 \end_layout
 
 \begin_layout Description
-gpTimerShow Show General Purpose (GP) Timers
+apbuartShow Shows APB bus UARTs
+\end_layout
+
+\begin_layout Description
+gptimerShow Show General Purpose (GP) Timers
 \end_layout
 
 \end_inset
@@ -1081,7 +1263,7 @@ Intel XScale ixp425/465 BSP
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Based on Intel's ixp400 library.
 \end_layout
 
@@ -1128,7 +1310,10 @@ pciHeaderShow Show PCI device config
 \end_layout
 
 \begin_layout Description
-sys557Show\InsetSpace ~
+sys557Show
+\begin_inset space ~
+\end_inset
+
 [
 \emph on
 unit
@@ -1170,7 +1355,7 @@ syslog System event log
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 For 
 \emph on
 severities
@@ -1263,9 +1448,9 @@ WIND_BASE Base directory of VxWorks
 \begin_layout Description
 WIND_HOST_TYPE Host type, 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 e.
 \backslash
@@ -1284,9 +1469,9 @@ path'x86-win32'
 \begin_layout Description
 WIND_PLATFORM Platform, 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 e.
 \backslash
@@ -1309,9 +1494,9 @@ WIND_COMPONENTS Components path
 \begin_layout Description
 TOOL Compiler, 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 e.
 \backslash
@@ -1357,9 +1542,9 @@ gnu
 \begin_layout Description
 CPU Processor, 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 e.
 \backslash
@@ -1372,11 +1557,11 @@ e.
 
  
 \family typewriter
-PPC604
+PPC603
 \family default
 , 
 \family typewriter
-XSCALE
+PPC32, XSCALE
 \family default
 , 
 \family typewriter
@@ -1392,7 +1577,7 @@ SPARC
 
 \begin_layout Standard
 \begin_inset Branch WITH_BUILD_VARS
-status collapsed
+status open
 
 \begin_layout Description
 VX_OS_LIBS OS libraries in 
@@ -1401,9 +1586,9 @@ LD_LINK_PATH
 \family default
  and 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1430,7 +1615,7 @@ ld
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Includes the tool independant and dependant directories, as well as any
  additional directory specified via LD_LINK_PATH_EXTRA.
 \end_layout
@@ -1445,7 +1630,7 @@ TGT_DIR
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1457,6 +1642,14 @@ path'$(WIND_BASE)/target'
 
 \end_layout
 
+\begin_layout Description
+_WRS_KERNEL Kernel build
+\end_layout
+
+\begin_layout Description
+__RTP__ RTP build
+\end_layout
+
 \end_inset
 
 
@@ -1464,9 +1657,9 @@ path'$(WIND_BASE)/target'
 
 \begin_layout Standard
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1482,11 +1675,11 @@ end{multicols}
 Build
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1500,7 +1693,7 @@ mp-usr) TARGET=rclean'
 \begin_inset Foot
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 sf 
 \begin_inset Formula $\equiv$
 \end_inset
@@ -1513,11 +1706,11 @@ sf
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1528,97 +1721,44 @@ mp-usr) ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
 \end_inset
 
 
-\begin_inset Foot
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
 status open
 
-\begin_layout Standard
-Generates object files in 
-\family typewriter
-$(WIND_BASE)/target/lib/$(CPU)/
-\family default
-\SpecialChar \ldots{}
- subdirectories: 
-\family typewriter
-objbridge
-\family default
-, 
-\family typewriter
-objcci
-\family default
-, 
-\family typewriter
-objcurl
-\family default
-, 
-\family typewriter
-objdot1x
-\family default
-, 
-\family typewriter
-objepcommon
-\family default
-, 
-\family typewriter
-objepdes
-\family default
-, 
-\family typewriter
-objnetapps
-\family default
-, 
-\family typewriter
-objnetcommon
-\family default
-, 
-\family typewriter
-objnetwrap
-\family default
-, 
-\family typewriter
-objrpc
-\family default
-, 
-\family typewriter
-objseclibs
-\family default
-, 
-\family typewriter
-objsnmp
-\family default
-, 
-\family typewriter
-objssl
-\family default
-, 
-\family typewriter
-objvxsnmp
-\family default
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status inlined
-
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
-path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab OPT=-fr'
+path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab [ADDED_CFLAGS+=...]
+ rclean'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab OPT=-fr
+ [ADDED_CFLAGS+=...] '
 \end_layout
 
 \end_inset
 
 
 \begin_inset Foot
-status collapsed
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 usr 
 \begin_inset Formula $\equiv$
 \end_inset
@@ -1630,8 +1770,12 @@ usr
 without 
 \emph on
 WindView
-\begin_inset LatexCommand index
-name "WindView"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+WindView
+\end_layout
 
 \end_inset
 
@@ -1652,13 +1796,19 @@ Files
 \begin_layout Labeling
 \labelwidthstring Architecture/Family Makefile: 
 \noindent
-Kernel\InsetSpace ~
-mode\InsetSpace ~
+Kernel
+\begin_inset space ~
+\end_inset
+
+mode
+\begin_inset space ~
+\end_inset
+
 config:
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 pad 
 \begin_inset Formula $\equiv$
 \end_inset
@@ -1682,9 +1832,9 @@ pad
 
  
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1698,13 +1848,19 @@ path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/config.mk'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-User\InsetSpace ~
-mode\InsetSpace ~
+User
+\begin_inset space ~
+\end_inset
+
+mode
+\begin_inset space ~
+\end_inset
+
 config: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1718,13 +1874,19 @@ path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/configRtp.mk'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Architecture\InsetSpace ~
-compile\InsetSpace ~
+Architecture
+\begin_inset space ~
+\end_inset
+
+compile
+\begin_inset space ~
+\end_inset
+
 flags: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1738,13 +1900,19 @@ path'$(WIND_BASE)/target/[usr/]h/tool/$(TOOL_FAMILY)/defs.$(CPU)'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Compiler\InsetSpace ~
-family\InsetSpace ~
+Compiler
+\begin_inset space ~
+\end_inset
+
+family
+\begin_inset space ~
+\end_inset
+
 flags: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1758,12 +1926,15 @@ path'$(WIND_BASE)/target/[usr/]h/tool/$(TOOL_FAMILY)/defs.$(TOOL_FAMILY)'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Architecture/Family\InsetSpace ~
+Architecture/Family
+\begin_inset space ~
+\end_inset
+
 Makefile: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1774,9 +1945,9 @@ path'$(WIND_BASE)/target/[usr/]h/tool/$(TOOL_FAMILY)/make.$(CPU)$(TOOL)'
 
 
 \begin_inset Foot
-status open
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Includes 
 \family typewriter
 file defs.$(TOOL_FAMILY)
@@ -1791,12 +1962,15 @@ file defs.$(TOOL_FAMILY)
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Common\InsetSpace ~
+Common
+\begin_inset space ~
+\end_inset
+
 makefiles: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1810,12 +1984,56 @@ path'$(WIND_BASE)/target/[usr/]h/make'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Components\InsetSpace ~
+statTbl
+\begin_inset space ~
+\end_inset
+
+makefile: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+path'$(WIND_BASE)/target/src/usr/Makefile'
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+perror
+\family default
+, 
+\family typewriter
+printErrno
+\family default
+ database makefile (see VxWorks Kernel API Reference Vol.
+ 1, errnoLib)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Components
+\begin_inset space ~
+\end_inset
+
 objects/libraries: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1829,12 +2047,15 @@ path'$(WIND_COMPONENTS)/obj'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-VxWorks\InsetSpace ~
+VxWorks
+\begin_inset space ~
+\end_inset
+
 objects/libraries: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1845,9 +2066,9 @@ path'$(WIND_BASE)/target/lib/$(CPU)'
 
 , 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1861,12 +2082,15 @@ path'$(WIND_BASE)/target/usr/lib/$(CPU)'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Precompiled\InsetSpace ~
+Precompiled
+\begin_inset space ~
+\end_inset
+
 objects:
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Precompiled object files (without any source code) from third parties.
 \end_layout
 
@@ -1876,7 +2100,7 @@ Precompiled object files (without any source code) from third parties.
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1890,12 +2114,15 @@ path'$(WIND_BASE)/target/precomp'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Environment\InsetSpace ~
+Environment
+\begin_inset space ~
+\end_inset
+
 variables: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1909,12 +2136,15 @@ path'$(WIND_HOME)/install.properties'
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Workbench\InsetSpace ~
+Workbench
+\begin_inset space ~
+\end_inset
+
 config: 
 \begin_inset ERT
-status inlined
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
