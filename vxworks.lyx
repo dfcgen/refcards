@@ -1,10 +1,11 @@
-#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
 \textclass scrartcl
 \begin_preamble
 \input{all-inc}
+\usepackage{path} %% obsolete
 \setlength{\skip\footins}{10mm}
 
 %% margin notes not supported by package multicol
@@ -33,8 +34,25 @@
 \setkomafont{descriptionlabel}{\small\ttfamily\bfseries}
 
 \date{} %% no date after title/author
+
+\def\maketitle{%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 0.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 0.5em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em
+}
 \end_preamble
-\options normalheadings,parskip+
+\options normalheadings,parskip+,9pt
 \use_default_options false
 \language english
 \inputencoding latin1
@@ -48,7 +66,7 @@
 \font_tt_scale 100
 
 \graphics default
-\paperfontsize 10
+\paperfontsize default
 \spacing other 0.9
 \use_hyperref true
 \pdf_subject "VxWorks"
@@ -69,8 +87,8 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\branch WITH_PRE65
-\selected 0
+\branch WITH_VXCOMPAT
+\selected 1
 \color #faf0e6
 \end_branch
 \branch WITH_HOST_TOOLS
@@ -94,12 +112,12 @@
 \color #faf0e6
 \end_branch
 \leftmargin 2cm
-\topmargin 1cm
+\topmargin 1.5cm
 \rightmargin 1.5cm
-\bottommargin 3cm
-\headheight 1cm
-\headsep 0.5cm
-\footskip 1cm
+\bottommargin 1cm
+\headheight 0cm
+\headsep 0.6cm
+\footskip 0.6cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -122,7 +140,7 @@
 status open
 
 \begin_layout Plain Layout
-$Id: vxworks.lyx,v 1.8 2009-03-01 08:16:46 ralf Exp $
+$Id: vxworks.lyx,v 1.9 2010-09-17 20:18:58 ralf Exp $
 \end_layout
 
 \end_inset
@@ -202,7 +220,7 @@ headingspecial{
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Especially for target (kernel) shell.
@@ -295,11 +313,11 @@ cmd
 \emph on
 cmd
 \emph default
- Execute target routine 
-\emph on
+ Execute 
+\family typewriter
 cmd
-\emph default
-, 
+\family default
+ in host shell, 
 \begin_inset ERT
 status open
 
@@ -312,9 +330,9 @@ eg
 
 \end_inset
 
- 
-\emph on
-@cd 
+
+\family typewriter
+ @cd 
 \begin_inset Quotes eld
 \end_inset
 
@@ -323,8 +341,6 @@ eg
 \end_inset
 
 
-\emph default
- (host shell)
 \end_layout
 
 \begin_layout Subsection
@@ -679,6 +695,26 @@ adr
 args
 \emph default
 ] Spawn a task
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Default settings can be controlled via variables 
+\family typewriter
+spTaskPriority
+\family default
+, 
+\family typewriter
+spTaskStackSize
+\family default
+, 
+\family typewriter
+spTaskOptions.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -775,26 +811,6 @@ spyHelp Processor usage
 
 \begin_layout Subsection
 Resources
-\end_layout
-
-\begin_layout Description
-syscallShow
-\begin_inset space ~
-\end_inset
-
-[
-\emph on
-grp
-\emph default
-,
-\begin_inset space ~
-\end_inset
-
-
-\emph on
-level
-\emph default
-] Shows all available system calls
 \end_layout
 
 \begin_layout Description
@@ -900,7 +916,7 @@ class
 \emph default
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -919,8 +935,36 @@ lkup "ClassId"
 envShow Show environment info
 \end_layout
 
+\begin_layout Description
+edrHelp Shows all available ED&R commands
+\end_layout
+
+\begin_layout Description
+edrShow Show ED&R error log
+\end_layout
+
 \begin_layout Subsection
 Real Time Processes (RTP)
+\end_layout
+
+\begin_layout Description
+syscallShow
+\begin_inset space ~
+\end_inset
+
+[
+\emph on
+grp
+\emph default
+,
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+level
+\emph default
+] Shows all system calls
 \end_layout
 
 \begin_layout Description
@@ -945,6 +989,20 @@ id
 level
 \emph default
 ] Show RTP(s) info
+\end_layout
+
+\begin_layout Description
+shlShow/rtpShlShow Show shared libraries info
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+INCLUDE_SHL, INCLUDE_SHL_SHOW
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -973,6 +1031,102 @@ id
 level
 \emph default
 ] Show RTP memory info
+\end_layout
+
+\begin_layout Description
+objHandleTblShow
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+rtpId
+\emph default
+ Show all objects in handle table
+\end_layout
+
+\begin_layout Description
+objShow
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+objId
+\emph default
+ Show information on an object
+\end_layout
+
+\begin_layout Description
+iosRtpFdShow Show the RTP file descriptor table
+\end_layout
+
+\begin_layout Description
+rtpLkup
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+sym,
+\begin_inset space ~
+\end_inset
+
+id
+\emph default
+ List address of RTP 
+\emph on
+id
+\emph default
+ symbol 
+\emph on
+sym
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If sym is 
+\begin_inset Formula $0$
+\end_inset
+
+ prints a short summary of symbol table, if it is 
+\begin_inset Quotes sld
+\end_inset
+
+
+\begin_inset Quotes srd
+\end_inset
+
+ lists all RTP symbols.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+rtpLkAddr
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+adr
+\emph default
+,
+\begin_inset space ~
+\end_inset
+
+id List RTP 
+\emph on
+id
+\emph default
+ symbols near 
+\emph on
+adr
 \end_layout
 
 \begin_layout Description
@@ -1010,9 +1164,7 @@ args
 \begin_inset Quotes srd
 \end_inset
 
- Execute RTP with 
-\emph on
-args
+ Execute RTP
 \end_layout
 
 \begin_layout Subsection
@@ -1034,7 +1186,7 @@ headingspecial{
 status open
 
 \begin_layout Plain Layout
-For commands as cd, pwd, xcopy and friends see usrFsLib.
+For commands as cd, pwd, rm, (x)copy and friends see usrFsLib.
   For all available commands see the Host Shell Users Guide.
 \end_layout
 
@@ -1064,6 +1216,56 @@ iosDrvShow Show all system drivers
 
 \begin_layout Description
 iosFdShow Show all file descriptor names
+\end_layout
+
+\begin_layout Description
+logFdSet
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+fd
+\emph default
+ Changes file descriptor of 
+\emph on
+logMsg
+\emph default
+ to 
+\emph on
+fd
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Typically used as 
+\begin_inset Quotes sld
+\end_inset
+
+
+\family typewriter
+logFdSet
+\begin_inset space ~
+\end_inset
+
+3
+\family default
+
+\begin_inset Quotes srd
+\end_inset
+
+, which assigns the file descriptor of 
+\family typewriter
+/tyCo/0
+\family default
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1111,7 +1313,25 @@ netHelp Show network helper functions
 \end_layout
 
 \begin_layout Description
+nfsHelp Show NFS helper functions
+\end_layout
+
+\begin_layout Description
 hostShow Show the remote host table
+\end_layout
+
+\begin_layout Description
+unstatShow Show AF_LOCAL/COMP sockets
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+INCLUDE_UN_COMP, INCLUDE_UN_SHOW, INCLUDE_UN_COMP_SHOW
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1128,6 +1348,32 @@ poolId
 
 \begin_layout Description
 netStackSysPoolShow Show network system pool
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+netStackSysPoolShow
+\family default
+ and 
+\family typewriter
+netStackDataPoolShow
+\family default
+ typically expand to 
+\family typewriter
+netPoolShow(_pNetSysPool)
+\family default
+ and 
+\family typewriter
+netPoolShow(_pNetDpool)
+\family default
+.
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Description
@@ -1151,8 +1397,8 @@ devName
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch WITH_PRE65
-status collapsed
+\begin_inset Branch WITH_VXCOMPAT
+status open
 
 \begin_layout Description
 ifShow
@@ -1258,7 +1504,7 @@ gptimerShow Show General Purpose (GP) Timers
 \begin_inset Branch WITH_BSP_IXP4XX
 status collapsed
 
-\begin_layout Standard
+\begin_layout Subsubsection
 Intel XScale ixp425/465 BSP
 \begin_inset Foot
 status collapsed
@@ -1448,7 +1694,7 @@ WIND_BASE Base directory of VxWorks
 \begin_layout Description
 WIND_HOST_TYPE Host type, 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1469,7 +1715,7 @@ path'x86-win32'
 \begin_layout Description
 WIND_PLATFORM Platform, 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1577,7 +1823,11 @@ SPARC
 
 \begin_layout Standard
 \begin_inset Branch WITH_BUILD_VARS
-status open
+status collapsed
+
+\begin_layout Subsection
+Build Variables (-D)
+\end_layout
 
 \begin_layout Description
 VX_OS_LIBS OS libraries in 
@@ -1650,6 +1900,18 @@ _WRS_KERNEL Kernel build
 __RTP__ RTP build
 \end_layout
 
+\begin_layout Subsection
+Project Build Macros
+\end_layout
+
+\begin_layout Description
+CFLAGS_PROJECT Common 
+\family typewriter
+CFLAGS
+\family default
+ (all build specs)
+\end_layout
+
 \end_inset
 
 
@@ -1673,6 +1935,76 @@ end{multicols}
 
 \begin_layout Subsection
 Build
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab [ADDED_CFLAGS+=...]
+ rclean'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab OPT=-fr
+ [ADDED_CFLAGS+=...] '
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+usr 
+\begin_inset Formula $\equiv$
+\end_inset
+
+ user space libraries, -fr 
+\begin_inset Formula $\equiv$
+\end_inset
+
+w/o 
+\emph on
+WindView
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+WindView
+\end_layout
+
+\end_inset
+
+
+\emph default
+ instrumentation (
+\family typewriter
+-D_FREE_VERSION -UWV_INSTRUMENTATION
+\family default
+)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1723,72 +2055,6 @@ mp-usr) ADDED_CFLAGS+="-DIP_DEBUG -g" ADDED_C++FLAGS+="-DIP_DEBUG -g"'
 
 \end_layout
 
-\begin_layout Enumerate
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab [ADDED_CFLAGS+=...]
- rclean'
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-path'make -C %WIND_BASE%/target/[usr/]src CPU=SPARC TOOL=sfdiab OPT=-fr
- [ADDED_CFLAGS+=...] '
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-usr 
-\begin_inset Formula $\equiv$
-\end_inset
-
- user space libraries, -fr 
-\begin_inset Formula $\equiv$
-\end_inset
-
-without 
-\emph on
-WindView
-\begin_inset Index
-status collapsed
-
-\begin_layout Plain Layout
-WindView
-\end_layout
-
-\end_inset
-
-
-\emph default
- instrumentation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Files
 \end_layout
@@ -1804,7 +2070,20 @@ mode
 \begin_inset space ~
 \end_inset
 
-config:
+config: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/config.mk'
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status collapsed
 
@@ -1826,19 +2105,6 @@ pad
 \end_inset
 
  Platform for Industrial Devices
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-path'$(WIND_BASE)/config/(pne|pad|pcd|pid)/config.mk'
 \end_layout
 
 \end_inset
@@ -2073,38 +2339,6 @@ status open
 
 \backslash
 path'$(WIND_BASE)/target/usr/lib/$(CPU)'
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Precompiled
-\begin_inset space ~
-\end_inset
-
-objects:
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Precompiled object files (without any source code) from third parties.
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-path'$(WIND_BASE)/target/precomp'
 \end_layout
 
 \end_inset
