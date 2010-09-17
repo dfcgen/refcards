@@ -1,12 +1,12 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass article
 \begin_preamble
 \input{all-inc}
-\docsubj{GNU Make Kurzreferenz}{GNU Make}{Make}
 \end_preamble
+\use_default_options false
 \language german
 \inputencoding latin1
 \font_roman times
@@ -17,9 +17,22 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize 10
 \spacing single
+\use_hyperref true
+\pdf_subject "GNU Make Kurzreferenz"
+\pdf_keywords "Make"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry false
 \use_amsmath 1
@@ -54,8 +67,8 @@
 \begin_inset Note Note
 status open
 
-\begin_layout Standard
-$Id: make.lyx,v 1.4 2008-11-22 16:35:59 ralf Exp $
+\begin_layout Plain Layout
+Version $Id: make.lyx,v 1.5 2010-09-17 20:19:26 ralf Exp $
 \end_layout
 
 \end_inset
@@ -72,7 +85,7 @@ Copyright
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -94,8 +107,12 @@ year
 
 \begin_layout Section
 Aufruf
-\begin_inset LatexCommand index
-name "Make"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Make
+\end_layout
 
 \end_inset
 
@@ -104,8 +121,12 @@ name "Make"
 
 \begin_layout Standard
 Der Make-Aufruf
-\begin_inset LatexCommand index
-name "Make!Aufruf"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Make!Aufruf
+\end_layout
 
 \end_inset
 
@@ -148,8 +169,12 @@ goal
 
 \emph default
  Die wichtigsten Optionen
-\begin_inset LatexCommand index
-name "Make!Optionen"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Make!Optionen
+\end_layout
 
 \end_inset
 
@@ -165,7 +190,10 @@ options
 \emph on
 dir
 \emph default
- (-C\InsetSpace ~
+ (-C
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 dir
@@ -182,7 +210,10 @@ dir
 \end_layout
 
 \begin_layout Description
---makefile=file (-f\InsetSpace ~
+--makefile=file (-f
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 file
@@ -192,8 +223,12 @@ file
 
 \begin_layout Description
 --help (-h) Hilfe
-\begin_inset LatexCommand index
-name "Make!Hilfe"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Make!Hilfe
+\end_layout
 
 \end_inset
 
@@ -202,8 +237,12 @@ name "Make!Hilfe"
 
 \begin_layout Description
 --ignore-errors (-i) Make ignoriert alle Fehler
-\begin_inset LatexCommand index
-name "Fehler"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Fehler
+\end_layout
 
 \end_inset
 
@@ -211,7 +250,10 @@ name "Fehler"
 \end_layout
 
 \begin_layout Description
---include-dir=dir (-I\InsetSpace ~
+--include-dir=dir (-I
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 dir
@@ -225,8 +267,12 @@ include
 
 \begin_layout Description
 --keep-going (-k) make soll trotz Fehler
-\begin_inset LatexCommand index
-name "Fehler"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Fehler
+\end_layout
 
 \end_inset
 
@@ -243,8 +289,12 @@ Rules
 
 \begin_layout Description
 --no-builtin-variables (-R) 
-\begin_inset LatexCommand index
-name "Variablen!Built-In"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Built-In
+\end_layout
 
 \end_inset
 
@@ -266,8 +316,12 @@ Rules
 
 \begin_layout Description
 --warn-undefined-variables Make gibt eine Warnung bei undefinierten Variablen
-\begin_inset LatexCommand index
-name "Variablen!Undefinierte"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Undefinierte
+\end_layout
 
 \end_inset
 
@@ -280,8 +334,12 @@ Rules
 
 \begin_layout Subsection
 Explizite Rules
-\begin_inset LatexCommand index
-name "Rules!Explizite"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rules!Explizite
+\end_layout
 
 \end_inset
 
@@ -294,8 +352,12 @@ Jedes Makefile besteht aus sogenannten
 Rules
 \emph default
 
-\begin_inset LatexCommand index
-name "Rules"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rules
+\end_layout
 
 \end_inset
 
@@ -304,16 +366,24 @@ name "Rules"
 Targets
 \emph default
 
-\begin_inset LatexCommand index
-name "Targets"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Targets
+\end_layout
 
 \end_inset
 
 , 
 \emph on
 Prerequisites
-\begin_inset LatexCommand index
-name "Prerequisites"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Prerequisites
+\end_layout
 
 \end_inset
 
@@ -377,8 +447,12 @@ Goal
 Prerequesites
 \emph default
  sind als .PHONY
-\begin_inset LatexCommand index
-name ".PHONY"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.PHONY
+\end_layout
 
 \end_inset
 
@@ -387,7 +461,7 @@ name ".PHONY"
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -447,8 +521,12 @@ Rule
 
 \begin_layout Subsection
 Implizite Rules
-\begin_inset LatexCommand index
-name "Rules!Implizite"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rules!Implizite
+\end_layout
 
 \end_inset
 
@@ -487,9 +565,9 @@ Target
 \emph default
 ) und ihre Bildungsregeln als Shell-Command, also 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -523,8 +601,12 @@ Rules
  werden von Make durch Built-In 
 \emph on
 Rules
-\begin_inset LatexCommand index
-name "Rules!Built-In"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rules!Built-In
+\end_layout
 
 \end_inset
 
@@ -596,14 +678,22 @@ $(TEX)
 \end_deeper
 \begin_layout Subsection
 Pattern
-\begin_inset LatexCommand index
-name "Pattern"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Pattern
+\end_layout
 
 \end_inset
 
 -Rules
-\begin_inset LatexCommand index
-name "Rules!Pattern-"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rules!Pattern-
+\end_layout
 
 \end_inset
 
@@ -617,9 +707,9 @@ Rules
 \emph default
  zu vielen gleichartigen Zeilen, in den sich 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -634,9 +724,9 @@ Targets
 \emph default
  
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -701,8 +791,12 @@ Pattern
 
  und (zuletzt) einem Suffix zusammen.
  Das Prozentzeichen ist ähnlich einem Wildcard
-\begin_inset LatexCommand index
-name "Wildcard"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Wildcard
+\end_layout
 
 \end_inset
 
@@ -713,8 +807,12 @@ Targets
 , zu dem es paßt, als auch als 
 \emph on
 Stamm
-\begin_inset LatexCommand index
-name "Stamm"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Stamm
+\end_layout
 
 \end_inset
 
@@ -766,9 +864,9 @@ Rule
  entspricht -- das aber nur dann, wenn das Target nicht noch (irgendwo)
  ein Kommando zur Generierung (
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -785,7 +883,7 @@ Rule
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Außerdem müssen die 
 \emph on
 Prerequisites
@@ -804,8 +902,12 @@ Built-In Targets
 
 \begin_layout Description
 .PHONY
-\begin_inset LatexCommand index
-name ".PHONY"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.PHONY
+\end_layout
 
 \end_inset
 
@@ -815,9 +917,9 @@ Phony Target
 \emph default
 , 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -832,14 +934,22 @@ t
 
 \begin_layout Description
 .IGNORE
-\begin_inset LatexCommand index
-name ".IGNORE"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.IGNORE
+\end_layout
 
 \end_inset
 
  Fehler
-\begin_inset LatexCommand index
-name "Fehler"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Fehler
+\end_layout
 
 \end_inset
 
@@ -848,8 +958,12 @@ name "Fehler"
 
 \begin_layout Description
 .PRECIOUS
-\begin_inset LatexCommand index
-name ".PRECIOUS"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.PRECIOUS
+\end_layout
 
 \end_inset
 
@@ -862,8 +976,12 @@ Target
 
 \begin_layout Description
 .DEFAULT
-\begin_inset LatexCommand index
-name ".DEFAULT"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.DEFAULT
+\end_layout
 
 \end_inset
 
@@ -877,8 +995,38 @@ Commands
 
 \begin_layout Description
 .EXPORT_ALL_VARIABLES
-\begin_inset LatexCommand index
-name ".EXPORT\\_ALL\\_VARIABLES"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+.EXPORT
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+_
+\end_layout
+
+\end_inset
+
+ALL
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+_
+\end_layout
+
+\end_inset
+
+VARIABLES
+\end_layout
 
 \end_inset
 
@@ -886,10 +1034,17 @@ name ".EXPORT\\_ALL\\_VARIABLES"
 \emph on
 Target
 \emph default
- als vielmehr eine Anweisung alle Variablen zu den Child-Prozessen (u.U.\InsetSpace ~
+ als vielmehr eine Anweisung alle Variablen zu den Child-Prozessen (u.U.
+\begin_inset space ~
+\end_inset
+
 Sub-Makes
-\begin_inset LatexCommand index
-name "Sub-Makes"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Sub-Makes
+\end_layout
 
 \end_inset
 
@@ -898,8 +1053,12 @@ name "Sub-Makes"
 
 \begin_layout Subsection
 Bedingte Ausführung
-\begin_inset LatexCommand index
-name "Bedingte Ausführung"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Bedingte Ausführung
+\end_layout
 
 \end_inset
 
@@ -912,12 +1071,19 @@ Bedingte Ausführung ist durch Verwendung der folgende Schlüsselwörter möglic
 
 \begin_layout Description
 ifdef
-\begin_inset LatexCommand index
-name "ifdef"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ifdef
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 VAR
@@ -931,12 +1097,19 @@ VAR
 
 \begin_layout Description
 ifndef
-\begin_inset LatexCommand index
-name "ifndef"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ifndef
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 VAR
@@ -950,12 +1123,19 @@ VAR
 
 \begin_layout Description
 ifeq
-\begin_inset LatexCommand index
-name "ifeq"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ifeq
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 (
 \emph on
 VAR
@@ -1001,12 +1181,19 @@ val
 
 \begin_layout Description
 ifneq
-\begin_inset LatexCommand index
-name "ifneq"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ifneq
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 (
 \emph on
 VAR
@@ -1056,7 +1243,10 @@ endif
 
 \begin_layout Standard
 Variablen können auf der Kommandozeile definiert (und vordefinierte sogar
- überschrieben) werden, Beispiel:\InsetSpace ~
+ überschrieben) werden, Beispiel:
+\begin_inset space ~
+\end_inset
+
 
 \family sans
 make CFLAGS='-g -O'
@@ -1066,8 +1256,12 @@ make CFLAGS='-g -O'
 
 \begin_layout Section
 Variablen
-\begin_inset LatexCommand index
-name "Variablen"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen
+\end_layout
 
 \end_inset
 
@@ -1076,8 +1270,12 @@ name "Variablen"
 
 \begin_layout Subsection
 Anwender-Variablen
-\begin_inset LatexCommand index
-name "Variablen!Anwender-"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Anwender-
+\end_layout
 
 \end_inset
 
@@ -1088,9 +1286,9 @@ name "Variablen!Anwender-"
 Ähnlich wie in Shell-Scripten können Variablen definiert und verwendet werden,
  also 
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1131,10 +1329,14 @@ VAR
 \emph on
 VAR
 \emph default
-+= , für die auf das 
-\begin_inset LatexCommand url
-name "GNU Make"
-target "http://www.gnu.org/software/make/manual/html_node/index.html"
++= , für die auf das GNU Make 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/software/make/manual/html_node/index.html
+\end_layout
 
 \end_inset
 
@@ -1144,7 +1346,7 @@ target "http://www.gnu.org/software/make/manual/html_node/index.html"
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Dazu muß man wissen, daß GNU Make eine Zwei-Pass Anwendung ist.
 \end_layout
 
@@ -1155,8 +1357,12 @@ Dazu muß man wissen, daß GNU Make eine Zwei-Pass Anwendung ist.
 
 \begin_layout Standard
 Die Bezugnahme auf Shell-Variablen
-\begin_inset LatexCommand index
-name "Variablen!Shell-"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Shell-
+\end_layout
 
 \end_inset
 
@@ -1169,8 +1375,12 @@ var
 
 \begin_layout Subsection
 Auto-Variablen
-\begin_inset LatexCommand index
-name "Variablen!Auto-"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Auto-
+\end_layout
 
 \end_inset
 
@@ -1178,7 +1388,7 @@ name "Variablen!Auto-"
 \begin_inset Foot
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Ohne Berücksichtigung von Variablen, die beim Handling von Archiven eine
  Rolle spielen.
 \end_layout
@@ -1251,8 +1461,12 @@ $(@F) Datei-Teil des Pfades von $@
 
 \begin_layout Subsection
 Umgebungsvariablen
-\begin_inset LatexCommand index
-name "Variablen!Umgebungs-"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Umgebungs-
+\end_layout
 
 \end_inset
 
@@ -1273,14 +1487,22 @@ VAR = value
 
 \begin_layout LyX-Code
 export
-\begin_inset LatexCommand index
-name "export"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+export
+\end_layout
 
 \end_inset
 
 
-\begin_inset LatexCommand index
-name "Variablen!Export"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Variablen!Export
+\end_layout
 
 \end_inset
 
@@ -1330,8 +1552,12 @@ CC Name des C/C++ Compilers
 
 \begin_layout Section
 Funktionen
-\begin_inset LatexCommand index
-name "Funktionen"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen
+\end_layout
 
 \end_inset
 
@@ -1340,12 +1566,19 @@ name "Funktionen"
 
 \begin_layout Description
 $(subst
-\begin_inset LatexCommand index
-name "Funktionen!subst"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!subst
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 from
@@ -1375,12 +1608,19 @@ text
 
 \begin_layout Description
 $(patsubst
-\begin_inset LatexCommand index
-name "Funktionen!patsubst"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!patsubst
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 pat
@@ -1408,12 +1648,19 @@ new.
 
 \begin_layout Description
 $(strip
-\begin_inset LatexCommand index
-name "Funktionen!strip"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!strip
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 string
@@ -1425,12 +1672,19 @@ string.
 
 \begin_layout Description
 $(findstring
-\begin_inset LatexCommand index
-name "Funktionen!findstring"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!findstring
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 find
@@ -1448,12 +1702,19 @@ find
 
 \begin_layout Description
 $(filter
-\begin_inset LatexCommand index
-name "Funktionen!filter"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!filter
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 pattern
@@ -1476,12 +1737,19 @@ pattern
 
 \begin_layout Description
 $(filter-out
-\begin_inset LatexCommand index
-name "Funktionen!filter-out"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!filter-out
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 pattern
@@ -1504,12 +1772,19 @@ pattern
 
 \begin_layout Description
 $(sort
-\begin_inset LatexCommand index
-name "Funktionen!sort"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!sort
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 list
@@ -1523,12 +1798,19 @@ list
 
 \begin_layout Description
 $(dir
-\begin_inset LatexCommand index
-name "Funktionen!dir"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!dir
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 fnames
@@ -1543,12 +1825,19 @@ fnames
 
 \begin_layout Description
 $(notdir
-\begin_inset LatexCommand index
-name "Funktionen!notdir"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!notdir
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 fnames
@@ -1563,12 +1852,19 @@ fnames
 
 \begin_layout Description
 $(suffix
-\begin_inset LatexCommand index
-name "Funktionen!suffix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!suffix
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 fnames
@@ -1583,12 +1879,19 @@ fnames
 
 \begin_layout Description
 $(basename
-\begin_inset LatexCommand index
-name "Funktionen!basename"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!basename
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 fnames
@@ -1599,12 +1902,19 @@ fnames
 
 \begin_layout Description
 $(addsuffix
-\begin_inset LatexCommand index
-name "Funktionen!addsuffix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!addsuffix
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 suffix
@@ -1627,12 +1937,19 @@ names
 
 \begin_layout Description
 $(addprefix
-\begin_inset LatexCommand index
-name "Funktionen!addprefix"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!addprefix
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 prefix
@@ -1655,12 +1972,19 @@ names
 
 \begin_layout Description
 $(join
-\begin_inset LatexCommand index
-name "Funktionen!join"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!join
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 list1
@@ -1682,12 +2006,19 @@ list2
 
 \begin_layout Description
 $(word
-\begin_inset LatexCommand index
-name "Funktionen!word"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!word
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 n
@@ -1705,12 +2036,19 @@ text
 
 \begin_layout Description
 $(words
-\begin_inset LatexCommand index
-name "Funktionen!words"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!words
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 text
@@ -1724,12 +2062,19 @@ text
 
 \begin_layout Description
 $(wordlist
-\begin_inset LatexCommand index
-name "Funktionen!wordlist"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!wordlist
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 s
@@ -1759,12 +2104,19 @@ e
 
 \begin_layout Description
 $(firstword
-\begin_inset LatexCommand index
-name "Funktionen!firstword"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!firstword
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 names
@@ -1779,12 +2131,19 @@ names
 
 \begin_layout Description
 $(wildcard
-\begin_inset LatexCommand index
-name "Funktionen!wildcard"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!wildcard
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 pat
@@ -1799,20 +2158,31 @@ pat
 
 \begin_layout Description
 $(error
-\begin_inset LatexCommand index
-name "Funktionen!error"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!error
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 text
 \emph default
 \SpecialChar \ldots{}
 ) Fehlerausgabe
-\begin_inset LatexCommand index
-name "Fehler"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Fehler
+\end_layout
 
 \end_inset
 
@@ -1825,12 +2195,19 @@ text
 
 \begin_layout Description
 $(warning
-\begin_inset LatexCommand index
-name "Funktionen!warning"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!warning
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 text
@@ -1845,15 +2222,25 @@ text
 
 \begin_layout Description
 $(shell
-\begin_inset LatexCommand index
-name "Funktionen!shell"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!shell
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
-cmd\InsetSpace ~
+cmd
+\begin_inset space ~
+\end_inset
+
 args
 \emph default
 ) Ausführung von Shell-Command 
@@ -1869,12 +2256,19 @@ args
 
 \begin_layout Description
 $(origin
-\begin_inset LatexCommand index
-name "Funktionen!origin"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!origin
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 var
@@ -1885,9 +2279,9 @@ var
 \emph default
  stammt (
 \begin_inset ERT
-status inlined
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1902,12 +2296,19 @@ eg
 
 \begin_layout Description
 $(foreach
-\begin_inset LatexCommand index
-name "Funktionen!foreach"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!foreach
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 var
@@ -1925,12 +2326,19 @@ text
 
 \begin_layout Description
 $(call
-\begin_inset LatexCommand index
-name "Funktionen!call"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Funktionen!call
+\end_layout
 
 \end_inset
 
-\InsetSpace ~
+
+\begin_inset space ~
+\end_inset
+
 
 \emph on
 var
@@ -1973,8 +2381,12 @@ VAR
 
 \begin_layout Section
 Spezialzeichen
-\begin_inset LatexCommand index
-name "Spezialzeichen"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Spezialzeichen
+\end_layout
 
 \end_inset
 
@@ -1983,8 +2395,12 @@ name "Spezialzeichen"
 
 \begin_layout Description
 # Kommentar
-\begin_inset LatexCommand index
-name "Kommentar"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Kommentar
+\end_layout
 
 \end_inset
 
@@ -2003,8 +2419,12 @@ name "Kommentar"
 cmd
 \emph default
  Unterdrückt Echo
-\begin_inset LatexCommand index
-name "Echo"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Echo
+\end_layout
 
 \end_inset
 
@@ -2023,8 +2443,12 @@ cmd
 cmd
 \emph default
  einen Fehler
-\begin_inset LatexCommand index
-name "Fehler"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Fehler
+\end_layout
 
 \end_inset
 
@@ -2041,8 +2465,12 @@ cmd
 cmd
 \emph default
  wird rekursiv
-\begin_inset LatexCommand index
-name "Rekursion"
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Rekursion
+\end_layout
 
 \end_inset
 
