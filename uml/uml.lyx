@@ -1,0 +1,1599 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\input{all-inc}
+
+\usepackage{multicol}
+\date{} %% no date after title/author
+
+%% \setkomafont{descriptionlabel}{\small\ttfamily\bfseries}
+%% \renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\makebox[2cm][l]{\textsf{#1}}}
+
+\def\maketitle{%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 0.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 0.5em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em
+}
+
+\rhead{\scriptsize{Page \thepage}}
+\chead{UML 2.2}
+\lhead{\scriptsize{Copyright \textcopyright\ ~ \number\year\ ~ Ralf Hoppe}}
+\end_preamble
+\options smallheadings,9pt
+\use_default_options false
+\language english
+\inputencoding latin1
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_subject "VxWorks"
+\pdf_keywords "vxworks, workbench, interpreter, environment"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_amsmath 2
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\branch WITH_VXCOMPAT
+\selected 1
+\color #faf0e6
+\end_branch
+\branch WITH_HOST_TOOLS
+\selected 0
+\color #faf0e6
+\end_branch
+\branch WITH_BUILD_VARS
+\selected 0
+\color #faf0e6
+\end_branch
+\branch WITH_BSP_GAISLER
+\selected 1
+\color #faf0e6
+\end_branch
+\branch WITH_BSP_SANDPOINT
+\selected 0
+\color #faf0e6
+\end_branch
+\branch WITH_BSP_IXP4XX
+\selected 0
+\color #faf0e6
+\end_branch
+\leftmargin 2cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1cm
+\headheight 0cm
+\headsep 0.6cm
+\footskip 0.6cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip smallskip
+\quotes_language swedish
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\bullet 0 0 15 3
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Class Diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+$Id$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Relations
+\end_layout
+
+\begin_layout Subsection
+Generalization [
+\begin_inset Graphics
+	filename arrow_gen.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="middle" width="8.5cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+inheritance (derived class specialized from base class)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Implementation:
+\end_layout
+
+\begin_layout LyX-Code
+class Derived : public Base
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename generalization.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dependency [
+\begin_inset Graphics
+	filename arrow_dep.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="bottom" width="12cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+semantic dependency: changing supplier requires change of client
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+four types: abstraction (interface), usage, permission, binding (template)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename dependency.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Realization [
+\begin_inset Graphics
+	filename arrow_real.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Subsubsection
+Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="bottom" width="9.7cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+an interface is a specifier for externally-visible operations of a class,
+ hiding any internal structure
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+an interface has no implementation (and no attributes)
+\end_layout
+
+\begin_layout Itemize
+in general a realization is a specialized abstraction relationship between
+ implementation (client) and specification (supplier).
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename interface.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Template (Parameterized Class)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="bottom" width="9cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+defines a family of classes
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cannot be instantiated
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+bind
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ actual parameters to formal parameter-list
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename template.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Associations
+\end_layout
+
+\begin_layout Subsubsection
+General Association [
+\begin_inset Graphics
+	filename arrow_assoc.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="middle" width="9.5cm">
+<column alignment="right" valignment="middle" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: qualifier (with key)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+general relationship, with unspecified containment (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{cf.}
+\end_layout
+
+\end_inset
+
+ composition/aggregation) 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+may be navigable --- arrow indicates direction
+\end_layout
+
+\begin_layout Itemize
+cardinality allows specification of n:m multiplicity relations
+\end_layout
+
+\begin_layout Plain Layout
+Implementation:
+\end_layout
+
+\begin_layout LyX-Code
+class A
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+    B* role_B;
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename association.eps
+	scale 75
+	groupId uml_fig
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aggregation [
+\begin_inset Graphics
+	filename arrow_aggr.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="middle" width="13cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes sld
+\end_inset
+
+has
+\begin_inset Quotes srd
+\end_inset
+
+ relationship
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+aggregate (B) lives independent of 
+\begin_inset Quotes sld
+\end_inset
+
+whole
+\begin_inset Quotes srd
+\end_inset
+
+ (A)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename aggregation.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Composition [
+\begin_inset Graphics
+	filename arrow_comp.eps
+	scale 75
+	groupId arrow
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features>
+<column alignment="block" valignment="bottom" width="12cm">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Properties:
+\end_layout
+
+\begin_layout Itemize
+special form of aggregation
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes sld
+\end_inset
+
+contains
+\begin_inset Quotes srd
+\end_inset
+
+ relationship
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes sld
+\end_inset
+
+part
+\begin_inset Quotes srd
+\end_inset
+
+ (B) lives not longer than 
+\begin_inset Quotes sld
+\end_inset
+
+whole
+\begin_inset Quotes srd
+\end_inset
+
+ (A)
+\end_layout
+
+\begin_layout Plain Layout
+Implementation:
+\end_layout
+
+\begin_layout LyX-Code
+class A
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+    B role;
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename composition.eps
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Stereotypes
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Classes
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring responsibility M
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+auxiliary
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ supporting class (for focus class)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt} 
+\backslash
+setlength
+\backslash
+parskip{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+enumeration
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ enum
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+focus
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ core class, supported by auxiliary class(es)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+implementationClass
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ \SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+interface
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ not instantiable (abstract) class 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+see UML 2.2 superstructure, Fig.
+ 7.57
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+metaclass
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ class whose instances are also classes
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+primitive
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ a primitive type/class
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+struct
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ C/C++ struct (only VC++)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+type
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ \SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+typedef
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ C/C++ typedef (only VC++)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+union
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ C/C++ union (only VC++)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+utility
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ a class w/o instances
+\end_layout
+
+\begin_layout Subsection
+Relations
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring responsibility M
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+refine
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ refinement at different semantic levels (abstraction)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{0pt} 
+\backslash
+setlength
+\backslash
+parskip{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+derive
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ derivation of client (by computation) from supplier (abstraction)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+trace
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ used for tracking requirements and changes in models (abstraction)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+substitute
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ denotes runtime substitutability not based on inheritance of structure
+ (abstraction)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+It requires that (1) interfaces implemented by the contract classifier are
+ also implemented by the substituting classifier, or else the substituting
+ classifier implements a more specialized interface type.
+ And, (2) the any port owned by the contract classifier has a matching port
+ (see ports) owned by the substituting classifier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+call
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ client invokes supplier operation (usage)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+instantiate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ client creates supplier instances
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Equivalent to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+create
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ in UML
+\begin_inset space ~
+\end_inset
+
+1.x, which is (among others) obsolete.
+\end_layout
+
+\end_inset
+
+ (usage)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+send
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ source sends a signal to target (usage)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+flqq 
+\end_layout
+
+\end_inset
+
+responsibility
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frqq
+\end_layout
+
+\end_inset
+
+ client has some kind of obligation to supplier (usage)
+\end_layout
+
+\begin_layout Subsection
+Operations
+\end_layout
+
+\begin_layout Subsection
+Attributes
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{multicols}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Constraints
+\end_layout
+
+\end_body
+\end_document
