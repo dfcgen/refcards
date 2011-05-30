@@ -1,4 +1,4 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.9 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -268,7 +268,7 @@ C-c)
 \end_layout
 
 \begin_layout Section
-Buffer/Fenster
+Buffer/Fenster/Frames
 \end_layout
 
 \begin_layout Description
@@ -277,6 +277,14 @@ Kp-Plus Nur ein Fenster (C-x
 \end_inset
 
 1)
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+o Nächstes Fenster
 \end_layout
 
 \begin_layout Description
@@ -358,11 +366,31 @@ b)
 \end_layout
 
 \begin_layout Description
-C-x
+C-Kp-Add Neuer Frame (C-x
 \begin_inset space ~
 \end_inset
 
-o Nächstes Fenster
+5
+\begin_inset space ~
+\end_inset
+
+2)
+\end_layout
+
+\begin_layout Description
+C-Kp-Subtract Frame zu Symbol
+\end_layout
+
+\begin_layout Description
+C-Kp-Enter Frame schließen (C-x
+\begin_inset space ~
+\end_inset
+
+5
+\begin_inset space ~
+\end_inset
+
+0)
 \end_layout
 
 \begin_layout Section
@@ -374,7 +402,7 @@ F5 Aktualisieren (Syntax Highlighting, Doxygen, iMenu)
 \end_layout
 
 \begin_layout Description
-F4 Block ausblenden
+F4 Block aus/einblenden
 \begin_inset Foot
 status collapsed
 
@@ -391,7 +419,11 @@ hideshow.el
 
 \end_inset
 
- (C-c
+
+\end_layout
+
+\begin_layout Description
+S-F4 Inkrementell aus/einblenden (C-c
 \begin_inset space ~
 \end_inset
 
@@ -400,18 +432,6 @@ hideshow.el
 \end_inset
 
 C-c)
-\end_layout
-
-\begin_layout Description
-S-F4 Alles einblenden (C-c
-\begin_inset space ~
-\end_inset
-
-@
-\begin_inset space ~
-\end_inset
-
-C-M-s)
 \begin_inset Note Note
 status collapsed
 
@@ -1291,7 +1311,7 @@ S-F10 Voriger Fehler (C-x
 \end_layout
 
 \begin_layout Section
-Dired (Speedbar, Buffer List, CVS)
+Dired (Speedbar, Buffer List, VC)
 \end_layout
 
 \begin_layout Description
