@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -70,7 +70,7 @@
 \spacing other 0.9
 \use_hyperref true
 \pdf_subject "VxWorks"
-\pdf_keywords "vxworks, workbench, interpreter, environment"
+\pdf_keywords "vxworks, refcard"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
@@ -96,11 +96,11 @@
 \color #faf0e6
 \end_branch
 \branch WITH_BUILD_VARS
-\selected 0
+\selected 1
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_GAISLER
-\selected 1
+\selected 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_SANDPOINT
@@ -167,13 +167,7 @@ status open
 \backslash
 textcopyright
 \backslash
- 2007 -- 
-\backslash
-number
-\backslash
-year
-\backslash
- 
+ 2007 -- 2010
 \end_layout
 
 \end_inset
@@ -1459,7 +1453,7 @@ BSP
 
 \begin_layout Standard
 \begin_inset Branch WITH_BSP_GAISLER
-status open
+status collapsed
 
 \begin_layout Subsubsection
 SPARC-V8 Leon
@@ -1823,7 +1817,7 @@ SPARC
 
 \begin_layout Standard
 \begin_inset Branch WITH_BUILD_VARS
-status collapsed
+status open
 
 \begin_layout Subsection
 Build Variables (-D)
