@@ -100,7 +100,7 @@
 status open
 
 \begin_layout Plain Layout
-$Id: emacs_keys.lyx,v 1.8 2010-09-17 20:19:16 ralf Exp $
+$Id$
 \end_layout
 
 \end_inset
@@ -166,7 +166,20 @@ Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
 \end_layout
 
 \begin_layout Description
-M-! Shell-Kommando ausführen
+M-Return Shell (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{bzw.}
+\end_layout
+
+\end_inset
+
+ Markierung als Kommando) ausführen
 \end_layout
 
 \begin_layout Description
@@ -378,7 +391,7 @@ C-Kp-Add Neuer Frame (C-x
 \end_layout
 
 \begin_layout Description
-C-Kp-Subtract Frame zu Symbol
+C-Kp-Subtract Frame zu Icon
 \end_layout
 
 \begin_layout Description
@@ -924,7 +937,7 @@ u)
 \end_layout
 
 \begin_layout Description
-M-Return Kontextabh.
+C-Return Kontextabh.
  Zeilenwechsel
 \begin_inset Foot
 status collapsed
@@ -1377,8 +1390,7 @@ Enter Unterverz./Datei öffnen
 \end_layout
 
 \begin_layout Description
-C-Enter Unterverz.
- in neuem Buffer (o)
+C-Enter Unterverz./Datei in neuem Buffer (o)
 \end_layout
 
 \begin_layout Description
