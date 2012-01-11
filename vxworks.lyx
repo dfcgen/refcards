@@ -1,5 +1,5 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
 \textclass scrartcl
@@ -39,35 +39,35 @@
   \begin{center}%
   \let \footnote \thanks
     {\LARGE \@title \par}%
-    \vskip 0.5em%
-    {\large
-      \lineskip .5em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
-    \vskip 0.5em%
-    {\large \@date}%
+    {\small \@author \par}%
   \end{center}%
   \par
-  \vskip 1em
 }
 \end_preamble
 \options normalheadings,parskip+,9pt
 \use_default_options false
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding latin1
+\fontencoding global
 \font_roman times
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
-\spacing other 0.9
+\spacing other 0.90000000000000002
 \use_hyperref true
 \pdf_subject "VxWorks"
 \pdf_keywords "vxworks, refcard"
@@ -84,33 +84,48 @@
 \use_geometry true
 \use_amsmath 2
 \use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
 \branch WITH_VXCOMPAT
 \selected 1
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_HOST_TOOLS
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BUILD_VARS
 \selected 1
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_GAISLER
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_SANDPOINT
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_IXP4XX
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \leftmargin 2cm
 \topmargin 1.5cm
 \rightmargin 1.5cm
@@ -129,8 +144,9 @@
 \bullet 0 0 15 3
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -1978,7 +1994,7 @@ usr
 w/o 
 \emph on
 WindView
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
