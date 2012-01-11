@@ -471,7 +471,11 @@ F3 Speedbar ein/aus
 \end_layout
 
 \begin_layout Description
-S-F3 Which-Mode ein/aus
+S-F3 Anzeige mit/ohne Umbruch (toggle-truncate-lines)
+\end_layout
+
+\begin_layout Description
+C-S-F3 Which-Mode ein/aus
 \begin_inset Foot
 status collapsed
 
