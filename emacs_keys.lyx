@@ -301,75 +301,15 @@ Buffer, Windows, Frames
 \end_layout
 
 \begin_layout Description
-Kp-Plus Nur ein Fenster (C-x
+S-F12 Buffer Menü (C-x C-b)
+\end_layout
+
+\begin_layout Description
+Kp-Add Nur ein Fenster (C-x
 \begin_inset space ~
 \end_inset
 
 1)
-\end_layout
-
-\begin_layout Description
-C-Tab Nächster Buffer (C-x 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Description
-S-C-Tab Vorheriger Buffer (C-x 
-\begin_inset Formula $\leftarrow$
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Description
-S-Tab Wechsel in anderes Fenster (C-x
-\begin_inset space ~
-\end_inset
-
-o)
-\end_layout
-
-\begin_layout Description
-Kp-Minus Fenster teilen übereinander (C-x
-\begin_inset space ~
-\end_inset
-
-2)
-\end_layout
-
-\begin_layout Description
-Kp-Divide Fenster teilen nebeneinander (C-x
-\begin_inset space ~
-\end_inset
-
-3)
-\end_layout
-
-\begin_layout Description
-Kp-Multiply Fenster horizontal vergrößern (C-x
-\begin_inset space ~
-\end_inset
-
-})
-\end_layout
-
-\begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-{ Fenster horizontal verkleinern
-\end_layout
-
-\begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-^ Fenster vertikal vergrößern
 \end_layout
 
 \begin_layout Description
@@ -403,10 +343,6 @@ k.
 \end_layout
 
 \begin_layout Description
-S-F12 Buffer Menü, nur echte Dateien (C-x C-b)
-\end_layout
-
-\begin_layout Description
 C-Kp-Add Neuer Frame (C-x
 \begin_inset space ~
 \end_inset
@@ -419,10 +355,6 @@ C-Kp-Add Neuer Frame (C-x
 \end_layout
 
 \begin_layout Description
-C-Kp-Subtract Frame zu Icon
-\end_layout
-
-\begin_layout Description
 C-Kp-Enter Frame schließen (C-x
 \begin_inset space ~
 \end_inset
@@ -432,6 +364,62 @@ C-Kp-Enter Frame schließen (C-x
 \end_inset
 
 0)
+\end_layout
+
+\begin_layout Description
+C-Tab Nächster Buffer (C-x 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+S-C-Tab Vorheriger Buffer (C-x 
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+S-Tab Wechsel in anderes Fenster (C-x
+\begin_inset space ~
+\end_inset
+
+o)
+\end_layout
+
+\begin_layout Description
+Kp-Divide Fenster teilen übereinander (C-x
+\begin_inset space ~
+\end_inset
+
+2)
+\end_layout
+
+\begin_layout Description
+Kp-Multiply Fenster teilen nebeneinander (C-x
+\begin_inset space ~
+\end_inset
+
+3)
+\end_layout
+
+\begin_layout Description
+Kp-Subtract Fenster horizontal vergrößern (C-x
+\begin_inset space ~
+\end_inset
+
+})
+\end_layout
+
+\begin_layout Description
+S-Kp-Subtract Fenster horizontal verkleinern (C-x
+\begin_inset space ~
+\end_inset
+
+{)
 \end_layout
 
 \begin_layout Section
