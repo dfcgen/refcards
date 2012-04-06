@@ -36,7 +36,7 @@
 \options smallheadings,9pt
 \use_default_options false
 \language english
-\inputencoding latin1
+\inputencoding auto
 \font_roman times
 \font_sans default
 \font_typewriter default

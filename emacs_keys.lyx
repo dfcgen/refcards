@@ -2,35 +2,21 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass scrartcl
+\textclass manual
 \begin_preamble
-\input{all-inc}
-
-\setlength{\skip\footins}{12pt}
-\setlength{\marginparwidth}{24pt}
-\setlength{\marginparsep}{12pt}
-
-\renewcommand{\descriptionlabel}[1] {\hspace{\labelsep}\textsf{#1}}
-
-\setkomafont{descriptionlabel}{\small\ttfamily\bfseries}
-
-\def\maketitle{%
-  \begin{center}%
-  \let \footnote \thanks
-    {\LARGE \@title \par}%
-    {\small \@author \par}%
-  \end{center}%
-  \par
-}
+\date{}
 \end_preamble
 \options normalheadings,parskip+
 \use_default_options false
+\begin_modules
+path
+\end_modules
 \maintain_unincluded_children false
 \language german
 \language_package default
-\inputencoding latin1
+\inputencoding auto
 \fontencoding global
-\font_roman default
+\font_roman times
 \font_sans default
 \font_typewriter default
 \font_default_family rmdefault
@@ -69,7 +55,7 @@
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date true
+\suppress_date false
 \use_refstyle 0
 \index Stichwortverzeichnis
 \shortcut idx
@@ -156,7 +142,7 @@ M-x
 \emph on
 Emacs
 \emph default
--Kommando <Cmd> ausführen
+-Kommando <Cmdq> ausführen
 \begin_inset Foot
 status collapsed
 
@@ -500,6 +486,14 @@ c-offsets-alist
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+= Informationen zur Cursorposition
 \end_layout
 
 \begin_layout Section
@@ -1036,7 +1030,7 @@ Kommentare
 
 \begin_deeper
 \begin_layout Description
-F6 Kommentar einfügen/ausrichten/entfernen
+F6 Kommentar einfügen/ausrichten
 \begin_inset Foot
 status collapsed
 
@@ -1047,11 +1041,15 @@ DWIM \SpecialChar \menuseparator
 
 \end_inset
 
- (M-;)
+
 \end_layout
 
 \begin_layout Description
-S-F6 Kommentar löschen
+S-F6 Kommentar einfügen/ausrichten an vorheriger/nächster Zeile (M-;)
+\end_layout
+
+\begin_layout Description
+C-S-F6 Kommentar löschen
 \end_layout
 
 \begin_layout Description
@@ -1206,7 +1204,7 @@ F9 Make (Compile All)
 
 \begin_layout Description
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1219,6 +1217,10 @@ status open
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Description
 C-c
 \begin_inset space ~
 \end_inset

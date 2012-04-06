@@ -2,54 +2,21 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass scrartcl
+\textclass manual
 \begin_preamble
-\input{all-inc}
-\usepackage{path} %% obsolete
-\setlength{\skip\footins}{10mm}
-
-%% margin notes not supported by package multicol
-%% \setlength{\marginparwidth}{24pt}
-%% \setlength{\marginparsep}{12pt}
-%% \normalmarginpar
-
-%% change linebreak character set from path.sty
-%% originally: \discretionaries |~!@$%^&*()_+`-=#{}[]:";'<>,.?\/|
-\discretionaries '~!|@$%^&*()_+`-=#{"}[]:;<>,.?\/'
-
 \usepackage{multicol}
-
-%% redefinition of description environment (tricky)
-%% \let\oldenvdesc = \description
-%% \let\endoldenvdesc = \enddescription
-%% \renewenvironment{description}
-%% {%
-%%     \begin{oldenvdesc}%
-%%     \setlength{\itemsep}{0pt}%
-%%     \setlength{\topsep}{0pt}%
-%%     \setlength{\partopsep}{0pt}%
-%%     \setlength{\parsep}{0pt}%
-%% }{\end{oldenvdesc}}
-
-\setkomafont{descriptionlabel}{\small\ttfamily\bfseries}
-
-\date{} %% no date after title/author
-
-\def\maketitle{%
-  \begin{center}%
-  \let \footnote \thanks
-    {\LARGE \@title \par}%
-    {\small \@author \par}%
-  \end{center}%
-  \par
-}
+\date{}
 \end_preamble
 \options normalheadings,parskip+,9pt
 \use_default_options false
+\begin_modules
+path
+helpers
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding latin1
+\inputencoding auto
 \fontencoding global
 \font_roman times
 \font_sans default
@@ -183,7 +150,13 @@ status open
 \backslash
 textcopyright
 \backslash
- 2007 -- 2010
+ 2007 -- 
+\backslash
+number
+\backslash
+year
+\backslash
+ 
 \end_layout
 
 \end_inset
@@ -193,7 +166,7 @@ textcopyright
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -223,7 +196,7 @@ status open
 
 
 \backslash
-headingspecial{
+toccmd{
 \end_layout
 
 \end_inset
@@ -259,29 +232,6 @@ Specials
 
 \begin_layout Description
 cmd Switch to command interpreter
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setlength{
-\backslash
-itemsep}{0pt}
-\backslash
-setlength{
-\backslash
-topsep}{0pt}
-\backslash
-setlength{
-\backslash
-parsep}{0pt}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -342,12 +292,24 @@ eg
 
 
 \family typewriter
- @cd 
+ 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+@cd 
 \begin_inset Quotes eld
 \end_inset
 
 /tffs0/
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -1180,23 +1142,63 @@ args
 \begin_layout Subsection
 I/O-System
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-headingspecial{
+toccmd{
 \end_layout
 
 \end_inset
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-For commands as cd, pwd, rm, (x)copy and friends see usrFsLib.
+For commands as 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+cd
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+pwd
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+rm
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+(x)copy
+\end_layout
+
+\end_inset
+
+ and friends see usrFsLib.
   For all available commands see the Host Shell Users Guide.
 \end_layout
 
@@ -1708,13 +1710,19 @@ status open
 
 \begin_layout Plain Layout
 
-e.
+
 \backslash
-,g.
-\backslash
+eg
+\end_layout
+
+\end_inset
+
  
-\backslash
-path'x86-win32'
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+x86-win32
 \end_layout
 
 \end_inset
@@ -1729,13 +1737,19 @@ status open
 
 \begin_layout Plain Layout
 
-e.
+
 \backslash
-,g.
-\backslash
+eg
+\end_layout
+
+\end_inset
+
  
-\backslash
-path'vxworks-6.5'
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+vxworks-6.5
 \end_layout
 
 \end_inset
@@ -1750,35 +1764,65 @@ WIND_COMPONENTS Components path
 \begin_layout Description
 TOOL Compiler, 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-e.
+
 \backslash
-,g.
-\backslash
- 
+eg
 \end_layout
 
 \end_inset
 
  
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 diab
-\family default
+\end_layout
+
+\end_inset
+
 , 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 sfdiab
-\family default
+\end_layout
+
+\end_inset
+
 , 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 gnu
-\family default
+\end_layout
+
+\end_inset
+
 , 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 gnube
-\family default
+\end_layout
+
+\end_inset
+
 , \SpecialChar \ldots{}
 
 \end_layout
@@ -1798,35 +1842,81 @@ gnu
 \begin_layout Description
 CPU Processor, 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-e.
+
 \backslash
-,g.
-\backslash
- 
+eg
 \end_layout
 
 \end_inset
 
  
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 PPC603
-\family default
+\end_layout
+
+\end_inset
+
 , 
 \family typewriter
-PPC32, XSCALE
-\family default
+
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+PPC32
+\end_layout
+
+\end_inset
+
 , 
+\family default
+
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
+XSCALE
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 ARM
-\family default
+\end_layout
+
+\end_inset
+
 , 
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
 \family typewriter
 SPARC
-\family default
+\end_layout
+
+\end_inset
+
 , \SpecialChar \ldots{}
 
 \end_layout
@@ -1842,11 +1932,23 @@ Build Variables (-D)
 \begin_layout Description
 VX_OS_LIBS OS libraries in 
 \family typewriter
+
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
 LD_LINK_PATH
+\end_layout
+
+\end_inset
+
+
 \family default
  and 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1863,13 +1965,37 @@ path'$(TGT_DIR)/lib/lib$(CPU)$(TOOL)vx.a'
 \begin_layout Description
 LIBS Customer's libraries and 
 \family typewriter
+
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
 VX_OS_LIBS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
 LD_LINK_PATH 
 \family typewriter
+
+\begin_inset Flex Command
+status collapsed
+
+\begin_layout Plain Layout
+
+\family typewriter
 ld
+\end_layout
+
+\end_inset
+
+
 \family default
  search path
 \begin_inset Foot

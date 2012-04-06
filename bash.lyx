@@ -1,24 +1,36 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass article
+\textclass manual
 \begin_preamble
-\input{all-inc}
+\date{}
 \end_preamble
 \use_default_options false
+\begin_modules
+path
+helpers
+\end_modules
+\maintain_unincluded_children false
 \language german
-\inputencoding latin1
+\language_package default
+\inputencoding auto
+\fontencoding global
 \font_roman times
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize 10
 \spacing single
 \use_hyperref true
@@ -34,19 +46,28 @@
 \pdf_backref false
 \pdf_pdfusetitle true
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
-\leftmargin 1.5cm
-\topmargin 0.5cm
-\rightmargin 3cm
-\bottommargin 0.5cm
-\headheight 1cm
-\headsep 0.4cm
-\footskip 0.4cm
+\suppress_date false
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1cm
+\headheight 0cm
+\headsep 0.6cm
+\footskip 0.6cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -57,8 +78,9 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -430,7 +452,11 @@ opt
 \begin_inset space ~
 \end_inset
 
-VAR[=
+
+\emph on
+VAR
+\emph default
+[=
 \emph on
 val
 \emph default
@@ -556,7 +582,11 @@ export
 \emph on
 VAR
 \emph default
- Shell-Variable 
+[=
+\emph on
+val
+\emph default
+] Shell-Variable 
 \emph on
 VAR
 \emph default
@@ -596,11 +626,7 @@ help
 \emph on
 cmd
 \emph default
- Zeigt die Online-Hilfe zu Kommando 
-\emph on
-cmd
-\emph default
-.
+ Zeigt die Online-Hilfe zu Kommando cmd.
 \end_layout
 
 \begin_layout Description
@@ -608,11 +634,19 @@ kill
 \begin_inset space ~
 \end_inset
 
-[opt]
+[
+\emph on
+opt
+\emph default
+]
 \begin_inset space ~
 \end_inset
 
-pid Beendet Prozeß mit ID 
+
+\emph on
+pid
+\emph default
+ Beendet Prozeß mit ID 
 \emph on
 pid
 \emph default
@@ -640,11 +674,23 @@ local
 \begin_inset space ~
 \end_inset
 
-[opt]
+[
+\emph on
+opt
+\emph default
+]
 \begin_inset space ~
 \end_inset
 
-[VAR[=val]\SpecialChar \ldots{}
+[
+\emph on
+VAR
+\emph default
+[=
+\emph on
+val
+\emph default
+]\SpecialChar \ldots{}
 ] Deklariert lokale Variable 
 \emph on
 VAR
@@ -700,15 +746,7 @@ Mit kleineren Einschränkungen.
 
 \end_inset
 
- der 
-\emph on
-C
-\emph default
--Funktion 
-\emph on
-printf
-\emph default
-().
+ der C-Funktion printf().
 \end_layout
 
 \begin_layout Description
@@ -804,11 +842,7 @@ reference "sec:options"
 \begin_inset space ~
 \end_inset
 
-
-\emph on
-var
-\emph default
-) 
+var) 
 \begin_inset ERT
 status collapsed
 
@@ -912,7 +946,9 @@ VAR
 \emph default
  Löschen der Variable 
 \emph on
-VAR.
+VAR
+\emph default
+.
 \end_layout
 
 \begin_layout Description
@@ -951,11 +987,7 @@ type
 \emph on
 cmd
 \emph default
- Liefert (wie 
-\family sans
-which
-\family default
-) den kompletten Pfad zu 
+ Liefert (wie 'which') den kompletten Pfad zu 
 \emph on
 cmd
 \emph default
@@ -988,15 +1020,11 @@ eg
 
 \end_inset
 
- 
-\family sans
-umask
+ umask
 \begin_inset space ~
 \end_inset
 
-644
-\family default
- 
+644 
 \begin_inset Formula $\widehat{=}$
 \end_inset
 
@@ -1033,11 +1061,7 @@ re
 
 \end_inset
 
- der Systemressourcen (
-\family sans
-siehe manpage
-\family default
-).
+ der Systemressourcen (siehe manpage).
 \end_layout
 
 \begin_layout Description
@@ -1061,8 +1085,28 @@ Steueranweisungen
 \end_layout
 
 \begin_layout Paragraph
-if list; then list; [ elif list; then list; ] ...
- [ else list; ] fi
+if 
+\emph on
+list
+\emph default
+; then 
+\emph on
+list
+\emph default
+; [ elif 
+\emph on
+list
+\emph default
+; then 
+\emph on
+list
+\emph default
+; ] ...
+ [ else 
+\emph on
+list
+\emph default
+; ] fi
 \end_layout
 
 \begin_layout Standard
@@ -1090,7 +1134,15 @@ mand executed, or zero if no condition tested true.
 \end_layout
 
 \begin_layout Paragraph
-select name [ in word ] ; do list ; done
+select 
+\emph on
+name
+\emph default
+ [ in word ] ; do 
+\emph on
+list
+\emph default
+ ; done
 \end_layout
 
 \begin_layout Standard
@@ -1150,8 +1202,16 @@ no commands were executed.
 \end_layout
 
 \begin_layout Paragraph
-case word in [ [(] pattern [ | pattern ] ...
- ) list ;; ] ...
+case 
+\emph on
+word
+\emph default
+ in [ [(] pattern [ | pattern ] ...
+ ) 
+\emph on
+list
+\emph default
+ ;; ] ...
  esac
 \end_layout
 
@@ -1287,7 +1347,15 @@ expressions is invalid.
 \end_layout
 
 \begin_layout Paragraph
-while list; do list; done
+while 
+\emph on
+list
+\emph default
+; do 
+\emph on
+list
+\emph default
+; done
 \end_layout
 
 \begin_layout Standard
@@ -1320,7 +1388,15 @@ if none was executed.
 \end_layout
 
 \begin_layout Paragraph
-until list; do list; done
+until 
+\emph on
+list
+\emph default
+; do 
+\emph on
+list
+\emph default
+; done
 \end_layout
 
 \begin_layout Standard
@@ -1369,22 +1445,21 @@ list
 \end_layout
 
 \begin_layout Standard
-This defines a function named name.
- The body of the function is the list of com­
-\end_layout
-
-\begin_layout Standard
-mands between { and }.
- This list is executed whenever name is specified as the name
-\end_layout
-
-\begin_layout Standard
-of a simple command.
- The exit status of a function is the exit status of the last
-\end_layout
-
-\begin_layout Standard
-command executed in the body.
+Definiert eine Funktion mit Namen 
+\emph on
+name
+\emph default
+, welche 
+\emph on
+list
+\emph default
+ als Sequenz von Kommandos ausführt.
+ Der Exit-Status der Funktion ist der Exit-Status des letzten Kommandos
+ in 
+\emph on
+list
+\emph default
+.
 \end_layout
 
 \begin_layout Section
@@ -2212,7 +2287,11 @@ s
 \emph on
 r
 \emph default
- (überall in VAR)
+ (überall in 
+\emph on
+VAR
+\emph default
+)
 \end_layout
 
 \end_deeper
@@ -2315,7 +2394,7 @@ eg
 \begin_deeper
 \begin_layout Standard
 
-\family sans
+\family typewriter
 mkdir /usr/local/src/bash/{old,new,dist,bugs}
 \end_layout
 
@@ -2372,7 +2451,7 @@ DIRSTACK (Array) Aktueller Directory-Stack
 
 \begin_layout Description
 EUID (Integer) Effektiver User-ID (UID
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2485,7 +2564,7 @@ linux
 
 \begin_layout Description
 PPID (Integer) Prozeß-ID (PID
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2550,17 +2629,11 @@ Optionen
 \end_layout
 
 \begin_layout Standard
-Optionen können auf der Kommandozeile oder mittels 
-\family sans
-set -o
-\family default
- 
-\family sans
+Optionen können auf der Kommandozeile oder mittels 'set -o 
 \emph on
 option-name
-\family default
 \emph default
- 
+' 
 \begin_inset ERT
 status collapsed
 
@@ -2573,14 +2646,11 @@ resp
 
 \end_inset
 
- 
-\family sans
-set -
+ 'set -
 \emph on
 option-abbrev
-\family default
 \emph default
- im Shell-Script angegeben werden.
+' im Shell-Script angegeben werden.
  
 \end_layout
 
@@ -2683,19 +2753,16 @@ ie
 r).
 \end_layout
 
-\begin_layout Standard
-Außerdem gibt es erweiterte Optionen, die mit 
-\family sans
-shopt
-\begin_inset space ~
-\end_inset
+\begin_layout Section
+Erweiterte Optionen
+\end_layout
 
--
+\begin_layout Standard
+Außerdem gibt es erweiterte Optionen, die mit 'shopt 
 \emph on
-option-abbrev
-\family default
+-option-abbrev
 \emph default
- angesprochen werden.
+' angesprochen werden.
 \end_layout
 
 \begin_layout Description
@@ -2777,11 +2844,18 @@ restricted_shell Einschränkung der Bash-Funktionalitäten (Restricted-Mode).
 \end_layout
 
 \begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100line%"
+height "1pt"
 
-\lyxline
+\end_inset
+
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

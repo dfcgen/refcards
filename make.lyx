@@ -1,24 +1,36 @@
-#LyX 1.6.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass article
+\textclass manual
 \begin_preamble
-\input{all-inc}
+\date{}
 \end_preamble
 \use_default_options false
+\begin_modules
+path
+helpers
+\end_modules
+\maintain_unincluded_children false
 \language german
-\inputencoding latin1
+\language_package default
+\inputencoding auto
+\fontencoding global
 \font_roman times
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize 10
 \spacing single
 \use_hyperref true
@@ -37,9 +49,18 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
 \leftmargin 1.5cm
 \topmargin 0.5cm
 \rightmargin 3cm
@@ -57,8 +78,9 @@
 \paperpagestyle plain
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
@@ -107,7 +129,7 @@ year
 
 \begin_layout Section
 Aufruf
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -121,7 +143,7 @@ Make
 
 \begin_layout Standard
 Der Make-Aufruf
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -131,6 +153,13 @@ Make!Aufruf
 \end_inset
 
  sieht wiefolgt aus: 
+\family sans
+
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+
 \family sans
 make [
 \emph on
@@ -164,12 +193,18 @@ val2
 \family sans
 \emph on
 goal
+\end_layout
+
+\end_inset
+
+
 \family default
+\emph on
 .
 
 \emph default
  Die wichtigsten Optionen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -223,7 +258,7 @@ file
 
 \begin_layout Description
 --help (-h) Hilfe
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -237,7 +272,7 @@ Make!Hilfe
 
 \begin_layout Description
 --ignore-errors (-i) Make ignoriert alle Fehler
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -267,7 +302,7 @@ include
 
 \begin_layout Description
 --keep-going (-k) make soll trotz Fehler
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -289,7 +324,7 @@ Rules
 
 \begin_layout Description
 --no-builtin-variables (-R) 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -316,7 +351,7 @@ Rules
 
 \begin_layout Description
 --warn-undefined-variables Make gibt eine Warnung bei undefinierten Variablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -334,7 +369,7 @@ Rules
 
 \begin_layout Subsection
 Explizite Rules
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -352,7 +387,7 @@ Jedes Makefile besteht aus sogenannten
 Rules
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -366,7 +401,7 @@ Rules
 Targets
 \emph default
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -378,7 +413,7 @@ Targets
 , 
 \emph on
 Prerequisites
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -447,7 +482,7 @@ Goal
 Prerequesites
 \emph default
  sind als .PHONY
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -521,7 +556,7 @@ Rule
 
 \begin_layout Subsection
 Implizite Rules
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -601,7 +636,7 @@ Rules
  werden von Make durch Built-In 
 \emph on
 Rules
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -678,7 +713,7 @@ $(TEX)
 \end_deeper
 \begin_layout Subsection
 Pattern
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -688,7 +723,7 @@ Pattern
 \end_inset
 
 -Rules
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -791,7 +826,7 @@ Pattern
 
  und (zuletzt) einem Suffix zusammen.
  Das Prozentzeichen ist ähnlich einem Wildcard
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -807,7 +842,7 @@ Targets
 , zu dem es paßt, als auch als 
 \emph on
 Stamm
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -902,7 +937,7 @@ Built-In Targets
 
 \begin_layout Description
 .PHONY
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -934,7 +969,7 @@ t
 
 \begin_layout Description
 .IGNORE
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -944,7 +979,7 @@ status collapsed
 \end_inset
 
  Fehler
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -958,7 +993,7 @@ Fehler
 
 \begin_layout Description
 .PRECIOUS
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -976,7 +1011,7 @@ Target
 
 \begin_layout Description
 .DEFAULT
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -995,7 +1030,7 @@ Commands
 
 \begin_layout Description
 .EXPORT_ALL_VARIABLES
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1039,7 +1074,7 @@ Target
 \end_inset
 
 Sub-Makes
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1053,7 +1088,7 @@ Sub-Makes
 
 \begin_layout Subsection
 Bedingte Ausführung
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1071,7 +1106,7 @@ Bedingte Ausführung ist durch Verwendung der folgende Schlüsselwörter möglic
 
 \begin_layout Description
 ifdef
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1097,7 +1132,7 @@ VAR
 
 \begin_layout Description
 ifndef
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1123,7 +1158,7 @@ VAR
 
 \begin_layout Description
 ifeq
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1181,7 +1216,7 @@ val
 
 \begin_layout Description
 ifneq
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1256,7 +1291,7 @@ make CFLAGS='-g -O'
 
 \begin_layout Section
 Variablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1270,7 +1305,7 @@ Variablen
 
 \begin_layout Subsection
 Anwender-Variablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1357,7 +1392,7 @@ Dazu muß man wissen, daß GNU Make eine Zwei-Pass Anwendung ist.
 
 \begin_layout Standard
 Die Bezugnahme auf Shell-Variablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1375,7 +1410,7 @@ var
 
 \begin_layout Subsection
 Auto-Variablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1461,7 +1496,7 @@ $(@F) Datei-Teil des Pfades von $@
 
 \begin_layout Subsection
 Umgebungsvariablen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1487,7 +1522,7 @@ VAR = value
 
 \begin_layout LyX-Code
 export
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1497,7 +1532,7 @@ export
 \end_inset
 
 
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1552,7 +1587,7 @@ CC Name des C/C++ Compilers
 
 \begin_layout Section
 Funktionen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1566,7 +1601,7 @@ Funktionen
 
 \begin_layout Description
 $(subst
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1608,7 +1643,7 @@ text
 
 \begin_layout Description
 $(patsubst
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1648,7 +1683,7 @@ new.
 
 \begin_layout Description
 $(strip
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1672,7 +1707,7 @@ string.
 
 \begin_layout Description
 $(findstring
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1702,7 +1737,7 @@ find
 
 \begin_layout Description
 $(filter
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1737,7 +1772,7 @@ pattern
 
 \begin_layout Description
 $(filter-out
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1772,7 +1807,7 @@ pattern
 
 \begin_layout Description
 $(sort
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1798,7 +1833,7 @@ list
 
 \begin_layout Description
 $(dir
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1825,7 +1860,7 @@ fnames
 
 \begin_layout Description
 $(notdir
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1852,7 +1887,7 @@ fnames
 
 \begin_layout Description
 $(suffix
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1879,7 +1914,7 @@ fnames
 
 \begin_layout Description
 $(basename
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1902,7 +1937,7 @@ fnames
 
 \begin_layout Description
 $(addsuffix
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1937,7 +1972,7 @@ names
 
 \begin_layout Description
 $(addprefix
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -1972,7 +2007,7 @@ names
 
 \begin_layout Description
 $(join
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2006,7 +2041,7 @@ list2
 
 \begin_layout Description
 $(word
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2036,7 +2071,7 @@ text
 
 \begin_layout Description
 $(words
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2062,7 +2097,7 @@ text
 
 \begin_layout Description
 $(wordlist
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2104,7 +2139,7 @@ e
 
 \begin_layout Description
 $(firstword
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2131,7 +2166,7 @@ names
 
 \begin_layout Description
 $(wildcard
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2158,7 +2193,7 @@ pat
 
 \begin_layout Description
 $(error
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2177,7 +2212,7 @@ text
 \emph default
 \SpecialChar \ldots{}
 ) Fehlerausgabe
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2195,7 +2230,7 @@ text
 
 \begin_layout Description
 $(warning
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2222,7 +2257,7 @@ text
 
 \begin_layout Description
 $(shell
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2256,7 +2291,7 @@ args
 
 \begin_layout Description
 $(origin
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2296,7 +2331,7 @@ eg
 
 \begin_layout Description
 $(foreach
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2326,7 +2361,7 @@ text
 
 \begin_layout Description
 $(call
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2381,7 +2416,7 @@ VAR
 
 \begin_layout Section
 Spezialzeichen
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2395,7 +2430,7 @@ Spezialzeichen
 
 \begin_layout Description
 # Kommentar
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2419,7 +2454,7 @@ Kommentar
 cmd
 \emph default
  Unterdrückt Echo
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2443,7 +2478,7 @@ cmd
 cmd
 \emph default
  einen Fehler
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
@@ -2465,7 +2500,7 @@ cmd
 cmd
 \emph default
  wird rekursiv
-\begin_inset Index
+\begin_inset Index idx
 status collapsed
 
 \begin_layout Plain Layout
