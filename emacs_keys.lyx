@@ -9,6 +9,7 @@
 \options normalheadings,parskip+
 \use_default_options false
 \begin_modules
+helpers
 path
 \end_modules
 \maintain_unincluded_children false
@@ -766,6 +767,10 @@ C-M-Insert Register (C-x
 \begin_inset space ~
 \end_inset
 
+r
+\begin_inset space ~
+\end_inset
+
 x)
 \end_layout
 
@@ -799,6 +804,10 @@ S-Insert
 
 \begin_layout Description
 S-M-Insert Register (C-x
+\begin_inset space ~
+\end_inset
+
+r
 \begin_inset space ~
 \end_inset
 
@@ -1255,19 +1264,19 @@ Dired
 \end_layout
 
 \begin_layout Description
-F3 Datei ansehen (v)
+F3 Ansehen (v)
 \end_layout
 
 \begin_layout Description
-F4 Datei bearbeiten (C-o)
+F4 Bearbeiten (C-o)
 \end_layout
 
 \begin_layout Description
-F5 Datei kopieren (C)
+F5 Kopieren (C)
 \end_layout
 
 \begin_layout Description
-F6 Datei umbennen/verschieben (R)
+F6 Umbennen/Verschieben (R)
 \end_layout
 
 \begin_layout Description
@@ -1275,7 +1284,7 @@ F7 Verzeichnis anlegen
 \end_layout
 
 \begin_layout Description
-F8 Datei löschen (D)
+F8 Löschen (D)
 \end_layout
 
 \begin_layout Description
@@ -1287,19 +1296,19 @@ x)
 \end_layout
 
 \begin_layout Description
-Insert Datei markieren (m/u)
+Insert Markieren (m/u)
 \end_layout
 
 \begin_layout Description
-Enter Unterverz./Datei öffnen
+Enter Öffnen
 \end_layout
 
 \begin_layout Description
-C-Enter Unterverz./Datei in neuem Buffer (o)
+C-Enter Öffnen in neuem Buffer (o)
 \end_layout
 
 \begin_layout Description
-Backspace Verzeichnisebene hoch
+Backspace Ebene hoch
 \end_layout
 
 \begin_layout Description
@@ -1311,15 +1320,28 @@ M-l Dateiname Kleinbuchstaben
 \end_layout
 
 \begin_layout Description
-l Anzeige versteckter Dateien
+l mehr anzeigen, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+eg
+\end_layout
+
+\end_inset
+
+ versteckte Dateien
 \end_layout
 
 \begin_layout Description
-d Datei zum Löschen markieren
+d Markieren zum Löschen
 \end_layout
 
 \begin_layout Description
-x Markierte (d) Dateien löschen
+x Markierte (d) löschen
 \end_layout
 
 \begin_layout Description
@@ -1327,7 +1349,7 @@ q Beenden
 \end_layout
 
 \begin_layout Description
-+ Dateien markieren 
++ Markieren 
 \emph on
 Reg-Exp
 \end_layout
