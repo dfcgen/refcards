@@ -143,7 +143,7 @@ M-x
 \emph on
 Emacs
 \emph default
--Kommando <Cmdq> ausführen
+-Kommando <Cmd> ausführen
 \begin_inset Foot
 status collapsed
 
@@ -1587,7 +1587,7 @@ mbox{Ges.}
 \begin_layout Description
 
 \backslash
-# Nummer der Ersetzung (0\SpecialChar \ldots{}
+# Nummer der Ersetzung (1\SpecialChar \ldots{}
 )
 \end_layout
 
