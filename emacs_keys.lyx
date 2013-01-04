@@ -145,7 +145,7 @@ Emacs
 \emph default
 -Kommando <Cmd> ausführen
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
@@ -1484,32 +1484,41 @@ $ Zeilenende
 \end_layout
 
 \begin_layout Paragraph*
-Suffixe
+Suffixe (Häufigkeit des Auftretens)
 \end_layout
 
 \begin_layout Description
-* Beliebige Anzahl (auch leer)
+* Beliebige Anzahl (längste Übereinstimmung): 0\SpecialChar \ldots{}
+
 \end_layout
 
 \begin_layout Description
-+ Beliebige Anzahl, 
-\begin_inset ERT
-status open
++ Mindestens einmal (längste Übereinstimmung): 1\SpecialChar \ldots{}
 
-\begin_layout Plain Layout
-
-
-\backslash
-mbox{mind.}
 \end_layout
 
+\begin_layout Description
+? Einmal oder nicht (längste Übereinstimmung): 0
+\begin_inset space \thinspace{}
 \end_inset
 
- einmal
+|
+\begin_inset space \thinspace{}
+\end_inset
+
+1
 \end_layout
 
 \begin_layout Description
-? Einmal oder nicht
+*?,
+\begin_inset space ~
+\end_inset
+
++?,
+\begin_inset space ~
+\end_inset
+
+?? Alternative Form für kürzeste Übereinstimmung
 \end_layout
 
 \begin_layout Description
