@@ -182,11 +182,7 @@ C-u
 \begin_inset space ~
 \end_inset
 
-<Cmd> 
-\emph on
-Emacs
-\emph default
--Kommando <Cmd> mit Argument <Num> ausführen
+<Cmd> <Cmd> mit Argument <Num> ausführen
 \begin_inset Foot
 status collapsed
 
@@ -272,7 +268,7 @@ C-c)
 \end_layout
 
 \begin_layout Description
-S-C-F12 VC-Status Verzeichnis (C-x
+S-F12 VC-Status Verzeichnis (C-x
 \begin_inset space ~
 \end_inset
 
@@ -288,7 +284,7 @@ Buffer, Windows, Frames
 \end_layout
 
 \begin_layout Description
-S-F12 Buffer Menü (C-x C-b)
+S-C-F12 Buffer Menü (C-x C-b)
 \end_layout
 
 \begin_layout Description
@@ -590,56 +586,23 @@ C-n #endif vorwärts
 \end_layout
 
 \begin_layout Description
-F7 Gehe zu Tag (M
+F7 Gehe zu Tag/Symbol (C-x
+\begin_inset space ~
+\end_inset
+
+4
 \begin_inset space ~
 \end_inset
 
 .)
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Setzt Ausführung von 'make tags' voraus.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
-S-F7 Nächste Fundstelle des Tags
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Nur anwendbar nach 
-\emph on
-find-tag
-\emph default
- (F7).
-\end_layout
-
-\end_inset
-
-
+S-F7 Suche passende Tags
 \end_layout
 
 \begin_layout Description
-M-S-F7 Gehe zurück 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-mbox{bzgl.}
-\end_layout
-
-\end_inset
-
- F7 (M-*)
+C-S-F7 Lade TAGS Datei
 \end_layout
 
 \begin_layout Description
@@ -692,24 +655,7 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-a Umschaltung Auto-Modus
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Quotes eld
-\end_inset
-
-Electric
-\begin_inset Quotes erd
-\end_inset
-
- characters insert newlines and indent.
-\end_layout
-
-\end_inset
-
-
+C-a Umschaltung Auto-Newline
 \end_layout
 
 \begin_layout Description
@@ -717,17 +663,15 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-d Umschaltung Hungry-Modus
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Delete groups of spaces with a single Delete/Backspace.
+C-d Umschaltung Hungry-Delete
 \end_layout
 
+\begin_layout Description
+C-c
+\begin_inset space ~
 \end_inset
 
- 
+C-l Umschaltung Electric-Mode
 \end_layout
 
 \end_deeper
@@ -1040,17 +984,6 @@ Kommentare
 \begin_deeper
 \begin_layout Description
 F6 Kommentar einfügen/ausrichten
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-DWIM \SpecialChar \menuseparator
- Do What I Mean (anwendbar auch auf Bereiche)
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Description
@@ -1130,6 +1063,10 @@ F10 Nächste Fundstelle
 
 \begin_layout Description
 S-F10 Vorherige Fundstelle
+\end_layout
+
+\begin_layout Description
+S-C-F10 Erste Fundstelle
 \end_layout
 
 \begin_layout Description
@@ -1281,6 +1218,10 @@ F6 Umbennen/Verschieben (R)
 
 \begin_layout Description
 F7 Verzeichnis anlegen
+\end_layout
+
+\begin_layout Description
+S-C-F7 TAGS erzeugen und laden
 \end_layout
 
 \begin_layout Description
