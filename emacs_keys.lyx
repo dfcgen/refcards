@@ -410,7 +410,7 @@ Anzeige
 \end_layout
 
 \begin_layout Description
-F5 Aktualisieren (Syntax Highlighting, Speedbar, iMenu)
+(S-)F5 Aktualisieren (Syntax Highlighting, Speedbar, iMenu)
 \end_layout
 
 \begin_layout Description
@@ -451,7 +451,28 @@ C-S-F3 Which-Mode ein/aus
 status collapsed
 
 \begin_layout Plain Layout
-Anzeige des aktuellen Funktionsnamen in der Mode-Line.
+In anderen Modi (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+eg
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+Dired
+\emph default
+, 
+\emph on
+Buffer Menu
+\emph default
+) Umschaltung von Anzeigeoptionen.
 \end_layout
 
 \end_inset
@@ -758,37 +779,6 @@ r
 g)
 \end_layout
 
-\begin_layout Description
-S-F5 Abkürzung ersetzen
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Nötig falls im 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-mbox{akt.}
-\end_layout
-
-\end_inset
-
- Buffer nicht automatisch 
-\emph on
-Abbrev
-\emph default
--Mode aktiviert ist.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Enumerate
 Löschen (Ausschneiden)
@@ -849,15 +839,13 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-mbox{Z.
-\backslash
-,B.}
+eg
 \end_layout
 
 \end_inset
@@ -1261,7 +1249,7 @@ M-l Dateiname Kleinbuchstaben
 \end_layout
 
 \begin_layout Description
-l mehr anzeigen, 
+S-C-F3 mehr anzeigen, 
 \begin_inset ERT
 status open
 
