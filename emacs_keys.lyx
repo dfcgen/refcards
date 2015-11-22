@@ -1,12 +1,12 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass manual
 \begin_preamble
-\date{}
+%% \date{}
 \end_preamble
-\options normalheadings,parskip+
+\options smallheadings,halfparskip*,9pt
 \use_default_options false
 \begin_modules
 helpers
@@ -20,20 +20,20 @@ path
 \font_roman times
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 99
-
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
 \paperfontsize 10
-\spacing other 0.5
+\spacing other 0.80000000000000004
 \use_hyperref true
 \pdf_subject "Emacs Keys"
 \pdf_keywords "Emacs"
@@ -48,15 +48,24 @@ path
 \pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
+\justification true
 \use_refstyle 0
 \index Stichwortverzeichnis
 \shortcut idx
@@ -143,7 +152,17 @@ M-x
 \emph on
 Emacs
 \emph default
--Kommando <Cmd> ausführen
+ Kommando 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+<Cmd>
+\end_layout
+
+\end_inset
+
+ ausführen
 \begin_inset Foot
 status open
 
@@ -182,31 +201,69 @@ C-u
 \begin_inset space ~
 \end_inset
 
-<Cmd> <Cmd> mit Argument <Num> ausführen
+<Cmd> 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+<Cmd>
+\end_layout
+
+\end_inset
+
+ mit Argument 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+<Num>
+\end_layout
+
+\end_inset
+
+ ausführen
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-<Num> kann z.
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+<Num>
+\end_layout
+
+\end_inset
+
+ kann 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-,
+eg
 \end_layout
 
 \end_inset
 
-B.
  als Wiederholungszähler wirken, wie in 
 \emph on
 C-u 78 *
 \emph default
 .
- Außerdem kann <Cmd> auch als M-x
+ Außerdem kann 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+<Cmd>
+\end_layout
+
+\end_inset
+
+ auch als M-x
 \begin_inset space ~
 \end_inset
 
@@ -252,11 +309,11 @@ C-s)
 \end_layout
 
 \begin_layout Description
-S-C-F2 UNIX-Konvertierung + Speichern
+C-S-F2 UNIX-Konvertierung + Speichern
 \end_layout
 
 \begin_layout Description
-S-M-F2 DOS-Konvertierung + Speichern
+M-S-F2 DOS-Konvertierung + Speichern
 \end_layout
 
 \begin_layout Description
@@ -268,15 +325,11 @@ C-c)
 \end_layout
 
 \begin_layout Description
-S-F12 VC-Status Verzeichnis (C-x
+Pause Umschaltung Read-Only (C-x
 \begin_inset space ~
 \end_inset
 
-v
-\begin_inset space ~
-\end_inset
-
-d)
+C-q)
 \end_layout
 
 \begin_layout Section
@@ -284,69 +337,7 @@ Buffer, Windows, Frames
 \end_layout
 
 \begin_layout Description
-S-C-F12 Buffer Menü (C-x C-b)
-\end_layout
-
-\begin_layout Description
-Kp-Add Nur ein Fenster (C-x
-\begin_inset space ~
-\end_inset
-
-1)
-\end_layout
-
-\begin_layout Description
-C-w Buffer schließen (ohne Rückfrage)
-\end_layout
-
-\begin_layout Description
-Kp-Enter Buffer schließen (C-x
-\begin_inset space ~
-\end_inset
-
-#)
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Für 
-\emph on
-emacsclient
-\emph default
-, sonst C-x
-\begin_inset space ~
-\end_inset
-
-k.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-C-Kp-Add Neuer Frame (C-x
-\begin_inset space ~
-\end_inset
-
-5
-\begin_inset space ~
-\end_inset
-
-2)
-\end_layout
-
-\begin_layout Description
-C-Kp-Enter Frame schließen (C-x
-\begin_inset space ~
-\end_inset
-
-5
-\begin_inset space ~
-\end_inset
-
-0)
+C-S-F12 Anzeige Buffer List (C-x C-b)
 \end_layout
 
 \begin_layout Description
@@ -358,11 +349,36 @@ C-Tab Nächster Buffer (C-x
 \end_layout
 
 \begin_layout Description
-S-C-Tab Vorheriger Buffer (C-x 
+C-S-Tab Vorheriger Buffer (C-x 
 \begin_inset Formula $\leftarrow$
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Description
+C-w Buffer schließen (C-x
+\begin_inset space ~
+\end_inset
+
+k 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resp
+\end_layout
+
+\end_inset
+
+ C-x
+\begin_inset space ~
+\end_inset
+
+#)
 \end_layout
 
 \begin_layout Description
@@ -371,6 +387,22 @@ S-Tab Wechsel in anderes Fenster (C-x
 \end_inset
 
 o)
+\end_layout
+
+\begin_layout Description
+Kp-Enter Fenster schließen (C-x
+\begin_inset space ~
+\end_inset
+
+0)
+\end_layout
+
+\begin_layout Description
+Kp-Add Nur ein Fenster (C-x
+\begin_inset space ~
+\end_inset
+
+1)
 \end_layout
 
 \begin_layout Description
@@ -405,16 +437,77 @@ S-Kp-Subtract Fenster horizontal verkleinern (C-x
 {)
 \end_layout
 
+\begin_layout Description
+C-Kp-Add Neuer Frame (C-x
+\begin_inset space ~
+\end_inset
+
+5
+\begin_inset space ~
+\end_inset
+
+2)
+\end_layout
+
+\begin_layout Description
+C-Kp-Enter Frame schließen (C-x
+\begin_inset space ~
+\end_inset
+
+5
+\begin_inset space ~
+\end_inset
+
+0)
+\end_layout
+
 \begin_layout Section
 Anzeige
 \end_layout
 
 \begin_layout Description
-(S-)F5 Aktualisieren (Syntax Highlighting, Speedbar, iMenu)
+F5 Aktualisieren (Font Lock, Flyspell, Speedbar, iMenu, Shell, VC)
 \end_layout
 
 \begin_layout Description
-F4 Block (inkrementell) ausblenden (C-c
+C-S-F5 Rechtschreibprüfung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{akt.}
+\end_layout
+
+\end_inset
+
+ Wort (M-$, 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+ispell-word
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+F4 [CC]
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Der CC Mode steht teils auch als Synonym für andere Programmiersprachen.
+\end_layout
+
+\end_inset
+
+ Block ein/ausblenden (C-c
 \begin_inset space ~
 \end_inset
 
@@ -426,7 +519,7 @@ C-c)
 \end_layout
 
 \begin_layout Description
-S-F4 Alle Ebenen/Blöcke anzeigen (C-c
+S-F4 [CC] Alle Ebenen/Blöcke anzeigen (C-c
 \begin_inset space ~
 \end_inset
 
@@ -446,12 +539,43 @@ S-F3 Anzeige mit/ohne Umbruch (toggle-truncate-lines)
 \end_layout
 
 \begin_layout Description
-C-S-F3 Which-Mode ein/aus
-\begin_inset Foot
-status collapsed
+C-S-F3 Umschaltung von Anzeigeoptionen:
+\end_layout
 
-\begin_layout Plain Layout
-In anderen Modi (
+\begin_layout Itemize
+[CC] Zeige Tabs ein/aus (whitespace-mode)
+\end_layout
+
+\begin_layout Itemize
+[Speedbar] 
+\begin_inset Quotes gld
+\end_inset
+
+Zeige alle Dateien
+\begin_inset Quotes grd
+\end_inset
+
+ ein/aus
+\end_layout
+
+\begin_layout Itemize
+[Dired] Anzeige versteckter Dateien ein/aus
+\end_layout
+
+\begin_layout Itemize
+[Buffer List] 
+\begin_inset Quotes gld
+\end_inset
+
+Zeige nur Datei-Buffer
+\begin_inset Quotes grd
+\end_inset
+
+ ein/aus
+\end_layout
+
+\begin_layout Itemize
+[VC] Verstecke Dateien in 
 \begin_inset ERT
 status open
 
@@ -459,25 +583,16 @@ status open
 
 
 \backslash
-eg
+mbox{best.}
 \end_layout
 
 \end_inset
 
- 
-\emph on
-Dired
-\emph default
-, 
-\emph on
-Buffer Menu
-\emph default
-) Umschaltung von Anzeigeoptionen.
+ Zustand
 \end_layout
 
-\end_inset
-
-
+\begin_layout Itemize
+[Bookmarks] Dateinamenanzeige ein/aus
 \end_layout
 
 \begin_layout Description
@@ -485,19 +600,31 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-s Syntaktischer Kontext
+C-s [CC] Syntaktischer Kontext
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 Hilfreich bei der Anpassung von 
-\emph on
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
 c-hanging-braces-alist
-\emph default
+\end_layout
+
+\end_inset
+
  und 
-\emph on
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
 c-offsets-alist
-\emph default
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -516,6 +643,10 @@ C-x
 
 \begin_layout Section
 Navigieren
+\end_layout
+
+\begin_layout Subsection
+Buffer
 \end_layout
 
 \begin_layout Description
@@ -551,7 +682,8 @@ C-Right Wort links (M-b)
 \end_layout
 
 \begin_layout Description
-M-g Zu Zeile
+M-g Zu Zeilennummer\SpecialChar \ldots{}
+
 \end_layout
 
 \begin_layout Description
@@ -559,35 +691,29 @@ C-l Cursor zentrieren
 \end_layout
 
 \begin_layout Description
-M-Left Klammern/Ausdruck rückwärts (C-M-b)
+M-Left [CC] Klammern balanciert zurück (C-M-b), [sonst] vorheriger Satzanfang
+ (M-a)
 \end_layout
 
 \begin_layout Description
-M-Right Klammern/Ausdruck vorwärts (C-M-f)
+M-Right [CC] Klammern balanciert vorwärts (C-M-f), [sonst] nächster Satzanfang
+ (M-e)
 \end_layout
 
 \begin_layout Description
-M-Up Hierarchie aufwärts (C-M-u)
+M-Up [CC] Hierarchie aufwärts (C-M-u), [sonst] Anfang des Absatzes
 \end_layout
 
 \begin_layout Description
-M-Down Hierarchie abwärts (C-M-d)
+M-Down [CC] Hierarchie abwärts (C-M-d), [sonst] Ende des Absatzes
 \end_layout
 
 \begin_layout Description
-C-Up Funktionsanfang (C-M-a)
+C-Up [CC] Funktionsanfang (C-M-a)
 \end_layout
 
 \begin_layout Description
-C-Down Funktionsende (C-M-e)
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-u #if(def)/#else/#endif aufwärts
+C-Down [CC] Funktionsende (C-M-e)
 \end_layout
 
 \begin_layout Description
@@ -595,7 +721,7 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-p #if(def) rückwärts
+C-u [CC] #if(def)/#else/#endif aufwärts
 \end_layout
 
 \begin_layout Description
@@ -603,27 +729,19 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-n #endif vorwärts
+C-p [CC] #if(def) rückwärts
 \end_layout
 
 \begin_layout Description
-F7 Gehe zu Tag/Symbol (C-x
+C-c
 \begin_inset space ~
 \end_inset
 
-4
-\begin_inset space ~
-\end_inset
-
-.)
+C-n [CC] #endif vorwärts
 \end_layout
 
-\begin_layout Description
-S-F7 Suche passende Tags
-\end_layout
-
-\begin_layout Description
-C-S-F7 Lade TAGS Datei
+\begin_layout Subsection
+Bookmarks
 \end_layout
 
 \begin_layout Description
@@ -662,6 +780,300 @@ r
 l)
 \end_layout
 
+\begin_layout Subsection
+Grep/Find
+\end_layout
+
+\begin_layout Description
+F8 Suche in Dateien (grep/find)
+\end_layout
+
+\begin_layout Description
+S-F8 Suche in offenen Buffers (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+multi-occur-in-matching-buffers
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+C-S-F8 Suche rekursiv in Dateien (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+grep-find
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+F10 Nächste (Fund-) Stelle (next-error)
+\end_layout
+
+\begin_layout Description
+S-F10 Vorherige (Fund-) Stelle (previous-error)
+\end_layout
+
+\begin_layout Subsection
+Tags, ChangeLog
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+4
+\begin_inset space ~
+\end_inset
+
+a Neuer 
+\emph on
+ChangeLog
+\emph default
+-Eintrag für 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{akt.}
+\end_layout
+
+\end_inset
+
+ Datei/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{Fkt.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-f [ChangeLog] Gehe zu Quelldatei der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{akt.}
+\end_layout
+
+\end_inset
+
+ Zeile
+\end_layout
+
+\begin_layout Description
+F7 Gehe zu:
+\end_layout
+
+\begin_layout Itemize
+[CC] Tag/Symbol (M-.)
+\end_layout
+
+\begin_layout Itemize
+[ChangeLog] Makro/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{Fkt.}
+\end_layout
+
+\end_inset
+
+ der 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{akt.}
+\end_layout
+
+\end_inset
+
+ Zeile (C-c
+\begin_inset space ~
+\end_inset
+
+C-c)
+\end_layout
+
+\begin_layout Itemize
+[Diff] Quelldatei (C-c
+\begin_inset space ~
+\end_inset
+
+C-c)
+\end_layout
+
+\begin_layout Description
+S-F7 [CC] Gehe von Tag zurück (M-*)
+\end_layout
+
+\begin_layout Description
+C-F7 [CC] Zeige Vervollständigungen für Tag (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+complete-tag
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+C-S-F7 [CC] Vervollständige Tag (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+hippie-expand
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+M-S-F7 [CC] Suche passende Tags (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+tags-apropos
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+C-S-F7 [Dired] TAGS Datei erzeugen und laden
+\end_layout
+
+\begin_layout Description
+M-S-F7 [Dired] Lade TAGS Datei (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+visit-tags-table
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsection
+Isearch
+\end_layout
+
+\begin_layout Description
+C-s/C-r Interaktive Suche vorwärts/rückwärts
+\end_layout
+
+\begin_layout Description
+C-s/C-r Weitersuchen vorwärts/rückwärts
+\end_layout
+
+\begin_layout Description
+C-w 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{Akt.}
+\end_layout
+
+\end_inset
+
+ Wort an Suchstring anhängen
+\end_layout
+
+\begin_layout Description
+C-y Rest der Zeile an Suchstring anhängen
+\end_layout
+
+\begin_layout Description
+M-y Einfügen an Ende des Suchstrings
+\end_layout
+
+\begin_layout Description
+M-c Umschaltung Case-Sensitivity
+\end_layout
+
+\begin_layout Description
+M-r Umschaltung auf reguläre Ausdrücke
+\end_layout
+
+\begin_layout Description
+M-e Suchstring editieren
+\end_layout
+
+\begin_layout Description
+M-n Verwende nächsten Suchstring
+\end_layout
+
+\begin_layout Description
+M-p Verwende vorhergehenden Suchstring
+\end_layout
+
+\begin_layout Description
+C-M-s Suchen vorwärts 
+\emph on
+Reg-Exp
+\end_layout
+
+\begin_layout Description
+C-M-r Suchen rückwärts 
+\emph on
+Reg-Exp
+\end_layout
+
 \begin_layout Section
 Editieren
 \end_layout
@@ -676,7 +1088,9 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-a Umschaltung Auto-Newline
+C-a Umschaltung 
+\emph on
+Auto-Newline
 \end_layout
 
 \begin_layout Description
@@ -684,7 +1098,9 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-d Umschaltung Hungry-Delete
+C-d Umschaltung 
+\emph on
+Hungry-Delete
 \end_layout
 
 \begin_layout Description
@@ -692,7 +1108,9 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-l Umschaltung Electric-Mode
+C-l Umschaltung 
+\emph on
+Electric-Mode
 \end_layout
 
 \end_deeper
@@ -768,7 +1186,7 @@ S-Insert
 \end_layout
 
 \begin_layout Description
-S-M-Insert Register (C-x
+M-S-Insert Register (C-x
 \begin_inset space ~
 \end_inset
 
@@ -838,19 +1256,7 @@ C-q Steuerzeichen eingeben
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-eg
-\end_layout
-
-\end_inset
-
- fügt C-q
+Zum Beispiel fügt C-q
 \begin_inset space ~
 \end_inset
 
@@ -871,23 +1277,7 @@ harten
 \end_layout
 
 \begin_layout Description
-S-C-q UTF-8 Sonderzeichen (ucs-insert)
-\end_layout
-
-\begin_layout Description
-M-x
-\begin_inset space ~
-\end_inset
-
-untabify TAB in Leerzeichen umwandeln
-\end_layout
-
-\begin_layout Description
-M-x
-\begin_inset space ~
-\end_inset
-
-tabify Leerzeichen in TAB umwandeln
+C-S-q UTF-8 Sonderzeichen (ucs-insert)
 \end_layout
 
 \end_deeper
@@ -930,7 +1320,7 @@ C-u Bereich Großbuchstaben
 
 \end_deeper
 \begin_layout Enumerate
-(Syntaktisches)
+Syntaktisches
 \begin_inset space ~
 \end_inset
 
@@ -947,7 +1337,17 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-q Funktion
+C-q Funktion (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+c-indent-defun
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Description
@@ -961,7 +1361,17 @@ C-S-q Bereich (C-M-
 \end_layout
 
 \begin_layout Description
-C-M-q Ausdruck
+C-M-q Ausdruck (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+c-indent-exp
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \end_deeper
@@ -1030,128 +1440,217 @@ mbox{Cursorpos.}
 
 \end_deeper
 \begin_layout Section
-Suchen/Ersetzen
+Spezielle Modi
+\end_layout
+
+\begin_layout Subsection
+Dired (Speedbar)
 \end_layout
 
 \begin_layout Description
-F8 Suche in Dateien (grep)
+F12 
+\emph on
+Dired
+\emph default
+ (C-x
+\begin_inset space ~
+\end_inset
+
+d)
 \end_layout
 
 \begin_layout Description
-S-F8 Suche in aktuellem Buffer (occur)
+F3 [Dired] Ansehen (v)
 \end_layout
 
 \begin_layout Description
-S-C-F8 Suche rekursiv in Dateien (grep-find)
+F5 [Dired] Kopieren (C)
 \end_layout
 
 \begin_layout Description
-F10 Nächste Fundstelle
+F6 [Dired] Umbennen/Verschieben (R)
 \end_layout
 
 \begin_layout Description
-S-F10 Vorherige Fundstelle
+F7 [Dired] Verzeichnis anlegen
 \end_layout
 
 \begin_layout Description
-S-C-F10 Erste Fundstelle
+F8 [Dired] Löschen (D)
 \end_layout
 
 \begin_layout Description
-C-s/C-r Interaktive Suche vorwärts/rückwärts
+S-F8 [Dired] Backup-Files löschen (~
+\begin_inset space ~
+\end_inset
+
+x)
 \end_layout
 
-\begin_deeper
 \begin_layout Description
-C-s/C-r Weitersuchen vorwärts/rückwärts
+C-u
+\begin_inset space ~
+\end_inset
+
+s ls Kommandozeile (Spezialfall von 
+\begin_inset Quotes gld
+\end_inset
+
+toggle sort
+\begin_inset Quotes grd
+\end_inset
+
+: s)
 \end_layout
 
 \begin_layout Description
-C-w 
-\begin_inset ERT
+Insert [Dired] Markieren (m/u)
+\end_layout
+
+\begin_layout Description
+Enter [Dired] Öffnen
+\end_layout
+
+\begin_layout Description
+C-Enter [Dired] Öffnen in anderem Buffer (o)
+\end_layout
+
+\begin_layout Description
+Backspace [Dired] Ebene hoch
+\end_layout
+
+\begin_layout Description
+M-u [Dired] Dateiname Großbuchstaben
+\end_layout
+
+\begin_layout Description
+M-l [Dired] Dateiname Kleinbuchstaben
+\end_layout
+
+\begin_layout Description
++ [Dired] Markieren 
+\emph on
+Reg-Exp
+\emph default
+ (%
+\begin_inset space ~
+\end_inset
+
+m)
+\end_layout
+
+\begin_layout Description
+- [Dired] Alle Markierungen aufheben (*
+\begin_inset space ~
+\end_inset
+
+!)
+\end_layout
+
+\begin_layout Subsection
+VC, (e)Diff, Log-Edit
+\end_layout
+
+\begin_layout Description
+S-F12 VC-Status Verzeichnis (C-x
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+d)
+\end_layout
+
+\begin_layout Description
+S-F2 [VC] Nächste VC Aktion (v), meist Checkin
+\end_layout
+
+\begin_layout Description
+F4 
+\emph on
+Ediff
+\end_layout
+
+\begin_layout Itemize
+[VC]
+\emph on
+ 
+\emph default
+Vergleich mit Vorgängerversion (
+\begin_inset Flex Command
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-mbox{Akt.}
+ediff-revision
 \end_layout
 
 \end_inset
 
- Wort an Suchstring anhängen
+)
+\end_layout
+
+\begin_layout Itemize
+[Diff] Patch (C-c
+\begin_inset space ~
+\end_inset
+
+C-e)
 \end_layout
 
 \begin_layout Description
-C-y Rest der Zeile an Suchstring anhängen
-\end_layout
-
-\begin_layout Description
-M-y Einfügen an Ende des Suchstrings
-\end_layout
-
-\begin_layout Description
-M-c Umschaltung Case-Sensitivity
-\end_layout
-
-\begin_layout Description
-M-r Umschaltung auf reguläre Ausdrücke
-\end_layout
-
-\begin_layout Description
-M-e Suchstring editieren
-\end_layout
-
-\begin_layout Description
-M-n Verwende nächsten Suchstring
-\end_layout
-
-\begin_layout Description
-M-p Verwende vorhergehenden Suchstring
-\end_layout
-
-\begin_layout Description
-M-Tab Vervollständigung aus History
-\end_layout
-
-\end_deeper
-\begin_layout Description
-C-M-s Suchen vorwärts 
+F6 [Log-Edit] Hole Log-Eintrag aus 
 \emph on
-Reg-Exp
+ChangeLog (
+\emph default
+C-c
+\begin_inset space ~
+\end_inset
+
+C-a)
 \end_layout
 
 \begin_layout Description
-C-M-r Suchen rückwärts 
-\emph on
-Reg-Exp
-\end_layout
+C-c
+\begin_inset space ~
+\end_inset
 
-\begin_layout Section
-Compile/Build
-\end_layout
-
-\begin_layout Description
-F9 Make (Compile All)
+C-c [Log-Edit] Commit (Fertig)
 \end_layout
 
 \begin_layout Description
-\begin_inset ERT
-status collapsed
+M-p [Log-Edit] Vorherige Log-Message
+\end_layout
+
+\begin_layout Description
+M-n [Log-Edit] Nächste Log-Message
+\end_layout
+
+\begin_layout Description
+M-r [Log-Edit] Suche Log-Message rückwärts
+\end_layout
+
+\begin_layout Description
+M-s [Log-Edit] Suche Log-Message vorwärts
+\end_layout
+
+\begin_layout Subsection
+Compile
+\end_layout
+
+\begin_layout Description
+F9 Compile (
+\begin_inset Flex Command
+status open
 
 \begin_layout Plain Layout
-
-%% C-F9 Compile File
-\end_layout
-
-\begin_layout Plain Layout
-
+make all
 \end_layout
 
 \end_inset
 
-
+)
 \end_layout
 
 \begin_layout Description
@@ -1162,94 +1661,30 @@ C-c
 C-k Compile abbrechen
 \end_layout
 
-\begin_layout Description
-F10 Nächster Fehler
+\begin_layout Section
+Hilfe
 \end_layout
 
 \begin_layout Description
-S-F10 Voriger Fehler (C-x
-\begin_inset space ~
-\end_inset
+F1 Man-Page lesen
+\end_layout
 
-`)
+\begin_layout Description
+S-F1 Apropos Kommando/Funktion
+\end_layout
+
+\begin_layout Description
+C-S-F1 Apropos Variable
 \end_layout
 
 \begin_layout Section
-Spezielle Modes
-\end_layout
+\start_of_appendix
+Reguläre Ausdrücke
+\begin_inset Foot
+status open
 
-\begin_layout Subsection
-Dired (Speedbar, Buffer List)
-\end_layout
-
-\begin_layout Description
-F12 
-\emph on
-Dired
-\end_layout
-
-\begin_layout Description
-F3 Ansehen (v)
-\end_layout
-
-\begin_layout Description
-F4 Bearbeiten (C-o)
-\end_layout
-
-\begin_layout Description
-F5 Kopieren (C)
-\end_layout
-
-\begin_layout Description
-F6 Umbennen/Verschieben (R)
-\end_layout
-
-\begin_layout Description
-F7 Verzeichnis anlegen
-\end_layout
-
-\begin_layout Description
-S-C-F7 TAGS erzeugen und laden
-\end_layout
-
-\begin_layout Description
-F8 Löschen (D)
-\end_layout
-
-\begin_layout Description
-S-F8 Backup-Files löschen (~
-\begin_inset space ~
-\end_inset
-
-x)
-\end_layout
-
-\begin_layout Description
-Insert Markieren (m/u)
-\end_layout
-
-\begin_layout Description
-Enter Öffnen
-\end_layout
-
-\begin_layout Description
-C-Enter Öffnen in neuem Buffer (o)
-\end_layout
-
-\begin_layout Description
-Backspace Ebene hoch
-\end_layout
-
-\begin_layout Description
-M-u Dateiname Großbuchstaben
-\end_layout
-
-\begin_layout Description
-M-l Dateiname Kleinbuchstaben
-\end_layout
-
-\begin_layout Description
-S-C-F3 mehr anzeigen, 
+\begin_layout Plain Layout
+Auswahl, siehe 
 \begin_inset ERT
 status open
 
@@ -1262,131 +1697,23 @@ eg
 
 \end_inset
 
- versteckte Dateien
-\end_layout
-
-\begin_layout Description
-d Markieren zum Löschen
-\end_layout
-
-\begin_layout Description
-x Markierte (d) löschen
-\end_layout
-
-\begin_layout Description
-q Beenden
-\end_layout
-
-\begin_layout Description
-+ Markieren 
-\emph on
-Reg-Exp
-\end_layout
-
-\begin_layout Description
-- Markierung aufheben 
-\emph on
-Reg-Exp
-\end_layout
-
-\begin_layout Subsection
-ChangeLog
-\end_layout
-
-\begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-4
-\begin_inset space ~
-\end_inset
-
-a Neuer 
-\emph on
-ChangeLog
-\emph default
--Eintrag
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-f Gehe zu Quelldatei (der 
-\begin_inset ERT
-status open
+ 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
 
-
-\backslash
-mbox{akt.}
+http://www.emacswiki.org/emacs/RegularExpression
 \end_layout
 
 \end_inset
 
- Zeile)
+.
 \end_layout
 
-\begin_layout Subsection
-Log-Edit (VC)
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
 \end_inset
 
-C-a Hole Log-Message aus 
-\emph on
-ChangeLog
-\end_layout
 
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-c Commit (Fertig)
-\end_layout
-
-\begin_layout Description
-M-p Vorherige Log-Message
-\end_layout
-
-\begin_layout Description
-M-n Nächste Log-Message
-\end_layout
-
-\begin_layout Description
-M-r Suche Log-Message rückwärts
-\end_layout
-
-\begin_layout Description
-M-s Suche Log-Message vorwärts
-\end_layout
-
-\begin_layout Section
-Hilfe
-\end_layout
-
-\begin_layout Description
-F1 Man-Page lesen
-\end_layout
-
-\begin_layout Description
-S-F1 Apropos Command/Function
-\end_layout
-
-\begin_layout Description
-C-S-F1 Apropos Variable
-\end_layout
-
-\begin_layout Section
-\start_of_appendix
-Reguläre Ausdrücke (Auswahl)
 \end_layout
 
 \begin_layout Description
@@ -1519,7 +1846,7 @@ mbox{Ges.}
 
 \end_inset
 
- gefundener Text
+ gefundener (Gesamt-) Text
 \end_layout
 
 \begin_layout Description
