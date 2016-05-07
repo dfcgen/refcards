@@ -324,14 +324,6 @@ M-F4 Speichern und beenden (C-x
 C-c)
 \end_layout
 
-\begin_layout Description
-Pause Umschaltung Read-Only (C-x
-\begin_inset space ~
-\end_inset
-
-C-q)
-\end_layout
-
 \begin_layout Section
 Buffer, Windows, Frames
 \end_layout
@@ -459,6 +451,10 @@ C-Kp-Enter Frame schließen (C-x
 \end_inset
 
 0)
+\end_layout
+
+\begin_layout Description
+Pause Umschaltung fixiertes Fenster
 \end_layout
 
 \begin_layout Section
@@ -825,7 +821,7 @@ S-F10 Vorherige (Fund-) Stelle (previous-error)
 \end_layout
 
 \begin_layout Subsection
-Tags, ChangeLog
+CScope/Tags, ChangeLog, Diff
 \end_layout
 
 \begin_layout Description
@@ -896,7 +892,15 @@ F7 Gehe zu:
 \end_layout
 
 \begin_layout Itemize
-[CC] Tag/Symbol (M-.)
+[CC] Tag (C-c
+\begin_inset space ~
+\end_inset
+
+s
+\begin_inset space ~
+\end_inset
+
+d, M-.)
 \end_layout
 
 \begin_layout Itemize
@@ -942,39 +946,39 @@ C-c)
 \end_layout
 
 \begin_layout Description
-S-F7 [CC] Gehe von Tag zurück (M-*)
-\end_layout
-
-\begin_layout Description
-C-F7 [CC] Zeige Vervollständigungen für Tag (
-\begin_inset Flex Command
-status open
-
-\begin_layout Plain Layout
-complete-tag
-\end_layout
-
+C-F7 [CC] Gehe zu Tag, anderes Fenster (C-c
+\begin_inset space ~
 \end_inset
 
-)
-\end_layout
-
-\begin_layout Description
-C-S-F7 [CC] Vervollständige Tag (
-\begin_inset Flex Command
-status open
-
-\begin_layout Plain Layout
-hippie-expand
-\end_layout
-
+s
+\begin_inset space ~
 \end_inset
 
-)
+G)
 \end_layout
 
 \begin_layout Description
-M-S-F7 [CC] Suche passende Tags (
+S-F7 [CC] Gehe von Tag zurück (C-c
+\begin_inset space ~
+\end_inset
+
+s
+\begin_inset space ~
+\end_inset
+
+u, M-*)
+\end_layout
+
+\begin_layout Description
+M-S-F7 [CC] Suche alle passenden Tags (C-c
+\begin_inset space ~
+\end_inset
+
+s
+\begin_inset space ~
+\end_inset
+
+s, 
 \begin_inset Flex Command
 status open
 
@@ -988,21 +992,25 @@ tags-apropos
 \end_layout
 
 \begin_layout Description
-C-S-F7 [Dired] TAGS Datei erzeugen und laden
-\end_layout
-
-\begin_layout Description
-M-S-F7 [Dired] Lade TAGS Datei (
+M-S-F7 [CC] Vervollständige Text/Tag (
 \begin_inset Flex Command
 status open
 
 \begin_layout Plain Layout
-visit-tags-table
+hippie-expand
 \end_layout
 
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Description
+C-S-F7 [Dired] Erzeuge Tags Datenbank
+\end_layout
+
+\begin_layout Description
+M-S-F7 [Dired] Lade Tags Datenbank
 \end_layout
 
 \begin_layout Subsection
@@ -1548,7 +1556,7 @@ m)
 \end_layout
 
 \begin_layout Subsection
-VC, (e)Diff, Log-Edit
+VC, Diff, Log-Edit
 \end_layout
 
 \begin_layout Description
