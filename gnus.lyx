@@ -1,0 +1,489 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass manual
+\begin_preamble
+%% \date{}
+\end_preamble
+\options smallheadings,halfparskip*,9pt
+\use_default_options false
+\begin_modules
+helpers
+path
+\end_modules
+\maintain_unincluded_children false
+\language german
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 99
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing other 0.80000000000000004
+\use_hyperref true
+\pdf_subject "Emacs Keys"
+\pdf_keywords "Emacs"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1.5cm
+\headheight 1cm
+\headsep 0.5cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language german
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Gnus Beginners Cheat Sheet
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+
+\size small
+Copyright 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcopyright
+\backslash
+ 2016 -- 
+\backslash
+number
+\backslash
+year
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ Ralf Hoppe
+\end_layout
+
+\begin_layout Section
+Groups
+\end_layout
+
+\begin_layout Description
+RET enter group, show unread
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+RET enter group, show already read (C-RET)
+\end_layout
+
+\begin_layout Description
+SPC enter group, show next unread
+\end_layout
+
+\begin_layout Description
+g refresh -- check for new articles (F5)
+\end_layout
+
+\begin_layout Description
+l list groups w/ L<=5, having unread articles
+\end_layout
+
+\begin_layout Description
+L list groups w/ L<=7, having articles
+\end_layout
+
+\begin_layout Description
+A
+\begin_inset space ~
+\end_inset
+
+A list groups, really all
+\end_layout
+
+\begin_layout Description
+t toggle topic mode
+\end_layout
+
+\begin_layout Description
+u toggle subscription
+\end_layout
+
+\begin_layout Description
+S
+\begin_inset space ~
+\end_inset
+
+l set level
+\end_layout
+
+\begin_layout Description
+m write email
+\end_layout
+
+\begin_layout Description
+# set process mark
+\end_layout
+
+\begin_layout Description
+M-# remove process mark
+\end_layout
+
+\begin_layout Description
+c mark all unread articles as read (catch-up)
+\end_layout
+
+\begin_layout Description
+r re-read init file
+\end_layout
+
+\begin_layout Description
+R re-start Gnus
+\end_layout
+
+\begin_layout Description
+q quit Gnus (C-w, kp-RET)
+\end_layout
+
+\begin_layout Description
+s save buffers (F2)
+\end_layout
+
+\begin_layout Section
+Summary
+\end_layout
+
+\begin_layout Description
+SPC scroll page down / read next (unread)
+\end_layout
+
+\begin_layout Description
+! tick (mark as interesting)
+\end_layout
+
+\begin_layout Description
+d mark as read
+\end_layout
+
+\begin_layout Description
+E mark as expiry
+\end_layout
+
+\begin_layout Description
+DEL mark as read and expiry
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Combines 
+\begin_inset Quotes gld
+\end_inset
+
+d
+\begin_inset space ~
+\end_inset
+
+E
+\begin_inset Quotes grd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+DEL delete from disk!
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+m move to another group
+\end_layout
+
+\begin_layout Description
+M-u clear all marks
+\end_layout
+
+\begin_layout Description
+# set process mark
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+# mark thread with #
+\end_layout
+
+\begin_layout Description
+s isearch article
+\end_layout
+
+\begin_layout Description
+h enter article buffer
+\end_layout
+
+\begin_layout Description
+m write (new) email
+\end_layout
+
+\begin_layout Description
+r mail reply w/o original
+\end_layout
+
+\begin_layout Description
+R mail reply w/ original
+\end_layout
+
+\begin_layout Description
+S
+\begin_inset space ~
+\end_inset
+
+W mail wide reply w/ original
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-f forward
+\end_layout
+
+\begin_layout Description
+f mail followup
+\end_layout
+
+\begin_layout Description
+F mail followup w/ original
+\end_layout
+
+\begin_layout Description
+Y
+\begin_inset space ~
+\end_inset
+
+g re-generate buffer (F5)
+\end_layout
+
+\begin_layout Description
+q quit Summary buffer (C-w, kp-RET)
+\end_layout
+
+\begin_layout Description
+Z
+\begin_inset space ~
+\end_inset
+
+s save buffers (F2)
+\end_layout
+
+\begin_layout Description
+C-t toggle line truncation (S-F3)
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+T toggle thread mode (C-S-F3)
+\end_layout
+
+\begin_layout Section
+Article
+\end_layout
+
+\begin_layout Description
+s jump to summary buffer
+\end_layout
+
+\begin_layout Description
+W c wash CRLF to LF
+\end_layout
+
+\begin_layout Description
+c open attachement (if over button)
+\end_layout
+
+\begin_layout Section
+Message
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-b move to body
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-f
+\begin_inset space ~
+\end_inset
+
+C-t move to header (C-c
+\begin_inset space ~
+\end_inset
+
+C-h)
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+TAB move to signature
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-u move to Importance:
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+M-n insert request receipt
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-a attach file
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-c send
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-k abort (kill message buffer)
+\end_layout
+
+\begin_layout Description
+\begin_inset space ~
+\end_inset
+
+ save buffers (F2)
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-d save as draft (S-F2)
+\end_layout
+
+\end_body
+\end_document
