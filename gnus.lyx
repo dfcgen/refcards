@@ -13,7 +13,7 @@ helpers
 path
 \end_modules
 \maintain_unincluded_children false
-\language german
+\language american
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -33,7 +33,7 @@ path
 \bibtex_command default
 \index_command default
 \paperfontsize 10
-\spacing other 0.80000000000000004
+\spacing other 0.8
 \use_hyperref true
 \pdf_subject "Emacs Keys"
 \pdf_keywords "Emacs"
@@ -82,7 +82,7 @@ path
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
-\quotes_language german
+\quotes_language english
 \papercolumns 2
 \papersides 2
 \paperpagestyle default
@@ -101,7 +101,7 @@ Gnus Beginners Cheat Sheet
 status open
 
 \begin_layout Plain Layout
-Tasten in Emacs-Notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+Keys in Emacs notation: C=Control (Strg), S=Shift, M=Meta (Alt).
 \end_layout
 
 \end_inset
@@ -137,6 +137,60 @@ year
 \end_layout
 
 \begin_layout Section
+Agent
+\end_layout
+
+\begin_layout Description
+J
+\begin_inset space ~
+\end_inset
+
+j toggle plugged/unplugged
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Useful if 
+\emph on
+Gnus
+\emph default
+ was started with 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+gnus-unplugged
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+J
+\begin_inset space ~
+\end_inset
+
+s send articles from 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+nndraft:queue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Groups
 \end_layout
 
@@ -149,7 +203,17 @@ C-u
 \begin_inset space ~
 \end_inset
 
-RET enter group, show already read (C-RET)
+RET enter group, show already read 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-RET)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -157,7 +221,17 @@ SPC enter group, show next unread
 \end_layout
 
 \begin_layout Description
-g refresh -- check for new articles (F5)
+g refresh & check for new articles 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F5)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -185,6 +259,114 @@ u toggle subscription
 \end_layout
 
 \begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+m make a new group 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F7)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+r rename group
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+DEL delete group
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+G
+\begin_inset space ~
+\end_inset
+
+DEL delete group, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{incl.}
+\end_layout
+
+\end_inset
+
+ all articles in
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+f add 
+\emph on
+nndoc
+\emph default
+ (foreign) group, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{e.g.}
+\end_layout
+
+\end_inset
+
+ MBOX file
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+e edit group method
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+p edit group parameters
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
+c customize group parameters
+\end_layout
+
+\begin_layout Description
 S
 \begin_inset space ~
 \end_inset
@@ -193,11 +375,17 @@ l set level
 \end_layout
 
 \begin_layout Description
-m write email
+# set process mark
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Can be used also on topic name, which marks all groups inside.
 \end_layout
 
-\begin_layout Description
-# set process mark
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -213,15 +401,101 @@ r re-read init file
 \end_layout
 
 \begin_layout Description
-R re-start Gnus
+s save buffers 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F2)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-q quit Gnus (C-w, kp-RET)
+q quit Gnus
+\end_layout
+
+\begin_layout Subsection*
+Topics
 \end_layout
 
 \begin_layout Description
-s save buffers (F2)
+RET toggle hide/show topic
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+H toggle hide/show empty topics 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-S-F3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+n create topic
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+m move group to another topic 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F6)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+r rename topic
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+DEL delete topic
+\end_layout
+
+\begin_layout Description
+TAB increase topic level
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+TAB decrease topic level
 \end_layout
 
 \begin_layout Section
@@ -229,15 +503,164 @@ Summary
 \end_layout
 
 \begin_layout Description
-SPC scroll page down / read next (unread)
+Y
+\begin_inset space ~
+\end_inset
+
+g re-generate summary buffer 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F5)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-! tick (mark as interesting)
+M-t toggle buttonized display
 \end_layout
 
 \begin_layout Description
-d mark as read
+C-t toggle line truncation 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(S-F3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+T toggle thread mode 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-S-F3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+SPC scroll page forward / read next (unread) 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-Next
+\begin_inset Formula $\equiv$
+\end_inset
+
+Ctrl-PgDn)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Backspace scroll page backward 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-Prior
+\begin_inset Formula $\equiv$
+\end_inset
+
+Ctrl-PgUp)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+g (re-) display current article
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+g display article raw (unformatted)
+\end_layout
+
+\begin_layout Description
+: display BBDB record of sender
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+; edit BBDB record of sender
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+W
+\begin_inset space ~
+\end_inset
+
+c 
+\begin_inset Quotes eld
+\end_inset
+
+wash
+\begin_inset Quotes erd
+\end_inset
+
+ CRLF pairs (to LF)
+\end_layout
+
+\begin_layout Description
+h jump to article buffer 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(TAB)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+! tick (important, handle as un-read)
+\end_layout
+
+\begin_layout Description
+? dormant (handle as read, but never expire)
+\end_layout
+
+\begin_layout Description
+d mark as read (no spam)
 \end_layout
 
 \begin_layout Description
@@ -245,21 +668,286 @@ E mark as expiry
 \end_layout
 
 \begin_layout Description
-DEL mark as read and expiry
+$ mark as spam
+\end_layout
+
+\begin_layout Description
+# set process mark to article
+\end_layout
+
+\begin_layout Description
+M-u clear all marks from article
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+# mark thread with process mark
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Insert toggle process mark on article
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-a set process mark to all articles 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-a)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+M
+\begin_inset space ~
+\end_inset
+
+P
+\begin_inset space ~
+\end_inset
+
+U clear process mark from all articles 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(-)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+m move article to another group 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F6)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+c copy article to another group
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+DEL delete article from disk!
+\end_layout
+
+\begin_layout Description
+m compose (new) email
+\end_layout
+
+\begin_layout Description
+R mail reply w/ original
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-f forward mail
+\end_layout
+
+\begin_layout Description
+Z
+\begin_inset space ~
+\end_inset
+
+s save buffers 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+ (F2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+q quit summary buffer
+\end_layout
+
+\begin_layout Section
+Article
+\end_layout
+
+\begin_layout Description
+t toggle header display 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-S-F3)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+h jump to summary buffer
+\end_layout
+
+\begin_layout Description
+TAB go to next 
+\emph on
+w3m
+\emph default
+ anchor (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{resp.}
+\end_layout
+
+\end_inset
+
+ button)
+\end_layout
+
+\begin_layout Description
+S-TAB go to previous button (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+w3m
+\emph default
+ anchor)
+\end_layout
+
+\begin_layout Subsection*
+MIME Parts
+\end_layout
+
+\begin_layout Description
+c open in buffer
+\end_layout
+
+\begin_layout Description
+o save to file
+\end_layout
+
+\begin_layout Description
+e show in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{ext.}
+\end_layout
+
+\end_inset
+
+ viewer
+\end_layout
+
+\begin_layout Description
+K
+\begin_inset space ~
+\end_inset
+
+H show text/html MIME part in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{ext.}
+\end_layout
+
+\end_inset
+
+ browser
+\end_layout
+
+\begin_layout Description
+X
+\begin_inset space ~
+\end_inset
+
+m save all parts matching a MIME type
+\end_layout
+
+\begin_layout Subsection*
+Coding/Charset
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Combines 
-\begin_inset Quotes gld
-\end_inset
+See 
+\begin_inset Flex Command
+status open
 
-d
-\begin_inset space ~
-\end_inset
+\begin_layout Plain Layout
+gnus-summary-show-article-charset-alist
+\end_layout
 
-E
-\begin_inset Quotes grd
 \end_inset
 
 .
@@ -271,127 +959,51 @@ E
 \end_layout
 
 \begin_layout Description
-B
+0
 \begin_inset space ~
 \end_inset
 
-DEL delete from disk!
+g CP-1252
 \end_layout
 
 \begin_layout Description
-B
+1
 \begin_inset space ~
 \end_inset
 
-m move to another group
+g iso-8859-1
 \end_layout
 
 \begin_layout Description
-M-u clear all marks
-\end_layout
-
-\begin_layout Description
-# set process mark
-\end_layout
-
-\begin_layout Description
-T
+2
 \begin_inset space ~
 \end_inset
 
-# mark thread with #
+g iso-8859-15
 \end_layout
 
 \begin_layout Description
-s isearch article
-\end_layout
-
-\begin_layout Description
-h enter article buffer
-\end_layout
-
-\begin_layout Description
-m write (new) email
-\end_layout
-
-\begin_layout Description
-r mail reply w/o original
-\end_layout
-
-\begin_layout Description
-R mail reply w/ original
-\end_layout
-
-\begin_layout Description
-S
+4
 \begin_inset space ~
 \end_inset
 
-W mail wide reply w/ original
+g CP-437
 \end_layout
 
 \begin_layout Description
-C-c
+5
 \begin_inset space ~
 \end_inset
 
-C-f forward
+g CP-850
 \end_layout
 
 \begin_layout Description
-f mail followup
-\end_layout
-
-\begin_layout Description
-F mail followup w/ original
-\end_layout
-
-\begin_layout Description
-Y
+8
 \begin_inset space ~
 \end_inset
 
-g re-generate buffer (F5)
-\end_layout
-
-\begin_layout Description
-q quit Summary buffer (C-w, kp-RET)
-\end_layout
-
-\begin_layout Description
-Z
-\begin_inset space ~
-\end_inset
-
-s save buffers (F2)
-\end_layout
-
-\begin_layout Description
-C-t toggle line truncation (S-F3)
-\end_layout
-
-\begin_layout Description
-T
-\begin_inset space ~
-\end_inset
-
-T toggle thread mode (C-S-F3)
-\end_layout
-
-\begin_layout Section
-Article
-\end_layout
-
-\begin_layout Description
-s jump to summary buffer
-\end_layout
-
-\begin_layout Description
-W c wash CRLF to LF
-\end_layout
-
-\begin_layout Description
-c open attachement (if over button)
+g UTF-8
 \end_layout
 
 \begin_layout Section
@@ -415,19 +1027,21 @@ C-f
 \begin_inset space ~
 \end_inset
 
-C-t move to header (C-c
+C-t move to header 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(C-c
 \begin_inset space ~
 \end_inset
 
 C-h)
 \end_layout
 
-\begin_layout Description
-C-c
-\begin_inset space ~
 \end_inset
 
-TAB move to signature
+
 \end_layout
 
 \begin_layout Description
@@ -435,7 +1049,23 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-u move to Importance:
+TAB 
+\lang canadian
+move
+\lang american
+ to signature
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-u add 
+\emph on
+Importance
+\emph default
+ header (or cycle through)
 \end_layout
 
 \begin_layout Description
@@ -459,7 +1089,15 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-c send
+C-c send immediately
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-j schedule for delayed sending
 \end_layout
 
 \begin_layout Description
@@ -471,10 +1109,21 @@ C-k abort (kill message buffer)
 \end_layout
 
 \begin_layout Description
+C-x
 \begin_inset space ~
 \end_inset
 
- save buffers (F2)
+s save buffers 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F2)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -482,7 +1131,17 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-d save as draft (S-F2)
+C-d save as draft 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(S-F2)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
