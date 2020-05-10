@@ -1,17 +1,19 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass manual
 \begin_preamble
-\usepackage{multicol}
-\date{}
+\definecolor{ruler}{rgb}{0.5, 0.5, 0.5}
+\setlength\columnseprule{.1pt}
+\renewcommand{\columnseprulecolor}{\color{ruler}}
 \end_preamble
-\options normalheadings,parskip+,9pt
+\options headings=small,fontsize=9pt
 \use_default_options false
 \begin_modules
-path
 helpers
+path
+multicol
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -21,20 +23,20 @@ helpers
 \font_roman times
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing other 0.90000000000000002
+\spacing other 0.9
 \use_hyperref true
 \pdf_subject "VxWorks"
 \pdf_keywords "vxworks, refcard"
@@ -49,15 +51,24 @@ helpers
 \pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
-\use_amsmath 2
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
-\paperorientation portrait
-\suppress_date false
+\paperorientation landscape
+\suppress_date true
+\justification true
 \use_refstyle 0
 \branch WITH_VXCOMPAT
 \selected 1
@@ -93,17 +104,17 @@ helpers
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
-\topmargin 1.5cm
-\rightmargin 1.5cm
+\leftmargin 0.5cm
+\topmargin 1cm
+\rightmargin 0.5cm
 \bottommargin 1cm
 \headheight 0cm
-\headsep 0.6cm
-\footskip 0.6cm
+\headsep 0.25cm
+\footskip 0cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip smallskip
+\defskip 1pt
 \quotes_language swedish
 \papercolumns 1
 \papersides 2
@@ -119,11 +130,50 @@ helpers
 \begin_body
 
 \begin_layout Standard
+
+\lang american
+\begin_inset Flex Multiple Columns
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang american
+3
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedcolumns
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-$Id$
+
+\lang american
+Use 
+\emph on
+pdflatex
+\emph default
+ for export to PDF (dvips seems not to work with 3 columns)!
 \end_layout
 
 \end_inset
@@ -133,13 +183,14 @@ $Id$
 
 \begin_layout Title
 
-\size large
+\lang american
 VxWorks
 \end_layout
 
 \begin_layout Author
 
 \size small
+\lang american
 Copyright 
 \begin_inset ERT
 status open
@@ -162,22 +213,6 @@ year
 \end_inset
 
  Ralf Hoppe
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{multicols}{2}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1199,7 +1234,7 @@ status collapsed
 \end_inset
 
  and friends see usrFsLib.
-  For all available commands see the Host Shell Users Guide.
+ For all available commands see the Host Shell Users Guide.
 \end_layout
 
 \end_inset
@@ -1408,7 +1443,7 @@ devName
 ] Show interfaces info
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_VXCOMPAT
 status open
 
@@ -1465,13 +1500,13 @@ routestatShow Show routing statistics
 
 \end_layout
 
-\begin_layout Subsection
-BSP
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_BSP_GAISLER
 status collapsed
+
+\begin_layout Subsubsection
+BSP
+\end_layout
 
 \begin_layout Subsubsection
 SPARC-V8 Leon
@@ -1512,9 +1547,13 @@ gptimerShow Show General Purpose (GP) Timers
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_BSP_IXP4XX
 status collapsed
+
+\begin_layout Subsection
+BSP
+\end_layout
 
 \begin_layout Subsubsection
 Intel XScale ixp425/465 BSP
@@ -1547,9 +1586,13 @@ ixp425GPIOShow Show GPIO config
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_BSP_SANDPOINT
 status collapsed
+
+\begin_layout Subsubsection
+BSP
+\end_layout
 
 \begin_layout Subsubsection
 Sandpoint
@@ -1670,7 +1713,7 @@ ipd Interpeak daemon
 rtp Real Time Process commands
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_HOST_TOOLS
 status collapsed
 
@@ -1688,6 +1731,7 @@ vxprj
 \end_layout
 
 \begin_layout Section
+\start_of_appendix
 Platform
 \end_layout
 
@@ -1921,7 +1965,7 @@ SPARC
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch WITH_BUILD_VARS
 status open
 
@@ -2051,17 +2095,6 @@ CFLAGS
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{multicols}
 \end_layout
 
 \end_inset
