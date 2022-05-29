@@ -4,13 +4,20 @@
 \begin_header
 \textclass manual
 \begin_preamble
-%% \date{}
+\RedeclareSectionCommand[
+  beforeskip=.8\baselineskip,
+  afterskip=.4\baselineskip]{section}
+
+\definecolor{ruler}{rgb}{0.5, 0.5, 0.5}
+\setlength\columnseprule{.1pt}
+\renewcommand{\columnseprulecolor}{\color{ruler}}
 \end_preamble
-\options smallheadings,halfparskip*,9pt
+\options headings=small,fontsize=9pt
 \use_default_options false
 \begin_modules
 helpers
 path
+multicol
 \end_modules
 \maintain_unincluded_children false
 \language american
@@ -33,7 +40,7 @@ path
 \bibtex_command default
 \index_command default
 \paperfontsize 10
-\spacing other 0.8
+\spacing other 0.9
 \use_hyperref true
 \pdf_subject "Emacs Keys"
 \pdf_keywords "Emacs"
@@ -63,7 +70,7 @@ path
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
-\paperorientation portrait
+\paperorientation landscape
 \suppress_date true
 \justification true
 \use_refstyle 0
@@ -71,21 +78,21 @@ path
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
-\topmargin 1cm
-\rightmargin 1cm
-\bottommargin 1.5cm
-\headheight 1cm
-\headsep 0.5cm
-\footskip 1cm
+\leftmargin 0.5cm
+\topmargin 0.5cm
+\rightmargin 0.25cm
+\bottommargin 0.5cm
+\headheight 0cm
+\headsep 0cm
+\footskip 0cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip smallskip
+\defskip 1pt
 \quotes_language english
-\papercolumns 2
+\papercolumns 1
 \papersides 2
-\paperpagestyle default
+\paperpagestyle empty
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -94,6 +101,50 @@ path
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset Flex Multiple Columns
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedcolumns
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Use 
+\emph on
+pdflatex
+\emph default
+ for export to PDF (dvips seems not to work with 3 columns)!
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Title
 Key Bindings for Emacs
@@ -128,6 +179,50 @@ year
 
 \begin_layout Section
 Commands
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+toccmd{
+\end_layout
+
+\end_inset
+
+
+\lang american
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Keys in 
+\emph on
+Emacs
+\emph default
+ notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+\end_layout
+
+\end_inset
+
+
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -145,20 +240,6 @@ status open
 
 \begin_layout Plain Layout
 <Cmd>
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Keys in 
-\emph on
-Emacs
-\emph default
- notation: C=Control (Strg), S=Shift, M=Meta (Alt).
 \end_layout
 
 \end_inset
@@ -197,7 +278,7 @@ status open
 
  
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Flex Command
@@ -222,27 +303,51 @@ C-u 78 *
 \end_layout
 
 \begin_layout Description
-C-g cancel command input
+C-g abort command
 \end_layout
 
 \begin_layout Description
-C-c
+M-: evaluate Lisp expression
+\end_layout
+
+\begin_layout Description
+C-x
 \begin_inset space ~
 \end_inset
 
-C-k cancel command execution
+C-e evaluate Lisp expression at point
 \end_layout
 
 \begin_layout Description
-Menu jump to global menu
+M-F4 save all and exit 
+\emph on
+Emacs
+\emph default
+ (C-x
+\begin_inset space ~
+\end_inset
+
+C-c)
+\end_layout
+
+\begin_layout Section
+Menu
 \end_layout
 
 \begin_layout Description
-M-Menu shell
+Menu Imenu
 \end_layout
 
 \begin_layout Description
-C-S-Menu terminal
+M-Menu jump to global menu
+\end_layout
+
+\begin_layout Description
+C-Menu open (predefined) site-file from popup menu
+\end_layout
+
+\begin_layout Description
+C-S-Menu execute (predefined) site-tool from popup menu
 \end_layout
 
 \begin_layout Section
@@ -250,11 +355,19 @@ Files
 \end_layout
 
 \begin_layout Description
-F12 
+M-x
+\begin_inset space ~
+\end_inset
+
+cd change current directory (of buffer)
+\end_layout
+
+\begin_layout Description
+F10 
 \emph on
 Dired
 \emph default
- (C-x
+, same-window (C-x
 \begin_inset space ~
 \end_inset
 
@@ -266,12 +379,43 @@ C-x
 \begin_inset space ~
 \end_inset
 
-C-f open file\SpecialChar \ldots{}
+4
+\begin_inset space ~
+\end_inset
 
+d 
+\emph on
+Dired
+\emph default
+, other window
 \end_layout
 
 \begin_layout Description
-C-RET open file/link at point
+C-x
+\begin_inset space ~
+\end_inset
+
+5
+\begin_inset space ~
+\end_inset
+
+d 
+\emph on
+Dired
+\emph default
+, other frame
+\end_layout
+
+\begin_layout Description
+C-S-RET 
+\emph on
+Dired
+\emph default
+ (other window) for file/s at point/region
+\end_layout
+
+\begin_layout Description
+C-RET open file/url/e-mail at point
 \begin_inset Note Comment
 status open
 
@@ -281,11 +425,42 @@ find-file-at-point
 
 \end_inset
 
+; or [Org] visit link; or [CC] open #include or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{corresp.}
+\end_layout
+
+\end_inset
+
+ C/H file
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+ff-find-other-file
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Description
-S-F2 save (C-x
+C-x
+\begin_inset space ~
+\end_inset
+
+C-f open file
+\end_layout
+
+\begin_layout Description
+S-F2 save file (C-x
 \begin_inset space ~
 \end_inset
 
@@ -309,33 +484,33 @@ M-S-F2 EOL conversion to DOS (CR/LF), then save
 \end_layout
 
 \begin_layout Description
-M-F4 save all and exit 
+S-F5 locate file per 
 \emph on
-Emacs
+updatedb
 \emph default
- (C-x
-\begin_inset space ~
-\end_inset
-
-C-c)
+/
+\emph on
+everything
+\emph default
+ database
 \end_layout
 
 \begin_layout Description
-Scroll_Lock [CC] open associated source/header file
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-ff-find-other-file
-\end_layout
-
-\end_inset
-
-
+F11 open file/url/\SpecialChar \ldots{}
+ from bookmarks (
+\emph on
+Org
+\emph default
+)
 \end_layout
 
 \begin_layout Description
-C-Scroll_Lock [CC] like above, but open in other window
+S-F11 add file/url/\SpecialChar \ldots{}
+ to bookmarks (
+\emph on
+Org
+\emph default
+)
 \end_layout
 
 \begin_layout Section
@@ -343,16 +518,32 @@ Buffers, Windows, Frames
 \end_layout
 
 \begin_layout Enumerate
-Buffer
+Buffers
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-C-S-F12 show buffer list (C-x C-b)
+C-x
+\begin_inset space ~
+\end_inset
+
+b switch to another buffer
 \end_layout
 
 \begin_layout Description
-C-x
+C-S-F10 buffer list (C-x
+\begin_inset space ~
+\end_inset
+
+C-b)
+\end_layout
+
+\begin_layout Description
+C-Page
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ show next buffer in same window (C-x
 \begin_inset space ~
 \end_inset
 
@@ -360,16 +551,12 @@ C-x
 \begin_inset Formula $\rightarrow$
 \end_inset
 
- show next buffer in same window
+)
 \end_layout
 
 \begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Formula $\leftarrow$
+C-Page
+\begin_inset Formula $\uparrow$
 \end_inset
 
  show 
@@ -385,15 +572,62 @@ mbox{prev.}
 
 \end_inset
 
- buffer in same window
-\end_layout
-
-\begin_layout Description
-C-w close buffer (C-x
+ buffer in same window (C-x
 \begin_inset space ~
 \end_inset
 
-k 
+
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+k kill a(ny) buffer
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+# exit 
+\emph on
+emacsclient
+\emph default
+, optional kill current buffer
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+server-edit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-w,
+\begin_inset space ~
+\end_inset
+
+Kp-RET kill current buffer, exit 
+\emph on
+emacsclient
+\emph default
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+kill-this-buffer 
 \begin_inset ERT
 status open
 
@@ -401,16 +635,17 @@ status open
 
 
 \backslash
-mbox{resp.}
+resp
 \end_layout
 
 \end_inset
 
- C-x
-\begin_inset space ~
+ server-edit
+\end_layout
+
 \end_inset
 
-#)
+
 \end_layout
 
 \end_deeper
@@ -420,7 +655,7 @@ Windows
 
 \begin_deeper
 \begin_layout Description
-Pause toggle dedicated (fixed)
+Pause/C-# toggle dedicated & unsplittable
 \end_layout
 
 \begin_layout Description
@@ -432,15 +667,15 @@ o)
 \end_layout
 
 \begin_layout Description
-Kp-RET close window (C-x
+C-x
 \begin_inset space ~
 \end_inset
 
-0)
+0 close window
 \end_layout
 
 \begin_layout Description
-Kp-Add single window (C-x
+Kp-+ single window (C-x
 \begin_inset space ~
 \end_inset
 
@@ -448,23 +683,27 @@ Kp-Add single window (C-x
 \end_layout
 
 \begin_layout Description
-Kp-Divide split window, one above the other (C-x
+C-x
 \begin_inset space ~
 \end_inset
 
-2)
+2 split window top/bottom
 \end_layout
 
 \begin_layout Description
-Kp-Multiply split window, side by side (C-x
+C-x
 \begin_inset space ~
 \end_inset
 
-3)
+3 split window left/right
 \end_layout
 
 \begin_layout Description
-Kp-Subtract widen window (C-x
+C-S-Page
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ widen window (C-x
 \begin_inset space ~
 \end_inset
 
@@ -472,7 +711,11 @@ Kp-Subtract widen window (C-x
 \end_layout
 
 \begin_layout Description
-S-Kp-Subtract narrow window (C-x
+C-S-Page
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ narrow window (C-x
 \begin_inset space ~
 \end_inset
 
@@ -480,21 +723,11 @@ S-Kp-Subtract narrow window (C-x
 \end_layout
 
 \begin_layout Description
-C-Kp-Subtract balance windows (C-x
+C-x
 \begin_inset space ~
 \end_inset
 
-+)
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-balance-windows
-\end_layout
-
-\end_inset
-
-
++ balance windows
 \end_layout
 
 \end_deeper
@@ -504,7 +737,7 @@ Frames
 
 \begin_deeper
 \begin_layout Description
-C-Kp-Add new frame (C-x
+C-Kp-+ new frame (C-x
 \begin_inset space ~
 \end_inset
 
@@ -533,22 +766,6 @@ View
 \end_layout
 
 \begin_layout Description
-F5 refresh
-\end_layout
-
-\begin_layout Description
-F4 [CC, Org] toggle show entry/block
-\end_layout
-
-\begin_layout Description
-S-F4 [CC, Org] show all entries/blocks
-\end_layout
-
-\begin_layout Description
-C-S-F4 [Org] toggle show all entries
-\end_layout
-
-\begin_layout Description
 F3 speedbar on/off
 \end_layout
 
@@ -568,79 +785,13 @@ toggle-truncate-lines
 
 \begin_layout Description
 C-S-F3 toggle view options
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-[CC] show tabs (whitespace-mode)
-\end_layout
-
-\begin_layout Itemize
-[Speedbar] show all files
-\end_layout
-
-\begin_layout Itemize
-[Dired] show hidden files
-\end_layout
-
-\begin_layout Itemize
-[Buffer List] show all/file buffers
-\end_layout
-
-\begin_layout Itemize
-[VC] hide files in a particular state
-\end_layout
-
-\begin_layout Itemize
-[Bookmarks] show file names
-\end_layout
-
-\begin_layout Itemize
-[Ediff] ignore whitespace
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-ediff-toggle-skip-similar
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-s [CC] show syntactic context
 \begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Helpful for customizing 
-\begin_inset Flex Command
 status open
 
 \begin_layout Plain Layout
-c-hanging-braces-alist
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset Flex Command
-status open
-
-\begin_layout Plain Layout
-c-offsets-alist
-\end_layout
-
-\end_inset
-
-.
+For example [CC] whitespace, [Org] indent/links, [Dired] hidden files, [w3m]
+ images, [Comint] prompt, [Grep] path, [Ediff] skip whitespace, [Ido] flex/ignor
+ed matches, [Company] Irony completions.
 \end_layout
 
 \end_inset
@@ -649,21 +800,29 @@ c-offsets-alist
 \end_layout
 
 \begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
+F4 toggle visibility of [Prog] code/comment block; or [Org] subtree
+\end_layout
 
-= show info on cursor position
-\begin_inset Note Comment
+\begin_layout Description
+S-F4 un-hide all [Prog] code/comment blocks; or [Org] subtrees
+\end_layout
+
+\begin_layout Description
+C-S-F4 toggle hide/show [CC] 
+\begin_inset Flex Command
 status open
 
 \begin_layout Plain Layout
-what-cursor-position
+#if
 \end_layout
 
 \end_inset
 
+ block; or [Org] all subtrees
+\end_layout
 
+\begin_layout Description
+F5 refresh, with C-u prefix revert buffer
 \end_layout
 
 \begin_layout Section
@@ -671,163 +830,10 @@ Navigation
 \end_layout
 
 \begin_layout Enumerate
-Buffer
+Save/Restore Point
 \end_layout
 
 \begin_deeper
-\begin_layout Description
-Home goto start of line (C-a)
-\end_layout
-
-\begin_layout Description
-S-Home goto first non-whitespace character (M-m)
-\end_layout
-
-\begin_layout Description
-End goto end of line (C-e)
-\end_layout
-
-\begin_layout Description
-C-Home goto start of file (M-<)
-\end_layout
-
-\begin_layout Description
-C-End goto end of file (M->)
-\end_layout
-
-\begin_layout Description
-C-
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- move to next word (M-f)
-\end_layout
-
-\begin_layout Description
-C-
-\begin_inset Formula $\leftarrow$
-\end_inset
-
- move to 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-mbox{prev.}
-\end_layout
-
-\end_inset
-
- word (M-b)
-\end_layout
-
-\begin_layout Description
-M-g goto line number\SpecialChar \ldots{}
-
-\end_layout
-
-\begin_layout Description
-C-l center current line in window
-\end_layout
-
-\begin_layout Description
-M-
-\begin_inset Formula $\leftarrow$
-\end_inset
-
- [CC] backward balanced expression (C-M-b), [else] start of sentence (M-a)
-\end_layout
-
-\begin_layout Description
-M-
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- [CC] forward balanced expression (C-M-f), [else] next sentence (M-e)
-\end_layout
-
-\begin_layout Description
-M-
-\begin_inset Formula $\uparrow$
-\end_inset
-
- [CC] backward out of one level of parentheses (C-M-u), [else] start of
- paragraph
-\end_layout
-
-\begin_layout Description
-M-
-\begin_inset Formula $\downarrow$
-\end_inset
-
- [CC] forward down one level of parentheses (C-M-d), [else] end of paragraph
-\end_layout
-
-\begin_layout Description
-C-
-\begin_inset Formula $\uparrow$
-\end_inset
-
- [CC] beginning of function (C-M-a)
-\end_layout
-
-\begin_layout Description
-C-
-\begin_inset Formula $\downarrow$
-\end_inset
-
- [CC] end of function (C-M-e)
-\end_layout
-
-\begin_layout Description
-C-S-
-\begin_inset Formula $\uparrow$
-\end_inset
-
- [CC] backward preprocessor conditional (C-c
-\begin_inset space ~
-\end_inset
-
-C-p)
-\end_layout
-
-\begin_layout Description
-C-S-
-\begin_inset Formula $\downarrow$
-\end_inset
-
- [CC] forward preprocessor conditional (C-c
-\begin_inset space ~
-\end_inset
-
-C-n)
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-u [CC] upward to containing preprocessor conditional
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Bookmarks/Register
-\end_layout
-
-\begin_deeper
-\begin_layout Description
-S-F11 set bookmark
-\end_layout
-
-\begin_layout Description
-C-S-F11 list all bookmarks
-\end_layout
-
 \begin_layout Description
 C-x
 \begin_inset space ~
@@ -837,7 +843,7 @@ r
 \begin_inset space ~
 \end_inset
 
-SPC save cursor 
+SPC save point 
 \begin_inset ERT
 status open
 
@@ -863,7 +869,7 @@ r
 \begin_inset space ~
 \end_inset
 
-j restore cursor 
+j restore point 
 \begin_inset ERT
 status open
 
@@ -880,60 +886,12 @@ mbox{pos.}
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Grep/Find
-\end_layout
-
-\begin_deeper
 \begin_layout Description
-F8 grep files
-\end_layout
-
-\begin_layout Description
-S-F8 grep in buffers
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-multi-occur-in-matching-buffers
-\end_layout
-
+C-SPC
+\begin_inset space ~
 \end_inset
 
-
-\end_layout
-
-\begin_layout Description
-C-S-F8 find in files
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-grep-find
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-F10 goto next hit (M-n)
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-next-error
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-S-F10 goto 
+C-SPC save point 
 \begin_inset ERT
 status open
 
@@ -941,36 +899,12 @@ status open
 
 
 \backslash
-mbox{prev.}
+mbox{pos.}
 \end_layout
 
 \end_inset
 
- hit (M-p)
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-previous-error
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Mark Ring
-\end_layout
-
-\begin_deeper
-\begin_layout Description
-C-SPC
-\begin_inset space ~
-\end_inset
-
-C-SPC save current position to mark ring
+ to mark ring(s)
 \end_layout
 
 \begin_layout Description
@@ -978,15 +912,21 @@ C-u
 \begin_inset space ~
 \end_inset
 
-C-SPC goto last 
-\begin_inset Quotes gld
+C-SPC\SpecialChar \ldots{}
+ pop point 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{pos.}
+\end_layout
+
 \end_inset
 
-mark
-\begin_inset Quotes grd
-\end_inset
-
- in local ring
+ from local mark ring
 \end_layout
 
 \begin_layout Description
@@ -994,15 +934,21 @@ C-x
 \begin_inset space ~
 \end_inset
 
-C-SPC goto last 
-\begin_inset Quotes gld
+C-SPC\SpecialChar \ldots{}
+ pop point 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{pos.}
+\end_layout
+
 \end_inset
 
-mark
-\begin_inset Quotes grd
-\end_inset
-
- in global ring
+ from global mark ring
 \begin_inset Note Comment
 status open
 
@@ -1012,57 +958,195 @@ pop-global-mark
 
 \end_inset
 
+ (C-x
+\begin_inset space ~
+\end_inset
 
+C-@)
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Tags
+Moving Point
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-F7 [CC] goto (e)tag, use current window
-\begin_inset Foot
-status collapsed
+Home goto start of line (C-a)
+\end_layout
+
+\begin_layout Description
+S-Home goto first non-whitespace character (M-m)
+\end_layout
+
+\begin_layout Description
+End goto end of line (C-e)
+\end_layout
+
+\begin_layout Description
+C-Home goto start of buffer (M-<)
+\end_layout
+
+\begin_layout Description
+C-End goto end of file (M->)
+\end_layout
+
+\begin_layout Description
+C-S-g goto line number (M-g
+\begin_inset space ~
+\end_inset
+
+g)
+\end_layout
+
+\begin_layout Description
+C-l center current line in window
+\end_layout
+
+\begin_layout Description
+C-
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
-\emph on
-Cscope
-\emph default
- should be used via prefix C-c
-\begin_inset space ~
-\end_inset
 
-s
-\begin_inset space ~
-\end_inset
-
-\SpecialChar \ldots{}
-
+\backslash
+mbox{forw.}
 \end_layout
 
 \end_inset
 
-
+ word (M-f)
 \end_layout
 
 \begin_layout Description
-C-F7 [CC] goto (e)tag, in another window
+C-
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+ word (M-b)
 \end_layout
 
 \begin_layout Description
-S-F7 [CC] pop from (e)tag (M-*)
+M-
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ sentence (M-e); or [Prog] balanced 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{expr.}
+\end_layout
+
+\end_inset
+
+ (C-M-f)
 \end_layout
 
 \begin_layout Description
-M-S-F7 [CC] find matching (e)tags
+M-
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+ sentence (M-a); or [Prog] balanced 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{expr.}
+\end_layout
+
+\end_inset
+
+ (C-M-b)
+\end_layout
+
+\begin_layout Description
+M-
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ paragraph (M-})
 \begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
-tags-apropos
+forward-paragraph
+\end_layout
+
+\end_inset
+
+; or [CC] parentheses level down (C-M-d)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+down-list
 \end_layout
 
 \end_inset
@@ -1071,61 +1155,323 @@ tags-apropos
 \end_layout
 
 \begin_layout Description
-C-S-F7 [Dired] create (etags/cscope) tags database
+M-
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+ paragraph (M-{)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+backward-paragraph
+\end_layout
+
+\end_inset
+
+; or [CC] parentheses level up (C-M-u)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+backward-up-list
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-M-S-F7 [Dired] load (etags/cscope) tags database
+C-
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+ paragraph; or [CC] beginning of function (C-M-a)
+\end_layout
+
+\begin_layout Description
+C-
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ paragraph; or [CC] end of function (C-M-e)
+\end_layout
+
+\begin_layout Description
+C-S-
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ [CC] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+#if
+\end_layout
+
+\end_inset
+
+ block, same level (C-c
+\begin_inset space ~
+\end_inset
+
+C-p)
+\end_layout
+
+\begin_layout Description
+C-S-
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ [CC] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+#if
+\end_layout
+
+\end_inset
+
+ block, same level (C-c
+\begin_inset space ~
+\end_inset
+
+C-n)
+\end_layout
+
+\begin_layout Description
+C-S-
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+ [CC] up to containing 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+#if
+\end_layout
+
+\end_inset
+
+ block (C-c
+\begin_inset space ~
+\end_inset
+
+C-u)
+\end_layout
+
+\begin_layout Description
+C-S-
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ [CC] 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ down one level of 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+#if
+\end_layout
+
+\end_inset
+
+ block
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
+Interactive Search (
+\emph on
 Isearch
+\emph default
+)
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-C-s/C-r interactive (re-)search forward/backward
+C-s/C-r search 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-C-M-s/C-M-r interactive 
+C-M-s/C-M-r search 
 \emph on
 Reg-Exp
 \emph default
- (re-)search forward/backward
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Description
+\noindent
 C-w copy current word to search string
 \end_layout
 
 \begin_layout Description
+\noindent
 C-y copy rest of line to search string
 \end_layout
 
 \begin_layout Description
+\noindent
 M-y paste to search string
 \end_layout
 
 \begin_layout Description
+\noindent
 M-c toggle case sensitivity
 \end_layout
 
 \begin_layout Description
+\noindent
 M-r toggle regular expression search
 \end_layout
 
 \begin_layout Description
+\noindent
 M-e edit search string
 \end_layout
 
 \begin_layout Description
+\noindent
 M-n next search string
 \end_layout
 
 \begin_layout Description
+\noindent
 M-p 
 \begin_inset ERT
 status open
@@ -1143,107 +1489,284 @@ mbox{prev.}
 \end_layout
 
 \end_deeper
+\begin_layout Description
+C-S-s search symbol/word at point 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ (M-s
+\begin_inset space ~
+\end_inset
+
+.); or
+\begin_inset Newline newline
+\end_inset
+
+[Dired, VC, Buffers] search in selected items
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Grep/Find, Compile
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+F7 compile, with C-u prefix enable 
+\emph on
+Comint
+\emph default
+ minor mode
+\end_layout
+
+\begin_layout Description
+F9 grep in (
+\begin_inset space \thinspace{}
+\end_inset
+
+[Dired, VC] marked
+\begin_inset space \thinspace{}
+\end_inset
+
+) files
+\end_layout
+
+\begin_layout Description
+S-F9 find in files
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+grep-find
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-F9 grep in buffers
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+multi-occur-in-matching-buffers
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+Multi-Occur
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Description
+C-S-F9 grep in (project) files, defined by tags table
+\end_layout
+
+\begin_layout Description
+F8 jump to next error/match (M-g
+\begin_inset space ~
+\end_inset
+
+n)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+next-error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+S-F8 jump to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ error/match (M-g
+\begin_inset space ~
+\end_inset
+
+p)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+previous-error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-S-F8 jump to first error/match
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+first-error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[CC] Etags
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-S-F5 lookup (project) file via tags table, using 
+\begin_inset CommandInset href
+LatexCommand href
+name "IDO"
+target "https://www.emacswiki.org/emacs/InteractivelyDoThings"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+F12 find tag (M-.)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+find-tag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+F12 (incremental) find next (C-u
+\begin_inset space ~
+\end_inset
+
+M-.)
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+4
+\begin_inset space ~
+\end_inset
+
+.
+ find tag in other window
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+5
+\begin_inset space ~
+\end_inset
+
+.
+ find tag in other frame
+\end_layout
+
+\begin_layout Description
+S-F12 pop from tag (M-*)
+\end_layout
+
+\begin_layout Description
+C-F12 find matching tags
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+tags-apropos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-S-F12 completion find tag, using 
+\begin_inset CommandInset href
+LatexCommand href
+name "IDO"
+target "https://www.emacswiki.org/emacs/InteractivelyDoThings"
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Section
 Edit
 \end_layout
 
 \begin_layout Enumerate
-Modes
-\end_layout
-
-\begin_deeper
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-a toggle 
-\emph on
-Auto-Newline
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-d toggle 
-\emph on
-Hungry-Delete
-\end_layout
-
-\begin_layout Description
-C-c
-\begin_inset space ~
-\end_inset
-
-C-l toggle 
-\emph on
-Electric-Mode
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
 Input
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-M-RET [CC] context-sesitive newline
-\end_layout
-
-\begin_layout Description
-C-S-SPC completion
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-hippie-expand/org-complete
-\end_layout
-
+C-z undo (C-x
+\begin_inset space ~
 \end_inset
 
-
-\end_layout
-
-\begin_layout Description
-C-S-F5 spell check current word (M-$)
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-ispell-word
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-C-.
- 
-\emph on
-Flyspell
-\emph default
- auto-correct
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-flyspell-auto-correct-word
-\end_layout
-
-\end_inset
-
-
+u)
 \end_layout
 
 \begin_layout Description
 C-q enter control character 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 For example: C-q
@@ -1258,24 +1781,36 @@ hard
 \begin_inset Quotes erd
 \end_inset
 
- tab.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-C-S-q UTF-8 special characters
-\end_layout
-
-\begin_layout Description
-C-z undo (C-x
+ tab, C-q
 \begin_inset space ~
 \end_inset
 
-u)
+25be inserts the UTF-8 char 0x25be.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-S-q UTF-8 special characters popup menu
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+C-q toggle buffer read-only (view mode)
+\end_layout
+
+\begin_layout Description
+C-S-SPC mode-specific completion (C-M-i); or [CC] 
+\emph on
+Hippie-Expand
+\emph default
+ (etags) completion
 \end_layout
 
 \end_deeper
@@ -1310,7 +1845,7 @@ C-f mark function (C-M-h)
 
 \end_deeper
 \begin_layout Enumerate
-Copy
+Copy/Paste
 \end_layout
 
 \begin_deeper
@@ -1319,47 +1854,15 @@ C-Insert copy (M-w)
 \end_layout
 
 \begin_layout Description
-C-M-Insert copy to register (C-x
-\begin_inset space ~
-\end_inset
-
-r
-\begin_inset space ~
-\end_inset
-
-x)
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Paste
-\end_layout
-
-\begin_deeper
-\begin_layout Description
 S-Insert paste last killed (C-y)
 \end_layout
 
 \begin_layout Description
-M-Insert paste next
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Only applicable immediately after 
-\emph on
-S-Insert
-\emph default
-.
-\end_layout
-
-\end_inset
-
- (M-y)
+M-Insert paste next from history (M-y)
 \end_layout
 
 \begin_layout Description
-M-S-Insert paste from register (C-x
+C-x
 \begin_inset space ~
 \end_inset
 
@@ -1367,29 +1870,195 @@ r
 \begin_inset space ~
 \end_inset
 
-g)
+s copy to register
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+r
+\begin_inset space ~
+\end_inset
+
+i paste/insert from register
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Kill/Delete
+Delete/Kill
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-S-Delete kill (delete & copy) region
+C-Delete delete line, forward (like C-k, but w/o copy to kill ring)
 \end_layout
 
 \begin_layout Description
-M-Delete delete word forward
+C-S-Delete delete whole line
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+kill-whole-line
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
-M-Backspace delete word backward
+S-Delete kill region (delete & copy)
 \end_layout
 
 \begin_layout Description
-C-Delete delete line (C-k)
+M-Delete delete word 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+M-Backspace delete word 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+Delete delete sentence 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+ (M-k)
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+Backspace delete sentence 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+Delete [CC] hungry delete 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{forw.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+Backspace [CC] hungry delete 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{backw.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-d [CC] toggle 
+\emph on
+Hungry Delete
+\emph default
+ (
+\begin_inset Quotes eld
+\end_inset
+
+h
+\begin_inset Quotes erd
+\end_inset
+
+)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+c-toggle-hungry-state
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1432,12 +2101,16 @@ C-u region to uppercase
 
 \end_deeper
 \begin_layout Enumerate
-Syntactic Indentation
+Indentation
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-Tab line/region
+Tab indent line/region
+\end_layout
+
+\begin_layout Description
+M-RET [Prog] context-sensitive newline/indent
 \end_layout
 
 \begin_layout Description
@@ -1445,7 +2118,7 @@ C-c
 \begin_inset space ~
 \end_inset
 
-C-q function
+C-q [CC] indent function
 \begin_inset Note Comment
 status open
 
@@ -1459,12 +2132,72 @@ c-indent-defun
 \end_layout
 
 \begin_layout Description
-C-M-q expression
+C-M-q [CC] indent expression
 \begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
 c-indent-exp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-l [CC] toggle 
+\emph on
+Electric Indent Mode
+\emph default
+ (
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+c-toggle-electric-state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-a [CC] toggle 
+\emph on
+Auto Newline
+\emph default
+ (
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+c-toggle-auto-newline
 \end_layout
 
 \end_inset
@@ -1479,21 +2212,35 @@ Comments
 
 \begin_deeper
 \begin_layout Description
-F6 insert/reformat comment (comment DWIM
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Do what i mean.
-\end_layout
-
-\end_inset
-
-)
+F6 insert/reformat comment (DWIM --- Do What I Mean)
 \end_layout
 
 \begin_layout Description
 S-F6 insert/line-up comment (M-;)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+comment-dwim
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-F6 insert a 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+NOTE
+\end_layout
+
+\end_inset
+
+ comment box
 \end_layout
 
 \begin_layout Description
@@ -1509,7 +2256,7 @@ C-x
 \begin_inset space ~
 \end_inset
 
-; set comment column based on point
+f set fill column
 \end_layout
 
 \begin_layout Description
@@ -1517,7 +2264,7 @@ C-x
 \begin_inset space ~
 \end_inset
 
-f set fill column
+; set comment column based on point
 \end_layout
 
 \end_deeper
@@ -1525,6 +2272,11 @@ f set fill column
 Misc
 \end_layout
 
+\begin_layout Enumerate
+(E)Diff, VC & ChangeLog
+\end_layout
+
+\begin_deeper
 \begin_layout Description
 C-x
 \begin_inset space ~
@@ -1544,24 +2296,154 @@ ediff-buffers
 
 \end_inset
 
-
+; or [Dired] directories
 \end_layout
 
 \begin_layout Description
-F9 compile
+C-x
+\begin_inset space ~
+\end_inset
+
+4
+\begin_inset space ~
+\end_inset
+
+a update 
+\emph on
+ChangeLog
+\emph default
+ for current buffer/file
 \end_layout
 
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+a update 
+\emph on
+ChangeLog
+\emph default
+ from VC logs (not 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{impl.}
+\end_layout
+
+\end_inset
+
+ for 
+\emph on
+Git
+\emph default
+)
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+! 
+\emph on
+Ediff
+\emph default
+ current file with another version
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+= Diff current file with another version
+\end_layout
+
+\begin_layout Description
+S-F10 VC status (C-x
+\begin_inset space ~
+\end_inset
+
+v
+\begin_inset space ~
+\end_inset
+
+d)
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+vc-dir
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{resp.}
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+Magit
+\emph default
+ (toggle)
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Dired
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Shadowed global key bindings for F5-F8 are available via prefix argument
+ C-u.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-F3  view file (v)
+F5 copy file (C)
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+dired-do-copy
 \end_layout
 
-\begin_layout Description
-F5  copy file (C)
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1587,23 +2469,21 @@ F8 delete file (D)
 \end_layout
 
 \begin_layout Description
-S-F8 delete backup files (~
-\begin_inset space ~
-\end_inset
-
-x)
+C-S-F12 create (etags/cscope) tags database
 \end_layout
 
 \begin_layout Description
-Insert mark (m/u)
+Insert toggle mark (m/u)
 \end_layout
 
 \begin_layout Description
-RET open file
+RET open file, quit 
+\emph on
+Dired
 \end_layout
 
 \begin_layout Description
-C-RET open file in other window (o)
+SPC open file in other window
 \end_layout
 
 \begin_layout Description
@@ -1611,11 +2491,40 @@ Backspace goto parent directory
 \end_layout
 
 \begin_layout Description
+! shell command on marked files
+\end_layout
+
+\begin_layout Description
+& same as 
+\begin_inset Quotes eld
+\end_inset
+
+!
+\begin_inset Quotes erd
+\end_inset
+
+, but 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{async.}
+\end_layout
+
+\end_inset
+
+ execution
+\end_layout
+
+\begin_layout Description
 M-u file name to uppercase
 \end_layout
 
 \begin_layout Description
-M-l  file name to lowercase
+M-l file name to lowercase
 \end_layout
 
 \begin_layout Description
@@ -1628,6 +2537,10 @@ m)
 
 \begin_layout Description
 - clear all marks
+\end_layout
+
+\begin_layout Description
+s toggle sort by name/date
 \end_layout
 
 \begin_layout Description
@@ -1658,25 +2571,17 @@ C-a attach file(s) to new email
 
 \end_deeper
 \begin_layout Enumerate
-Version Control
+Spell
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-S-F12 VC status of directory (C-x
-\begin_inset space ~
-\end_inset
-
-v
-\begin_inset space ~
-\end_inset
-
-d)
+M-$ spell check word
 \begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
-vc-dir
+ispell-word
 \end_layout
 
 \end_inset
@@ -1685,52 +2590,16 @@ vc-dir
 \end_layout
 
 \begin_layout Description
-C-x
+C-$ (Fly-) spell correct word (C-c
 \begin_inset space ~
 \end_inset
 
-v
-\begin_inset space ~
-\end_inset
-
-! VC 
-\emph on
-Ediff
-\emph default
- current file
-\end_layout
-
-\begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-v
-\begin_inset space ~
-\end_inset
-
-= VC diff current file
-\end_layout
-
-\begin_layout Description
-C-x
-\begin_inset space ~
-\end_inset
-
-v
-\begin_inset space ~
-\end_inset
-
-D compare tree with another version
-\begin_inset Foot
-status collapsed
+$)
+\begin_inset Note Comment
+status open
 
 \begin_layout Plain Layout
-Since 
-\emph on
-Emacs
-\emph default
- version 23.2.0.
+flyspell-correct-word-before-point
 \end_layout
 
 \end_inset
@@ -1739,104 +2608,120 @@ Emacs
 \end_layout
 
 \begin_layout Description
-C-x
-\begin_inset space ~
+C-.
+ (Fly-) spell correct word automatically
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+flyspell-auto-correct-word
+\end_layout
+
 \end_inset
 
-v
-\begin_inset space ~
-\end_inset
 
-a update 
-\emph on
-ChangeLog
-\emph default
- file from recent VC logs
 \end_layout
 
 \begin_layout Description
-C-x
-\begin_inset space ~
+C-, goto next (Fly-) spell error
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+flyspell-goto-next-error
+\end_layout
+
 \end_inset
 
-g GIT status, using 
-\emph on
-Magit
+
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Org
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-See the 
-\begin_inset CommandInset href
-LatexCommand href
-name "Org-Mode Reference Card"
-target "http://orgmode.org/orgcard.pdf"
-
-\end_inset
-
- for key bindings in 
-\emph on
-Org
-\emph default
- mode.
-\end_layout
-
-\end_inset
-
-
+Shell & Comint
 \end_layout
 
 \begin_deeper
 \begin_layout Description
-F11 
-\emph on
-Org
-\emph default
- capture/remember
-\begin_inset Foot
-status collapsed
+M-! shell command (
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-Depending on Org version either package 
-\emph on
-capture
-\emph default
- or package 
-\emph on
-remember
-\emph default
- is used.
+
+
+\backslash
+mbox{opt.}
 \end_layout
 
 \end_inset
 
- (C-c
-\begin_inset space ~
-\end_inset
-
-c)
+ on active region)
 \end_layout
 
 \begin_layout Description
-C-F11 open my 
-\begin_inset Quotes gld
+C-d send EOF to process (kills the buffer)
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
 \end_inset
 
-Notes
-\begin_inset Quotes grd
+C-d send EOF to process
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+comint-send-eof
+\end_layout
+
 \end_inset
 
- file
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-k send 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+INTR
+\end_layout
+
+\end_inset
+
+ to process
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+comint-interrupt-subjob
+\end_layout
+
+\end_inset
+
+, with C-u prefix send 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+KILL
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Help
+Help & Info
 \end_layout
 
 \begin_deeper
@@ -1849,7 +2734,17 @@ S-F1 apropos
 \emph on
 Emacs
 \emph default
- command/function
+ cmd/function, with C-u prefix only cmds
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+apropos-command
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -1857,47 +2752,372 @@ C-S-F1 apropos
 \emph on
 Emacs
 \emph default
- variable
+ variable/option, with C-u prefix only options
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+apropos-user-option
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-h
+\begin_inset space ~
+\end_inset
+
+a apropos 
+\emph on
+Emacs
+\emph default
+ symbol, with C-u prefix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{incl.}
+\end_layout
+
+\end_inset
+
+ properties
+\end_layout
+
+\begin_layout Description
+C-h
+\begin_inset space ~
+\end_inset
+
+[?fv\SpecialChar \ldots{}
+] describe 
+\emph on
+Emacs
+\emph default
+ help/function/variable/\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Description
+C-x
+\begin_inset space ~
+\end_inset
+
+= describe char after point, more with prefix C-u
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+what-cursor-position
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-s [CC] show syntactic context
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\emph on
+Ido
+\emph default
+ (Completion)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For a full list of 
+\emph on
+Ido
+\emph default
+ key bindings see function 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+ido-find-file
+\end_layout
+
+\end_inset
+
+ (C-h
+\begin_inset space ~
+\end_inset
+
+f).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+C-g fallback to non-Ido input (C-x
+\begin_inset space ~
+\end_inset
+
+C-f)
+\end_layout
+
+\begin_layout Description
+M-e edit input (C-e)
+\end_layout
+
+\begin_layout Description
+M-c toggle case sensitivity (C-c)
+\end_layout
+
+\begin_layout Description
+\noindent
+M-r toggle regular expression search (C-t)
+\end_layout
+
+\begin_layout Description
+C-S-F3 toggle 
+\emph on
+flex
+\emph default
+ matching
+\end_layout
+
+\begin_layout Description
+TAB,
+\begin_inset space ~
+\end_inset
+
+? show completion list
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+,
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ next candidate (C-s)
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+,
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ candidate (C-r)
+\end_layout
+
+\begin_layout Description
+M-n next directory from history
+\end_layout
+
+\begin_layout Description
+M-p 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ directory from history
+\end_layout
+
+\begin_layout Description
+~/ jump to home directory
+\end_layout
+
+\begin_layout Description
+// jump to root directory
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Company (Completion)
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+M-c toggle case sensitivity
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\downarrow$
+\end_inset
+
+ next candidate (M-n)
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ candidate (M-p)
+\end_layout
+
+\begin_layout Description
+TAB complete with common part
+\end_layout
+
+\begin_layout Description
+F1 show documentation for candidate (C-h)
+\end_layout
+
+\begin_layout Description
+C-w show candidate in context
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Does not work with 
+\emph on
+Clang
+\emph default
+ and 
+\emph on
+Irony
+\emph default
+ package.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+company-show-location
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-s incremental search in candidates
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For a full list of 
+\emph on
+Company
+\emph default
+ search key bindings see function 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+company-search-candidates
+\end_layout
+
+\end_inset
+
+ (C-h
+\begin_inset space ~
+\end_inset
+
+f).
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+company-search-candidates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+C-M-s start incremental filtering in candidates
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+company-filter-candidates
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Section
 \start_of_appendix
 Regular Expressions
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Extract, for more see 
-\begin_inset CommandInset href
-LatexCommand href
-name "EmacsWiki"
-target "https://www.emacswiki.org/emacs/RegularExpression"
-
-\end_inset
-
- and 
-\begin_inset CommandInset href
-LatexCommand href
-name "Emacs Manual"
-target "https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html"
-
-\end_inset
-
-.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-^ beginning of line
-\end_layout
-
-\begin_layout Description
-$ end of line
+\begin_layout Paragraph*
+Characters
 \end_layout
 
 \begin_layout Description
@@ -1916,17 +3136,152 @@ $ end of line
 \end_layout
 
 \begin_layout Paragraph*
-Suffixes
+Pseudo
+\end_layout
+
+\begin_layout Description
+^
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+$ beginning/end of line (newline based)
+\end_layout
+
+\begin_layout Description
+
+\backslash
+`
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+' beginning/end of line (w/o newline)
+\end_layout
+
+\begin_layout Description
+
+\backslash
+<
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+> beginning/end of word
+\end_layout
+
+\begin_layout Description
+
+\backslash
+_<
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+_> beginning/end of symbol
+\end_layout
+
+\begin_layout Description
+
+\backslash
+W
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+w not/ word-constituent character
+\end_layout
+
+\begin_layout Description
+
+\backslash
+S
+\begin_inset Formula $\varPsi$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+/
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+s
+\begin_inset Formula $\varPsi$
+\end_inset
+
+ not/ matches syntax class 
+\begin_inset Formula $\varPsi=$
+\end_inset
+
+
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Also known as postfix operators.
+Incomplete, for a full list see 
+\begin_inset CommandInset href
+LatexCommand href
+name "Table of Syntax Classes"
+target "https://www.gnu.org/software/emacs/manual/html_node/elisp/Syntax-Class-Table.html"
+
+\end_inset
+
+ online.
 \end_layout
 
 \end_inset
 
- (frequency of appearance)
+
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+- whitespace
+\end_layout
+
+\begin_layout Description
+_ symbol
+\end_layout
+
+\begin_layout Description
+w word
+\end_layout
+
+\begin_layout Description
+.
+ punctuation
+\end_layout
+
+\end_deeper
+\begin_layout Paragraph*
+Suffixes
 \end_layout
 
 \begin_layout Description
@@ -1960,7 +3315,7 @@ Also known as postfix operators.
 \begin_inset space ~
 \end_inset
 
-?? alternative form (shortest match, non-greedy variants of above)
+?? alternative form (shortest match, non-greedy variants)
 \end_layout
 
 \begin_layout Description
@@ -1980,7 +3335,7 @@ Also known as postfix operators.
 \end_layout
 
 \begin_layout Paragraph*
-Groups
+Grouping
 \end_layout
 
 \begin_layout Description
@@ -1996,18 +3351,6 @@ Groups
 
 \backslash
 | alternative
-\end_layout
-
-\begin_layout Description
-
-\backslash
-< beginning of word
-\end_layout
-
-\begin_layout Description
-
-\backslash
-> end of word
 \end_layout
 
 \begin_layout Paragraph*
@@ -2034,6 +3377,11 @@ Replacement
 
 \backslash
 ? edit each replacement
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
