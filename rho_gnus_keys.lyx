@@ -4,13 +4,16 @@
 \begin_header
 \textclass manual
 \begin_preamble
-%% \date{}
+\definecolor{ruler}{rgb}{0.5, 0.5, 0.5}
+\setlength\columnseprule{.1pt}
+\renewcommand{\columnseprulecolor}{\color{ruler}}
 \end_preamble
-\options smallheadings,halfparskip*,9pt
+\options headings=small,fontsize=9pt
 \use_default_options false
 \begin_modules
 helpers
 path
+multicol
 \end_modules
 \maintain_unincluded_children false
 \language american
@@ -33,7 +36,7 @@ path
 \bibtex_command default
 \index_command default
 \paperfontsize 10
-\spacing other 0.8
+\spacing other 0.9
 \use_hyperref true
 \pdf_subject "Emacs Keys"
 \pdf_keywords "Emacs"
@@ -63,7 +66,7 @@ path
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
-\paperorientation portrait
+\paperorientation landscape
 \suppress_date true
 \justification true
 \use_refstyle 0
@@ -71,19 +74,19 @@ path
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
+\leftmargin 1cm
 \topmargin 1cm
 \rightmargin 1cm
-\bottommargin 1.5cm
+\bottommargin 1cm
 \headheight 1cm
 \headsep 0.5cm
 \footskip 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
-\defskip smallskip
+\defskip 1pt
 \quotes_language english
-\papercolumns 2
+\papercolumns 1
 \papersides 2
 \paperpagestyle default
 \tracking_changes false
@@ -95,18 +98,52 @@ path
 
 \begin_body
 
-\begin_layout Title
-Gnus Beginners Cheat Sheet
-\begin_inset Foot
+\begin_layout Standard
+\begin_inset Flex Multiple Columns
 status open
 
 \begin_layout Plain Layout
-Keys in Emacs notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+3
 \end_layout
 
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedcolumns
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Use 
+\emph on
+pdflatex
+\emph default
+ for export to PDF (dvips seems not to work with 3 columns)!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Gnus Beginners Cheat Sheet
 \end_layout
 
 \begin_layout Author
@@ -138,6 +175,16 @@ year
 
 \begin_layout Section
 Agent
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Keys in Emacs notation: C=Control (Strg), S=Shift, M=Meta (Alt).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -203,17 +250,7 @@ C-u
 \begin_inset space ~
 \end_inset
 
-RET enter group, show already read 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-(C-RET)
-\end_layout
-
-\end_inset
-
-
+RET enter group, show already read
 \end_layout
 
 \begin_layout Description
@@ -226,12 +263,16 @@ g refresh & check for new articles
 status open
 
 \begin_layout Plain Layout
-(F5)
+(C-S-F5)
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Description
+M-g FIXME
 \end_layout
 
 \begin_layout Description
@@ -263,17 +304,7 @@ G
 \begin_inset space ~
 \end_inset
 
-m make a new group 
-\begin_inset Note Greyedout
-status open
-
-\begin_layout Plain Layout
-(F7)
-\end_layout
-
-\end_inset
-
-
+R subscribe to RSS feed
 \end_layout
 
 \begin_layout Description
@@ -347,6 +378,18 @@ G
 \begin_inset space ~
 \end_inset
 
+R add 
+\emph on
+nnrss
+\emph default
+ group (RSS feed)
+\end_layout
+
+\begin_layout Description
+G
+\begin_inset space ~
+\end_inset
+
 e edit group method
 \end_layout
 
@@ -367,11 +410,57 @@ c customize group parameters
 \end_layout
 
 \begin_layout Description
+C-c
+\begin_inset space ~
+\end_inset
+
+C-d show group description
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+From 
+\begin_inset Flex Command
+status open
+
+\begin_layout Plain Layout
+nnfolder-newsgroups-file
+\end_layout
+
+\end_inset
+
+, which is 
+\begin_inset Flex Path
+status open
+
+\begin_layout Plain Layout
+~/.mail/newsgroups
+\end_layout
+
+\end_inset
+
+ at my site.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
 S
 \begin_inset space ~
 \end_inset
 
-l set level
+l set level (
+\begin_inset Formula $1\ldots5$
+\end_inset
+
+ subsribed, 
+\begin_inset Formula $6\ldots7$
+\end_inset
+
+ unsubscribed)
 \end_layout
 
 \begin_layout Description
@@ -423,6 +512,10 @@ Topics
 \end_layout
 
 \begin_layout Description
+t Toggle topic mode
+\end_layout
+
+\begin_layout Description
 RET toggle hide/show topic
 \end_layout
 
@@ -449,7 +542,35 @@ T
 \begin_inset space ~
 \end_inset
 
-n create topic
+n create topic 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F7)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+T
+\begin_inset space ~
+\end_inset
+
+c copy group to another topic 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F5)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -512,7 +633,7 @@ g re-generate summary buffer
 status open
 
 \begin_layout Plain Layout
-(F5)
+(C-S-F5)
 \end_layout
 
 \end_inset
@@ -638,17 +759,49 @@ wash
 \end_layout
 
 \begin_layout Description
-h jump to article buffer 
-\begin_inset Note Greyedout
+n next unread article
+\end_layout
+
+\begin_layout Description
+p 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-(TAB)
+
+
+\backslash
+mbox{prev.}
 \end_layout
 
 \end_inset
 
+ unread article
+\end_layout
 
+\begin_layout Description
+N next article
+\end_layout
+
+\begin_layout Description
+P 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{prev.}
+\end_layout
+
+\end_inset
+
+ article
+\end_layout
+
+\begin_layout Description
+h jump to article buffer
 \end_layout
 
 \begin_layout Description
@@ -745,6 +898,32 @@ B
 \begin_inset space ~
 \end_inset
 
+r re-spool article
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
+c copy article to another group 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+(F5)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+B
+\begin_inset space ~
+\end_inset
+
 m move article to another group 
 \begin_inset Note Greyedout
 status open
@@ -812,17 +991,65 @@ status open
 q quit summary buffer
 \end_layout
 
+\begin_layout Subsection*
+Search/Limit
+\end_layout
+
+\begin_layout Description
+// limit to subject
+\end_layout
+
+\begin_layout Description
+/a limit to author
+\end_layout
+
+\begin_layout Description
+/@ limit to (with) attachment
+\end_layout
+
+\begin_layout Description
+/w remove last limit
+\end_layout
+
+\begin_layout Description
+C-u
+\begin_inset space ~
+\end_inset
+
+/w remove all limits
+\end_layout
+
+\begin_layout Description
+M-s search content (of current article) forward
+\end_layout
+
+\begin_layout Description
+M-S-s repeat search forward
+\end_layout
+
+\begin_layout Description
+M-r search content (of current article) backward
+\end_layout
+
+\begin_layout Description
+M-S-r repeat search backward
+\end_layout
+
 \begin_layout Section
 Article
 \end_layout
 
 \begin_layout Description
-t toggle header display 
+t toggle header display
+\end_layout
+
+\begin_layout Description
+s jump to summary buffer 
 \begin_inset Note Greyedout
 status open
 
 \begin_layout Plain Layout
-(C-S-F3)
+(h)
 \end_layout
 
 \end_inset
@@ -831,15 +1058,7 @@ status open
 \end_layout
 
 \begin_layout Description
-h jump to summary buffer
-\end_layout
-
-\begin_layout Description
-TAB go to next 
-\emph on
-w3m
-\emph default
- anchor (
+TAB go to next button (
 \begin_inset ERT
 status open
 
@@ -852,11 +1071,15 @@ mbox{resp.}
 
 \end_inset
 
- button)
+ 
+\emph on
+w3m
+\emph default
+ anchor)
 \end_layout
 
 \begin_layout Description
-S-TAB go to previous button (
+S-TAB go to 
 \begin_inset ERT
 status open
 
@@ -869,6 +1092,19 @@ mbox{prev.}
 
 \end_inset
 
+ button (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbox{resp.}
+\end_layout
+
+\end_inset
+
  
 \emph on
 w3m
@@ -876,12 +1112,16 @@ w3m
  anchor)
 \end_layout
 
+\begin_layout Description
+C-S-F3 toggle details (number of buttons, show images)
+\end_layout
+
 \begin_layout Subsection*
 MIME Parts
 \end_layout
 
 \begin_layout Description
-c open in buffer
+c open in another buffer
 \end_layout
 
 \begin_layout Description
@@ -1137,6 +1377,11 @@ status open
 
 \begin_layout Plain Layout
 (S-F2)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
