@@ -1,11 +1,9 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass scrartcl
 \begin_preamble
-\input{all-inc}
-
 \usepackage{multicol}
 \date{} %% no date after title/author
 
@@ -35,24 +33,35 @@
 \end_preamble
 \options smallheadings,9pt
 \use_default_options false
+\begin_modules
+helpers
+\end_modules
+\maintain_unincluded_children false
 \language english
+\language_package default
 \inputencoding auto
+\fontencoding global
 \font_roman times
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \float_placement H
 \paperfontsize default
 \spacing single
-\use_hyperref false
-\pdf_subject "VxWorks"
-\pdf_keywords "vxworks, workbench, interpreter, environment"
+\use_hyperref true
+\pdf_subject "UML"
+\pdf_keywords "UML,Class"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
@@ -64,35 +73,59 @@
 \pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
-\use_amsmath 2
-\use_esint 0
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
 \branch WITH_VXCOMPAT
 \selected 1
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_HOST_TOOLS
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BUILD_VARS
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_GAISLER
 \selected 1
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_SANDPOINT
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch WITH_BSP_IXP4XX
 \selected 0
+\filename_suffix 0
 \color #faf0e6
 \end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \leftmargin 2cm
 \topmargin 1.5cm
 \rightmargin 1.5cm
@@ -103,7 +136,7 @@
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip smallskip
+\paragraph_indentation default
 \quotes_language swedish
 \papercolumns 1
 \papersides 2
@@ -111,27 +144,15 @@
 \bullet 0 0 15 3
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
 
 \begin_layout Part
 Class Diagram
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-$Id$
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -153,9 +174,9 @@ Generalization [
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="middle" width="8.5cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -210,8 +231,6 @@ class Derived : public Base
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename generalization.eps
 	scale 75
@@ -246,9 +265,9 @@ Dependency [
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="bottom" width="12cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -286,8 +305,6 @@ four types: abstraction (interface), usage, permission, binding (template)
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename dependency.eps
 	scale 75
@@ -326,9 +343,9 @@ Interface
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="bottom" width="9.7cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -372,8 +389,6 @@ in general a realization is a specialized abstraction relationship between
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename interface.eps
 	scale 75
@@ -400,9 +415,9 @@ Template (Parameterized Class)
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="bottom" width="9cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -471,8 +486,6 @@ frqq
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename template.eps
 	scale 75
@@ -511,9 +524,9 @@ General Association [
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="middle" width="9.5cm">
-<column alignment="right" valignment="middle" width="0">
+<column alignment="right" valignment="middle">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -598,8 +611,6 @@ class A
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename association.eps
 	scale 75
@@ -635,9 +646,9 @@ Aggregation [
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="middle" width="13cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -724,9 +735,9 @@ Composition [
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features>
+<features rotate="0" tabularvalignment="middle">
 <column alignment="block" valignment="bottom" width="12cm">
-<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -810,8 +821,6 @@ class A
 \begin_inset Text
 
 \begin_layout Plain Layout
-\noindent
-\align right
 \begin_inset Graphics
 	filename composition.eps
 	scale 75
@@ -1589,10 +1598,6 @@ end{multicols}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Constraints
 \end_layout
 
 \end_body
